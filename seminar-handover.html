@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>セミナースケジュール管理 引き継ぎマニュアル</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; }
+
+/* スライド共通 */
+.slide {
+  width: 100%; max-width: 960px; margin: 0 auto 2px;
+  min-height: 540px; padding: 48px 56px;
+  position: relative; overflow: hidden;
+}
+.slide-dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  color: #fff;
+}
+.slide-light { background: #fff; color: #1a1a1a; }
+
+/* 装飾 */
+.slide::after {
+  content: ''; position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px; border: 2px solid rgba(255,255,255,0.06);
+  transform: rotate(45deg);
+}
+.slide-light::after { border-color: rgba(0,0,0,0.04); }
+
+/* ページ番号 */
+.page-num {
+  position: absolute; bottom: 16px; right: 24px;
+  font-size: 12px; font-weight: 700; color: #B80C2C;
+}
+.slide-dark .page-num { color: rgba(255,255,255,0.4); }
+
+/* フッター */
+.slide-footer {
+  position: absolute; bottom: 16px; left: 24px;
+  font-size: 8px; color: rgba(0,0,0,0.25); letter-spacing: 0.5px;
+}
+.slide-dark .slide-footer { color: rgba(255,255,255,0.15); }
+
+/* セクション番号 */
+.sec-num { font-size: 56px; font-weight: 900; color: #B80C2C; line-height: 1; }
+.sec-label { font-size: 11px; color: #B80C2C; letter-spacing: 3px; margin-bottom: 4px; }
+.sec-title { font-size: 28px; font-weight: 900; margin-bottom: 24px; }
+
+/* カード */
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card {
+  padding: 24px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+}
+.card-dark { background: rgba(255,255,255,0.05); }
+.card-light { background: #f8f8f8; border-color: #e8e8e8; border-left: 4px solid #B80C2C; }
+.card-title { font-size: 14px; font-weight: 700; color: #B80C2C; margin-bottom: 8px; }
+.card ul { list-style: none; font-size: 13px; line-height: 2; }
+.card ul li::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #B80C2C; margin-right: 8px; vertical-align: middle; }
+
+/* テーブル */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th { background: #B80C2C; color: #fff; padding: 10px 12px; text-align: left; font-weight: 700; }
+tbody td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.slide-dark tbody td { border-bottom-color: rgba(255,255,255,0.08); }
+tbody tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+.slide-dark tbody tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+
+/* ルール行 */
+.rule-row {
+  padding: 14px 20px; margin-bottom: 6px; border-radius: 6px;
+  font-size: 13px; display: flex; align-items: center; gap: 12px;
+}
+.rule-icon { font-size: 18px; flex-shrink: 0; }
+.rule-critical { background: rgba(184,12,44,0.15); border-left: 4px solid #B80C2C; }
+.rule-high { background: rgba(184,12,44,0.08); border-left: 4px solid #e53935; }
+.rule-mid { background: rgba(255,193,7,0.08); border-left: 4px solid #ffc107; }
+
+/* フロー */
+.flow-step {
+  display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px;
+  padding: 16px 20px; background: rgba(255,255,255,0.05); border-radius: 8px;
+}
+.flow-num {
+  width: 32px; height: 32px; border-radius: 50%; background: #B80C2C;
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 14px; flex-shrink: 0;
+}
+.flow-title { font-weight: 700; font-size: 14px; }
+.flow-desc { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+/* フォーマット例 */
+.format-box {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 20px; font-size: 13px; line-height: 1.8;
+}
+.format-box-light {
+  background: #f8f8f8; border: 1px solid #e0e0e0;
+  border-radius: 8px; padding: 20px; font-size: 13px; line-height: 1.8;
+}
+.nisa { color: #B80C2C; font-weight: 700; }
+.rsp { color: #1565c0; font-weight: 700; }
+.crm { color: #2e7d32; font-weight: 700; }
+.kiso { color: #e65100; font-weight: 700; }
+
+/* Q&A */
+.qa-item {
+  padding: 16px 20px; margin-bottom: 8px; border-radius: 8px;
+  background: rgba(255,255,255,0.05); border-left: 4px solid #B80C2C;
+}
+.qa-q { font-size: 14px; font-weight: 700; color: #B80C2C; margin-bottom: 6px; }
+.qa-a { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+/* 注意ボックス */
+.warn-box {
+  background: rgba(184,12,44,0.08); border-left: 4px solid #B80C2C;
+  padding: 12px 16px; border-radius: 6px; font-size: 12px; margin-top: 12px;
+}
+
+/* 表紙 */
+.cover { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.cover-badge {
+  border: 2px solid #B80C2C; border-radius: 24px; padding: 8px 28px;
+  font-size: 12px; color: #B80C2C; letter-spacing: 4px; font-weight: 700;
+  margin-bottom: 24px;
+}
+.cover-line { width: 60px; height: 3px; background: #B80C2C; margin-bottom: 24px; }
+.cover-title { font-size: 36px; font-weight: 900; letter-spacing: 6px; margin-bottom: 12px; }
+.cover-sub { font-size: 18px; font-weight: 400; color: rgba(0,0,0,0.6); margin-bottom: 32px; }
+.cover-date { font-size: 14px; color: rgba(0,0,0,0.4); margin-bottom: 8px; }
+.cover-to { font-size: 13px; color: rgba(0,0,0,0.4); }
+
+@media (max-width: 640px) {
+  .slide { padding: 32px 24px; min-height: auto; }
+  .card-grid { grid-template-columns: 1fr; }
+  .cover-title { font-size: 24px; }
+  .sec-num { font-size: 40px; }
+  .sec-title { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- P1: 表紙 -->
+<div class="slide slide-light cover">
+  <div class="cover-badge">H A N D O V E R&ensp; M A N U A L</div>
+  <div class="cover-line"></div>
+  <div class="cover-title">セミナースケジュール管理</div>
+  <div class="cover-sub">引き継ぎマニュアル</div>
+  <div class="cover-date">2026年4月（改訂版）</div>
+  <div class="cover-to">引き継ぎ先：ゆうちゃん・あきちゃん</div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">1 / 10</div>
+</div>
+
+<!-- P2: 引き継ぎの全体像 -->
+<div class="slide slide-dark">
+  <div class="sec-num">01</div>
+  <div class="sec-title">引き継ぎの全体像</div>
+  <div class="card-grid">
+    <div class="card card-dark">
+      <div class="card-title">引き継ぐ業務</div>
+      <ul>
+        <li>スケジュール作成・日程調整（3ヶ月先まで）</li>
+        <li>講師日程変更のやりとり</li>
+        <li>LINE送付</li>
+        <li>Googleカレンダー登録</li>
+      </ul>
+    </div>
+    <div class="card card-dark" style="border: 1px solid rgba(255,255,255,0.15);">
+      <div class="card-title" style="color: rgba(255,255,255,0.7);">さきかが継続</div>
+      <ul>
+        <li>エルメ設定</li>
+        <li>Notion設定</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">2 / 10</div>
+</div>
+
+<!-- P3: セミナー種別と基本情報 -->
+<div class="slide slide-light">
+  <div class="sec-label">セ ミ ナ ー 一 覧</div>
+  <div class="sec-num">02</div>
+  <div class="sec-title">セミナー種別と基本情報</div>
+  <table>
+    <thead>
+      <tr><th>セミナー</th><th>月回数</th><th>講師</th><th>時間帯</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>知っトク</strong></td>
+        <td>10回</td>
+        <td>NISA: 澤野(2)・高橋(2)<br>知っトク: 西尾(2)・石田(2)・澤野(1)・高橋(1)</td>
+        <td>13:00〜15:00 / 20:00〜22:00</td>
+      </tr>
+      <tr><td><strong>スタートアップ</strong></td><td>2回</td><td>田中・大越</td><td>20:00〜22:00</td></tr>
+      <tr><td><strong>スキルアップ</strong></td><td>4回(6月〜)</td><td>石田・久末・西尾・小野</td><td>13:00〜15:00 / 20:00〜22:00</td></tr>
+      <tr><td><strong>サポセミ</strong></td><td>4回</td><td>高橋・久末(RSPのみ)</td><td>20:00〜21:30</td></tr>
+    </tbody>
+  </table>
+  <div style="font-size: 11px; color: rgba(0,0,0,0.4); margin-top: 12px;">※ FA事業説明会は2026年3月で廃止</div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">3 / 10</div>
+</div>
+
+<!-- P4: 体制変更ポイント -->
+<div class="slide slide-dark">
+  <div class="sec-num">03</div>
+  <div class="sec-title">体制変更ポイント</div>
+  <div class="card-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="card card-dark" style="border-top: 3px solid #B80C2C;">
+      <div style="color: #B80C2C; font-size: 12px; font-weight: 700; margin-bottom: 8px;">01</div>
+      <div style="font-weight: 900; font-size: 15px; margin-bottom: 8px;">知っトク4名体制</div>
+      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">
+        西尾さん加入で4名体制に。<br>
+        NISA: 澤野・高橋のみ<br>
+        <span style="color: #B80C2C;">かずきさん承認済み</span>
+      </div>
+    </div>
+    <div class="card card-dark" style="border-top: 3px solid #B80C2C;">
+      <div style="color: #B80C2C; font-size: 12px; font-weight: 700; margin-bottom: 8px;">02</div>
+      <div style="font-weight: 900; font-size: 15px; margin-bottom: 8px;">スキルアップ体制変更</div>
+      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">
+        4-5月は井上+新4名（月6回）。<br>
+        6月〜は4名体制（月4回）
+      </div>
+    </div>
+    <div class="card card-dark" style="border-top: 3px solid #B80C2C;">
+      <div style="color: #B80C2C; font-size: 12px; font-weight: 700; margin-bottom: 8px;">03</div>
+      <div style="font-weight: 900; font-size: 15px; margin-bottom: 8px;">サポセミ講師移行</div>
+      <div style="font-size: 12px; color: rgba(255,255,255,0.6);">
+        若佐→久末に移行済み<br>
+        （現在はRSPのみ担当）
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">4 / 10</div>
+</div>
+
+<!-- P5: 講師一覧と担当 -->
+<div class="slide slide-light">
+  <div class="sec-label">講 師 情 報</div>
+  <div class="sec-num">04</div>
+  <div class="sec-title">講師一覧と担当</div>
+  <table>
+    <thead>
+      <tr><th>講師</th><th>知っトク</th><th>スキルアップ</th><th>その他</th><th>月合計</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>澤野</td><td>NISA 2回 + 知っトク 1回</td><td>-</td><td>-</td><td>3回</td></tr>
+      <tr><td>高橋</td><td>NISA 2回 + 知っトク 1回</td><td>-</td><td>サポセミ</td><td>3回+</td></tr>
+      <tr><td>西尾</td><td>知っトク 2回</td><td>1回</td><td>-</td><td>3回</td></tr>
+      <tr><td>石田</td><td>知っトク 2回</td><td>1回</td><td>-</td><td>3回</td></tr>
+      <tr><td>久末（廉さん）</td><td>-</td><td>1回</td><td>サポセミ(RSPのみ)</td><td>1回+</td></tr>
+      <tr><td>小野</td><td>-</td><td>1回</td><td>-</td><td>1回</td></tr>
+      <tr><td>田中</td><td>-</td><td>-</td><td>スタートアップ</td><td>2回</td></tr>
+      <tr><td>大越</td><td>-</td><td>-</td><td>スタートアップ(最優先確認)</td><td>2回</td></tr>
+    </tbody>
+  </table>
+  <div class="warn-box">
+    <strong>⚠ 石田さん・西尾さんにはNISAをつけない</strong>（NISA担当は澤野・高橋のみ）<br>
+    ⚠ 西尾・石田は兼任に注意（知っトク + スキルアップ）
+  </div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">5 / 10</div>
+</div>
+
+<!-- P6: 日程を組むときのルール -->
+<div class="slide slide-dark">
+  <div class="sec-num">05</div>
+  <div class="sec-title">日程を組むときのルール</div>
+  <div class="rule-row rule-critical"><span class="rule-icon">⚠️</span><span><strong>最優先</strong>：スタートアップとスキルアップは同日不可</span></div>
+  <div class="rule-row rule-high"><span class="rule-icon">🔴</span><span><strong>高</strong>：全体会議の日の夜はセミナー不可（毎月10日）</span></div>
+  <div class="rule-row rule-high"><span class="rule-icon">🔴</span><span><strong>高</strong>：特別研修の日は終日不可</span></div>
+  <div class="rule-row rule-high"><span class="rule-icon">🔴</span><span><strong>高</strong>：マレーシアツアー・キャンペーン期間はセミナー不可</span></div>
+  <div class="rule-row rule-mid"><span class="rule-icon">🟡</span><span><strong>中</strong>：サポセミは他と時間重複しない</span></div>
+  <div class="rule-row rule-mid"><span class="rule-icon">🟡</span><span><strong>中</strong>：知っトクは昼夜バランス（5:5 or 6:4）</span></div>
+  <div class="rule-row rule-mid"><span class="rule-icon">🟡</span><span><strong>中</strong>：各講師の担当回数を守る</span></div>
+  <div class="rule-row rule-mid"><span class="rule-icon">🟡</span><span><strong>中</strong>：兼任講師（西尾・石田）の日程考慮</span></div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">6 / 10</div>
+</div>
+
+<!-- P7: 避けるべき日程 -->
+<div class="slide slide-light">
+  <div class="sec-label">固 定 予 定</div>
+  <div class="sec-num">06</div>
+  <div class="sec-title">避けるべき日程</div>
+  <div class="card-grid">
+    <div class="card card-light">
+      <div class="card-title">全体会議</div>
+      <ul>
+        <li>毎月10日（固定）</li>
+        <li>20:00〜22:00</li>
+        <li>この日の夜はセミナー不可（昼は可）</li>
+      </ul>
+    </div>
+    <div class="card card-light">
+      <div class="card-title">特別研修</div>
+      <ul>
+        <li>3ヶ月に1度（大越さん帰国タイミング）</li>
+        <li>けいちゃん経由で都度調整</li>
+        <li>確定：4/24, 7/24, 10/20</li>
+      </ul>
+      <div style="font-size: 10px; color: #999; margin-top: 6px;">※ 旧年間スケジュールは無効</div>
+    </div>
+    <div class="card card-light">
+      <div class="card-title">マレーシアツアー</div>
+      <ul>
+        <li>研修期間中は終日セミナー不可</li>
+        <li>日程は都度確認</li>
+      </ul>
+    </div>
+    <div class="card card-light">
+      <div class="card-title">キャンペーン期間</div>
+      <ul>
+        <li>キャンペーン期間中はセミナー日程に注意</li>
+        <li>日程は都度確認</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">7 / 10</div>
+</div>
+
+<!-- P8: 毎月の作業フロー -->
+<div class="slide slide-dark">
+  <div class="sec-num">07</div>
+  <div class="sec-title">毎月の作業フロー</div>
+  <div class="flow-step">
+    <div class="flow-num">1</div>
+    <div><div class="flow-title">講師に日程確認</div><div class="flow-desc">大越さん最優先 → 廉さん → 全体</div></div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">2</div>
+    <div><div class="flow-title">スケジュール組み立て</div><div class="flow-desc">固定予定 → スタートアップ → サポセミ → スキルアップ → 知っトク</div></div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">3</div>
+    <div><div class="flow-title">LINE形式で共有</div><div class="flow-desc">フォーマットに沿ってLINE投稿 → 講師が記入</div></div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">4</div>
+    <div><div class="flow-title">内容追記</div><div class="flow-desc">知っトク：NISA等 / サポセミ：基礎・RSP・CRM（現在は廉さんRSPのみ）</div></div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">5</div>
+    <div><div class="flow-title">確定 → さきかに連絡</div><div class="flow-desc">エルメ・Notion更新のため、確定したらさきかへ</div></div>
+  </div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">8 / 10</div>
+</div>
+
+<!-- P9: 共有フォーマット -->
+<div class="slide slide-light">
+  <div class="sec-num">08</div>
+  <div class="sec-label">共 有 フ ォ ー マ ッ ト</div>
+  <div class="sec-title">日程確定後の内容追記と送付</div>
+  <div class="card-grid">
+    <div style="background: #1a1a2e; border-radius: 8px; overflow: hidden;">
+      <div style="background: #B80C2C; padding: 10px 16px; font-size: 13px; color: #fff; font-weight: 700;">◾ 知って得するお金の話</div>
+      <div style="padding: 16px;">
+        <div style="color: #B80C2C; font-size: 12px; font-weight: 700; margin-bottom: 8px;">講師名 + セミナー内容を追記</div>
+        <div class="format-box">
+          4/6(月)13:00〜15:00 高橋<span class="nisa">NISA</span><br>
+          4/7(火)20:00〜22:00 石田<br>
+          4/8(水)13:00〜15:00 澤野<span class="nisa">NISA</span><br>
+          4/10(金)13:00〜15:00 高橋<br>
+          4/13(月)20:00〜22:00 西尾
+        </div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px;">
+          <span class="nisa">NISA</span> = 積立保険とNISAの内容<br>
+          なし = 通常の知っトク内容<br>
+          <strong style="color: #ffc107;">⚠ 石田さん・西尾さんにはNISAをつけない</strong>
+        </div>
+      </div>
+    </div>
+    <div style="background: #1a1a2e; border-radius: 8px; overflow: hidden;">
+      <div style="background: #555; padding: 10px 16px; font-size: 13px; color: #fff; font-weight: 700;">◾ ご契約者様サポートセミナー</div>
+      <div style="padding: 16px;">
+        <div style="color: #B80C2C; font-size: 12px; font-weight: 700; margin-bottom: 8px;">講師名 + (内容種別) を追記</div>
+        <div class="format-box">
+          4/2(木) 20:00〜21:30 久末(<span class="rsp">RSP</span>)<br>
+          4/9(木) 20:00〜21:30 高橋<br>
+          4/16(木) 20:00〜21:30 高橋<br>
+          4/28(火) 20:00〜21:30 久末(<span class="rsp">RSP</span>)
+        </div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px;">
+          内容種別:<br>
+          ・<span class="kiso">基礎セミナー</span> — 基礎的な内容<br>
+          ・<span class="rsp">RSP</span> — RSP関連<br>
+          ・<span class="crm">CRM</span> — CRM解説
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 12px; background: #B80C2C; color: #fff; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; display: inline-block;">送付先</div>
+  <span style="font-size: 12px; margin-left: 8px;">セミナー日程調整グループLINE に最終版を投稿</span>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">9 / 10</div>
+</div>
+
+<!-- P10: Q&A -->
+<div class="slide slide-dark">
+  <div class="sec-num">09</div>
+  <div class="sec-title">確認待ち事項 & 困ったときは</div>
+  <div class="qa-item">
+    <div class="qa-q">Q: NISA担当は誰？</div>
+    <div class="qa-a">澤野さん・高橋（遼さん）のみ。石田さん・西尾さんにはNISAをつけない。</div>
+  </div>
+  <div class="qa-item">
+    <div class="qa-q">Q: サポセミのCRMや基礎セミナーはしないの？</div>
+    <div class="qa-a">CRMはオンクラスに移行と聞いている。基礎セミナーは人気がないため廃止。<br>今後、久末さん（廉さん）に他のセミナーを依頼する可能性あり。</div>
+  </div>
+  <div class="qa-item">
+    <div class="qa-q">Q: エルメ・Notionの設定が必要なときは？</div>
+    <div class="qa-a">さきかに連絡してください。エルメ設定・Notion更新を対応します。</div>
+  </div>
+  <div class="slide-footer">© 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+  <div class="page-num">10 / 10</div>
+</div>
+
+</body>
+</html>
