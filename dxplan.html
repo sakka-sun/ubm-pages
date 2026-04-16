@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UBM × AI Business Transformation 統合計画書</title>
+<title>CRM統合DX計画 — 合意形成資料</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,6 +45,9 @@ body { font-family: 'Noto Sans JP', sans-serif; background: #f0f0f0; max-width: 
 .b-fix { background: #e6a700; color: #fff; }
 .b-new { background: #B80C2C; color: #fff; }
 .b-wait { background: #666; color: #fff; }
+.b-p1 { background: #e6a700; color: #fff; }
+.b-p2 { background: #1565c0; color: #fff; }
+.b-future { background: #999; color: #fff; }
 @media print { body { background: white; } .slide { margin: 0; box-shadow: none; } }
 </style>
 </head>
@@ -55,112 +58,139 @@ body { font-family: 'Noto Sans JP', sans-serif; background: #f0f0f0; max-width: 
 <div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:50px;">
 <div class="sn">01</div>
-<div style="font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:3px;margin:6px 0 20px;">INTEGRATION PLAN</div>
-<h1 style="font-size:32px;font-weight:900;letter-spacing:3px;line-height:1.4;">UBM × AI Business Transformation<br>統合計画書</h1>
+<div style="font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:3px;margin:6px 0 20px;">CONSENSUS DOCUMENT</div>
+<h1 style="font-size:34px;font-weight:900;letter-spacing:3px;line-height:1.4;">CRM統合DX計画</h1>
 <div style="width:80px;height:3px;background:#B80C2C;margin:16px 0;"></div>
-<p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;">CRM移行 × ペンディング管理統合 × 通知自動化<br>佐藤さん仕様報告書へのUBM側レビュー + 追加要件</p>
+<p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8;">UBM側レビュー・追加要件整理・次回合意事項</p>
 <p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:24px;">2026年4月 ｜ UBM Wealth Management ｜ 高本咲佳</p>
 </div>
 <div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
-<!-- 02: 現在のシステム全体図 -->
-<div class="slide white">
-<div class="geo-tr"></div><div class="geo-tr2"></div>
-<div style="padding:26px 36px;">
-<div class="sn">02</div><div class="sec">CURRENT SYSTEM</div>
-<h2 class="tt" style="margin-top:4px;">現在のシステム全体図</h2><div class="dl"></div>
-<div style="display:flex;gap:10px;margin-top:10px;font-size:9px;">
-<!-- RL360 -->
-<div style="flex:1;background:#f0f4ff;border:2px solid #4285f4;border-radius:8px;padding:10px;text-align:center;">
-<div style="font-size:11px;font-weight:900;color:#4285f4;">RL360ポータル</div>
-<div style="font-size:8px;color:#666;margin-top:4px;text-align:left;line-height:1.5;">
-My Policies: 1,393件<br>CC Declined: 35件<br>CC Expiry: 17件<br>Premium Arrears: 43件<br>Pipeline: 59件<br>New Policies: 72件
-</div>
-<div style="font-size:7px;color:#999;margin-top:4px;">service.rl360.com</div>
-</div>
-<!-- 旧CRM -->
-<div style="flex:1;background:#fff5f5;border:2px solid #999;border-radius:8px;padding:10px;text-align:center;">
-<div style="font-size:11px;font-weight:900;color:#999;">旧CRM（BM）</div>
-<div style="font-size:8px;color:#666;margin-top:4px;text-align:left;line-height:1.5;">
-契約一覧・詳細<br>クレカ有効期限（ポップアップ内）<br>リマインダー画面（0件）<br><span style="color:#B80C2C;font-weight:700;">保守終了予定</span>
-</div>
-<div style="font-size:7px;color:#999;margin-top:4px;">billmorrisons.m6tec.com</div>
-</div>
-<!-- 新CRM -->
-<div style="flex:1;background:#f0fff0;border:2px solid #2e7d32;border-radius:8px;padding:10px;text-align:center;">
-<div style="font-size:11px;font-weight:900;color:#2e7d32;">新CRM（佐藤さんMVP）</div>
-<div style="font-size:8px;color:#666;margin-top:4px;text-align:left;line-height:1.5;">
-ダッシュボード<br>ポートフォリオ<br>クレカリマインダー（0件）<br>毎朝6時自動同期<br><span style="color:#2e7d32;font-weight:700;">9件修正待ち</span>
-</div>
-<div style="font-size:7px;color:#999;margin-top:4px;">billmorrisons-crm.vercel.app</div>
-</div>
-<!-- ペンディング -->
-<div style="flex:1;background:#fff8e1;border:2px solid #e6a700;border-radius:8px;padding:10px;text-align:center;">
-<div style="font-size:11px;font-weight:900;color:#e6a700;">ペンディング管理</div>
-<div style="font-size:8px;color:#666;margin-top:4px;text-align:left;line-height:1.5;">
-スプシ+GAS+ポータル<br>BS+BM統合: 784件<br>対応フロー13ステップ<br>ステータス自動判定<br><span style="color:#e6a700;font-weight:700;">CRM統合したい</span>
-</div>
-<div style="font-size:7px;color:#999;margin-top:4px;">GAS Web App</div>
-</div>
-<!-- ドミニオン -->
-<div style="flex:1;background:#f3e5f5;border:2px solid #7b1fa2;border-radius:8px;padding:10px;text-align:center;">
-<div style="font-size:11px;font-weight:900;color:#7b1fa2;">ドミニオンCRM</div>
-<div style="font-size:8px;color:#666;margin-top:4px;text-align:left;line-height:1.5;">
-別CRMシステム<br>ペンディングも発生中<br>データ連携なし<br><span style="color:#7b1fa2;font-weight:700;">統合が必要</span>
-</div>
-<div style="font-size:7px;color:#999;margin-top:4px;">app.dominion-cs.com</div>
+<!-- 02: この資料で決めたいこと -->
+<div class="slide dark">
+<div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
+<div style="padding:30px 40px;">
+<div class="sn" style="text-align:center;">02</div><div class="sec" style="text-align:center;">KEY DECISIONS</div>
+<h2 class="tt" style="text-align:center;margin-top:4px;">この資料で決めたいこと</h2>
+<div style="width:60px;height:3px;background:#B80C2C;margin:10px auto;"></div>
+<div style="display:flex;flex-direction:column;gap:16px;margin-top:24px;max-width:700px;margin-left:auto;margin-right:auto;">
+<div class="card" style="border-left:4px solid #B80C2C;display:flex;align-items:center;gap:16px;">
+<div style="font-size:28px;font-weight:900;color:#B80C2C;min-width:30px;text-align:center;">1</div>
+<div>
+<div style="font-size:14px;font-weight:900;">Phase 0 の完了条件をどこまでにするか</div>
+<div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px;">提出済みの9件修正のうち、どこまでを移行最低条件とするか</div>
 </div>
 </div>
-<div style="text-align:center;margin-top:10px;font-size:9px;color:#888;">
-現在5つのシステムが独立して稼働 → CRMに一元化し、全データを自動連携する
+<div class="card" style="border-left:4px solid #e6a700;display:flex;align-items:center;gap:16px;">
+<div style="font-size:28px;font-weight:900;color:#e6a700;min-width:30px;text-align:center;">2</div>
+<div>
+<div style="font-size:14px;font-weight:900;">開発パートナー対応分とUBM追加要望をどう切り分けるか</div>
+<div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px;">150万の見積もり範囲に何が含まれ、追加分はどう扱うか</div>
+</div>
+</div>
+<div class="card" style="border-left:4px solid #1565c0;display:flex;align-items:center;gap:16px;">
+<div style="font-size:28px;font-weight:900;color:#1565c0;min-width:30px;text-align:center;">3</div>
+<div>
+<div style="font-size:14px;font-weight:900;">Phase 1以降に回す項目をどこまで合意するか</div>
+<div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px;">ペンディング統合・ドミニオン連携・通知システムの着手順</div>
+</div>
+</div>
 </div>
 </div>
 <div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
-<!-- 03: 9件修正へのUBMコメント -->
+<!-- 03: 現状の課題 -->
 <div class="slide white">
 <div class="geo-tr"></div><div class="geo-tr2"></div>
-<div style="padding:26px 36px;">
-<div class="sn">03</div><div class="sec">REVIEW: 9 FIXES</div>
-<h2 class="tt" style="margin-top:4px;">佐藤さんの9件修正 → UBMレビュー</h2><div class="dl"></div>
-<table class="tbl" style="margin-top:8px;">
-<tr><th style="width:5%;">#</th><th style="width:8%;">優先度</th><th style="width:35%;">修正項目</th><th style="width:8%;">判定</th><th>UBMコメント</th></tr>
-<tr><td>1</td><td><span class="badge b-new">最優先</span></td><td>トップ画面の数字不一致（392 vs 953）</td><td><span class="badge b-ok">合意</span></td><td>計算ルールを旧サイトと統一。信頼できるダッシュボードが最優先</td></tr>
-<tr><td>2</td><td><span class="badge b-new">最優先</span></td><td>契約一覧の並び順逆転</td><td><span class="badge b-ok">合意</span></td><td>旧サイトと同じ昇順に統一</td></tr>
-<tr><td>3</td><td><span class="badge b-new">最優先</span></td><td>グラフ月名の言語固定</td><td><span class="badge b-ok">合意</span></td><td></td></tr>
-<tr><td>4</td><td><span class="badge b-fix">高優先</span></td><td>クレカ画面の検索窓なし</td><td><span class="badge b-ok">合意</span></td><td></td></tr>
-<tr><td>5</td><td><span class="badge b-fix">高優先</span></td><td>受託者情報非表示+印刷なし</td><td><span class="badge b-ok">合意</span></td><td></td></tr>
-<tr><td>6</td><td><span class="badge b-fix">高優先</span></td><td>閉じるボタン言語固定</td><td><span class="badge b-ok">合意</span></td><td></td></tr>
-<tr><td>7</td><td><span class="badge b-fix">高優先</span></td><td>自動同期で連絡先消失リスク</td><td><span class="badge b-ok">合意</span></td><td style="color:#B80C2C;font-weight:700;">補足: 旧CRMの入力はBM担当者がやっていた（UBMスタッフではない）。担当者不在でCRM移行が必要になった経緯</td></tr>
-<tr><td>8</td><td><span class="badge b-wait">次ステップ</span></td><td>カテゴリ分類修正+データ未挿入</td><td><span class="badge b-ok">合意</span></td><td>Oracle/積立の分類精度向上が必要</td></tr>
-<tr><td>9</td><td><span class="badge b-wait">次ステップ</span></td><td>未移行データの投入</td><td><span class="badge b-ok">合意</span></td><td>旧CRMからの全データスクレイピング</td></tr>
-</table>
+<div style="padding:30px 40px;">
+<div class="sn">03</div><div class="sec">CURRENT PROBLEM</div>
+<h2 class="tt" style="margin-top:4px;">現状の課題</h2><div class="dl"></div>
+<div style="text-align:center;margin:16px 0 10px;">
+<div style="font-size:13px;font-weight:700;color:#B80C2C;line-height:1.8;">7つの独立システムが並走し、業務・データ・通知が分散している。<br>運用負荷とミスリスクが高く、一元管理が必要。</div>
+</div>
+<div style="display:flex;gap:6px;margin-top:14px;font-size:9px;">
+<div style="flex:1;background:#f0f4ff;border:2px solid #4285f4;border-radius:8px;padding:8px;text-align:center;">
+<div style="font-size:10px;font-weight:900;color:#4285f4;">RL360ポータル</div>
+<div style="font-size:8px;color:#666;margin-top:4px;line-height:1.5;">契約1,393件<br>CC Declined: 35件<br>CC Expiry: 17件<br>Arrears: 43件</div>
+<div style="font-size:7px;color:#999;margin-top:3px;">service.rl360.com</div>
+</div>
+<div style="flex:1;background:#fff5f5;border:2px solid #999;border-radius:8px;padding:8px;text-align:center;">
+<div style="font-size:10px;font-weight:900;color:#999;">旧CRM（BM）</div>
+<div style="font-size:8px;color:#666;margin-top:4px;line-height:1.5;">契約詳細・クレカ情報<br><span style="color:#B80C2C;font-weight:700;">保守終了予定</span></div>
+<div style="font-size:7px;color:#999;margin-top:3px;">billmorrisons.m6tec.com</div>
+</div>
+<div style="flex:1;background:#e8f5e9;border:2px solid #2e7d32;border-radius:8px;padding:8px;text-align:center;">
+<div style="font-size:10px;font-weight:900;color:#2e7d32;">BS CRM</div>
+<div style="font-size:8px;color:#666;margin-top:4px;line-height:1.5;">BS契約管理<br>RL360系</div>
+<div style="font-size:7px;color:#999;margin-top:3px;">hs.aifin.asia</div>
+</div>
+<div style="flex:1;background:#e0f7fa;border:2px solid #00838f;border-radius:8px;padding:8px;text-align:center;">
+<div style="font-size:10px;font-weight:900;color:#00838f;">SunLife CRM</div>
+<div style="font-size:8px;color:#666;margin-top:4px;line-height:1.5;">SunLife契約管理<br>Grand Tag系</div>
+<div style="font-size:7px;color:#999;margin-top:3px;">boa.grandtag.com</div>
+</div>
+<div style="flex:1;background:#fff8e1;border:2px solid #e6a700;border-radius:8px;padding:8px;text-align:center;">
+<div style="font-size:10px;font-weight:900;color:#e6a700;">ペンディング管理</div>
+<div style="font-size:8px;color:#666;margin-top:4px;line-height:1.5;">GAS+スプシ: 784件<br><span style="color:#e6a700;font-weight:700;">CRM統合したい</span></div>
+<div style="font-size:7px;color:#999;margin-top:3px;">GAS Web App</div>
+</div>
+<div style="flex:1;background:#f3e5f5;border:2px solid #7b1fa2;border-radius:8px;padding:8px;text-align:center;">
+<div style="font-size:10px;font-weight:900;color:#7b1fa2;">ドミニオンCRM</div>
+<div style="font-size:8px;color:#666;margin-top:4px;line-height:1.5;">別CRM<br><span style="color:#7b1fa2;font-weight:700;">連携なし</span></div>
+<div style="font-size:7px;color:#999;margin-top:3px;">app.dominion-cs.com</div>
+</div>
+</div>
 </div>
 <div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
-<!-- 04: 機能拡張5件へのUBMコメント -->
+<!-- 04: 今回すでに合意に近い内容 -->
 <div class="slide white">
 <div class="geo-tr"></div><div class="geo-tr2"></div>
 <div style="padding:26px 36px;">
-<div class="sn">04</div><div class="sec">REVIEW: 5 ENHANCEMENTS</div>
-<h2 class="tt" style="margin-top:4px;">佐藤さんの5つの機能拡張 → UBMレビュー</h2><div class="dl"></div>
-<table class="tbl" style="margin-top:10px;">
-<tr><th style="width:5%;">#</th><th style="width:8%;">優先度</th><th style="width:32%;">機能拡張</th><th style="width:8%;">判定</th><th>UBMコメント</th></tr>
-<tr><td>1</td><td><span class="badge b-new">最高</span></td><td>ファンド・支払履歴の完全同期</td><td><span class="badge b-ok">合意</span></td><td>契約ごとの支払履歴・ファンド配分がCRM上で見える状態に</td></tr>
-<tr><td>2</td><td><span class="badge b-fix">高</span></td><td>クレカ期限切れ自動メール通知</td><td><span class="badge b-ok">合意</span></td><td style="color:#B80C2C;font-weight:700;">重要補足: データソースはCredit Card <b>Expiry</b>画面（期限切れ前の通知用）。Credit Card <b>Declined</b>は決済失敗後の再試行管理で別画面</td></tr>
-<tr><td>3</td><td><span class="badge b-fix">高</span></td><td>管理者ダッシュボード</td><td><span class="badge b-ok">合意</span></td><td>ユーザー管理・権限管理・同期ログ閲覧</td></tr>
-<tr><td>4</td><td><span class="badge b-wait">中</span></td><td>LINE連携</td><td><span class="badge b-fix">段階的</span></td><td>現状ポータル/CRMにLINE IDがないため、まずメール通知で構築。段階的にLINEへ移行</td></tr>
-<tr><td>5</td><td><span class="badge b-wait">中</span></td><td>評価額トレンドチャート</td><td><span class="badge b-ok">合意</span></td><td>顧客面談時のパフォーマンスレビューに活用</td></tr>
-</table>
-<div style="margin-top:14px;background:#fff5f5;border-left:4px solid #B80C2C;padding:10px 14px;border-radius:0 6px 6px 0;">
-<div style="font-size:11px;font-weight:700;color:#B80C2C;">通知の3段階（UBM側の整理）</div>
-<div style="font-size:10px;color:#666;margin-top:4px;line-height:1.6;">
-<b>予防</b>: Credit Card Expiry → 30/14/7日前にメール通知（現在17件該当）<br>
-<b>対応</b>: Credit Card Declined → 毎日20時に本人通知、月曜朝に管理者通知（現在35件該当）<br>
-<b>エスカレーション</b>: Premium Arrears → 一定期間未解決で上位アラート（現在43件、通知なし）
+<div class="sn">04</div><div class="sec">AGREED ITEMS</div>
+<h2 class="tt" style="margin-top:4px;">今回すでに合意に近い内容</h2><div class="dl"></div>
+<div style="font-size:10px;color:#888;margin-bottom:8px;">MVP検証で判明した修正9件 + 機能拡張5件をUBMレビュー済み。全件合意方針。</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px;">
+<!-- 最優先修正 -->
+<div style="background:#fff5f5;border-left:4px solid #B80C2C;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:11px;font-weight:900;color:#B80C2C;">最優先修正（3件）<span class="badge b-ok" style="margin-left:6px;">合意済み</span></div>
+<div style="font-size:9px;color:#666;margin-top:4px;line-height:1.6;">
+1. トップ画面の数字不一致（392 vs 953）<br>
+2. 契約一覧の並び順逆転<br>
+3. グラフ月名の言語固定
+</div>
+</div>
+<!-- 高優先修正 -->
+<div style="background:#fff8e1;border-left:4px solid #e6a700;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:11px;font-weight:900;color:#e6a700;">高優先修正（4件）<span class="badge b-ok" style="margin-left:6px;">合意済み</span></div>
+<div style="font-size:9px;color:#666;margin-top:4px;line-height:1.6;">
+4. クレカ画面の検索窓追加<br>
+5. 受託者情報表示 + 印刷ボタン<br>
+6. 閉じるボタン多言語対応<br>
+7. 自動同期の連絡先保護
+</div>
+</div>
+<!-- 合意済み拡張 -->
+<div style="background:#e8f5e9;border-left:4px solid #2e7d32;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:11px;font-weight:900;color:#2e7d32;">合意済み拡張（3件）<span class="badge b-ok" style="margin-left:6px;">合意済み</span></div>
+<div style="font-size:9px;color:#666;margin-top:4px;line-height:1.6;">
+1. ファンド・支払履歴の完全同期<br>
+2. クレカ期限切れ自動メール通知<br>
+3. 管理者ダッシュボード
+</div>
+</div>
+<!-- 段階対応 -->
+<div style="background:#f0f4ff;border-left:4px solid #666;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:11px;font-weight:900;color:#666;">段階対応項目（4件）<span class="badge b-wait" style="margin-left:6px;">今回判断</span></div>
+<div style="font-size:9px;color:#666;margin-top:4px;line-height:1.6;">
+8. カテゴリ分類修正 + データ未挿入<br>
+9. 旧CRMからの全データ移行<br>
+LINE連携（メール通知先行）<br>
+評価額トレンドチャート
+</div>
 </div>
 </div>
 </div>
@@ -171,96 +201,170 @@ My Policies: 1,393件<br>CC Declined: 35件<br>CC Expiry: 17件<br>Premium Arrea
 <div class="slide white">
 <div class="geo-tr"></div><div class="geo-tr2"></div>
 <div style="padding:26px 36px;">
-<div class="sn">05</div><div class="sec">UBM REQUIREMENTS</div>
-<h2 class="tt" style="margin-top:4px;">UBM側からの追加要望</h2><div class="dl"></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
-<div style="background:#fff5f5;border:2px solid #B80C2C;border-radius:8px;padding:14px;">
-<div style="font-size:12px;font-weight:900;color:#B80C2C;margin-bottom:6px;"><span class="badge b-new">高</span> ペンディング管理のCRM統合</div>
-<div style="font-size:10px;color:#666;line-height:1.6;">
-現在GAS+スプシで運用中のポータルをCRM上に統合<br>
-・代理店別の案件管理（一次代理店→代理店→契約者の階層）<br>
-・対応フロー13ステップの進捗記録<br>
-・ステータス自動判定（新規→対応中→解決）<br>
-・優先度自動並び替え（滞納額順）<br>
-・BS/BM/ALL別のダッシュボード
-</div>
-</div>
-<div style="background:#f3e5f5;border:2px solid #7b1fa2;border-radius:8px;padding:14px;">
-<div style="font-size:12px;font-weight:900;color:#7b1fa2;margin-bottom:6px;"><span class="badge" style="background:#7b1fa2;color:#fff;">高</span> ドミニオンCRMのデータ統合</div>
-<div style="font-size:10px;color:#666;line-height:1.6;">
-ドミニオンのペンディングも発生中<br>
-・ドミニオンCRMからデータ取得→統合が必要<br>
-・BS/BMと同じ形式でペンディング管理<br>
-・アクセス情報は共有可能
-</div>
-</div>
-<div style="background:#e3f2fd;border:2px solid #1565c0;border-radius:8px;padding:14px;">
-<div style="font-size:12px;font-weight:900;color:#1565c0;margin-bottom:6px;"><span class="badge b-add">中</span> 代理店向け閲覧ポータル</div>
-<div style="font-size:10px;color:#666;line-height:1.6;">
-代理店が自分の担当案件の進捗を確認できる画面<br>
-・現在は社内カスタマー専用<br>
-・代理店に情報共有できていない<br>
-・セルフサービス化で問い合わせ削減
-</div>
-</div>
-<div style="background:#fff8e1;border:2px solid #e6a700;border-radius:8px;padding:14px;">
-<div style="font-size:12px;font-weight:900;color:#e6a700;margin-bottom:6px;"><span class="badge b-fix">中</span> 各種申請書類の履歴管理</div>
-<div style="font-size:10px;color:#666;line-height:1.6;">
-住所変更・クレカ変更・ポートフォリオ変更等<br>
-・CRM上で申請→進捗→完了まで追跡<br>
-・申請書類の保管場所はNotionにて共有済み<br>
-・RL360ポータルのPolicy Servicing画面との連携を検討
-</div>
-</div>
-</div>
+<div class="sn">05</div><div class="sec">UBM ADDITIONAL REQUIREMENTS</div>
+<h2 class="tt" style="margin-top:4px;">UBM側の追加要望</h2><div class="dl"></div>
+<div style="font-size:10px;color:#888;margin-bottom:8px;">MVP提案とは別に、UBM側から追加で必要な要件。各項目にPhase候補ラベル付き。</div>
+<table class="tbl" style="margin-top:4px;">
+<tr><th style="width:6%;">Phase</th><th style="width:28%;">要望</th><th>内容・理由</th><th style="width:10%;">ラベル</th></tr>
+<tr><td style="text-align:center;"><span class="badge b-new">必須</span></td><td style="font-weight:700;">ペンディング管理のCRM統合</td><td style="font-size:9px;">現GAS+スプシのポータルをCRM内に統合。代理店別案件管理、対応フロー13ステップ、ステータス自動判定、BS/BM/ALLダッシュボード</td><td style="text-align:center;"><span class="badge b-p1">Phase 1</span></td></tr>
+<tr><td style="text-align:center;"><span class="badge b-new">必須</span></td><td style="font-weight:700;">ドミニオンCRMのデータ統合</td><td style="font-size:9px;">ドミニオンのペンディングも発生中。BS/BMと同形式で管理。アクセス情報は共有可能</td><td style="text-align:center;"><span class="badge b-p1">Phase 1</span></td></tr>
+<tr><td style="text-align:center;"><span class="badge b-fix">中</span></td><td style="font-weight:700;">代理店向け閲覧ポータル</td><td style="font-size:9px;">代理店が担当案件の進捗を自分で確認。セルフサービス化で問い合わせ削減</td><td style="text-align:center;"><span class="badge b-p2">Phase 2</span></td></tr>
+<tr><td style="text-align:center;"><span class="badge b-fix">中</span></td><td style="font-weight:700;">各種申請書類の履歴管理</td><td style="font-size:9px;">住所変更・クレカ変更等をCRM上で申請→進捗→完了まで追跡</td><td style="text-align:center;"><span class="badge b-p2">Phase 2</span></td></tr>
+<tr><td style="text-align:center;"><span class="badge b-wait">低</span></td><td>FAQチャットボット</td><td style="font-size:9px;">代理店・顧客向けのAI FAQ。蓄積データに基づく提案</td><td style="text-align:center;"><span class="badge b-future">将来</span></td></tr>
+</table>
 </div>
 <div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
-<!-- 06: 認識修正点 -->
-<div class="slide white">
-<div class="geo-tr"></div><div class="geo-tr2"></div>
-<div style="padding:26px 36px;">
-<div class="sn">06</div><div class="sec">CORRECTIONS</div>
-<h2 class="tt" style="margin-top:4px;">認識修正点</h2><div class="dl"></div>
-<div style="display:flex;flex-direction:column;gap:14px;margin-top:14px;">
-<div style="display:flex;gap:16px;">
-<div style="flex:1;background:#fee;border-left:4px solid #B80C2C;padding:14px;border-radius:0 8px 8px 0;">
-<div style="font-size:12px;font-weight:900;color:#B80C2C;">佐藤さんの認識</div>
-<div style="font-size:11px;margin-top:6px;line-height:1.6;">旧CRMのデータ更新は「手動コピペ」で行われていた → 新CRMで自動化することで改善</div>
-</div>
-<div style="flex:1;background:#e8f5e9;border-left:4px solid #2e7d32;padding:14px;border-radius:0 8px 8px 0;">
-<div style="font-size:12px;font-weight:900;color:#2e7d32;">実態</div>
-<div style="font-size:11px;margin-top:6px;line-height:1.6;">旧CRMのデータ更新は<b>ビルモリソンズの担当者</b>が手動入力していた（UBMスタッフではない）。その担当者が不在になるため、CRM移行が必要になった。つまり、入力作業自体がなくなる。</div>
-</div>
-</div>
-<div style="display:flex;gap:16px;">
-<div style="flex:1;background:#fee;border-left:4px solid #B80C2C;padding:14px;border-radius:0 8px 8px 0;">
-<div style="font-size:12px;font-weight:900;color:#B80C2C;">佐藤さんの認識</div>
-<div style="font-size:11px;margin-top:6px;line-height:1.6;">クレカ通知のデータソース → CreditCardDeclined画面からメールアドレスを取得して通知</div>
-</div>
-<div style="flex:1;background:#e8f5e9;border-left:4px solid #2e7d32;padding:14px;border-radius:0 8px 8px 0;">
-<div style="font-size:12px;font-weight:900;color:#2e7d32;">実態</div>
-<div style="font-size:11px;margin-top:6px;line-height:1.6;">
-<b>Credit Card Expiry</b>: 期限切れ前のリマインダー用（30/14/7日前通知）<br>
-<b>Credit Card Declined</b>: すでに決済失敗した案件の再試行管理（毎日20時通知）<br>
-用途が異なる2つの画面。通知ロジックも別設計が必要。
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
-</div>
-
-<!-- 07: ペンディング管理の現状と統合方針 -->
+<!-- 06: 優先順位つきロードマップ -->
 <div class="slide dark">
 <div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
 <div style="padding:26px 36px;">
-<div class="sn" style="text-align:center;">07</div><div class="sec" style="text-align:center;">PENDING MANAGEMENT</div>
-<h2 class="tt" style="text-align:center;margin-top:4px;">ペンディング管理の現状</h2>
+<div class="sn" style="text-align:center;">06</div><div class="sec" style="text-align:center;">ROADMAP</div>
+<h2 class="tt" style="text-align:center;margin-top:4px;">優先順位つきロードマップ</h2>
 <div style="width:60px;height:3px;background:#B80C2C;margin:8px auto;"></div>
-<div style="display:flex;gap:12px;margin-top:14px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
+<div class="card" style="border-left:4px solid #B80C2C;">
+<div style="font-size:10px;color:#B80C2C;font-weight:700;">Phase 0</div>
+<div style="font-size:14px;font-weight:900;margin-top:2px;">移行最低条件</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.6;">
+最優先修正3件 + データ正確性の確保<br>
+旧CRMからの全データ移行<br>
+契約数不一致の原因調査・解消<br>
+<span style="color:#B80C2C;font-size:8px;">目標: 旧CRMと同等の信頼性を担保</span>
+</div>
+</div>
+<div class="card" style="border-left:4px solid #e6a700;">
+<div style="font-size:10px;color:#e6a700;font-weight:700;">Phase 1</div>
+<div style="font-size:14px;font-weight:900;margin-top:2px;">業務統合</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.6;">
+ペンディング管理のCRM統合<br>
+ドミニオンCRMのデータ連携<br>
+通知システム構築（メール: Expiry + Declined）<br>
+<span style="color:#e6a700;font-size:8px;">目標: 分散していた業務をCRMに集約</span>
+</div>
+</div>
+<div class="card" style="border-left:4px solid #1565c0;">
+<div style="font-size:10px;color:#1565c0;font-weight:700;">Phase 2</div>
+<div style="font-size:14px;font-weight:900;margin-top:2px;">外部開放・申請管理</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.6;">
+代理店向け閲覧ポータル<br>
+各種申請書類の履歴管理<br>
+LINE連携（ID取得→通知移行）<br>
+<span style="color:#1565c0;font-size:8px;">目標: 社外ステークホルダーとの接点をCRMに</span>
+</div>
+</div>
+<div class="card" style="border-left:4px solid #2e7d32;">
+<div style="font-size:10px;color:#2e7d32;font-weight:700;">Phase 3</div>
+<div style="font-size:14px;font-weight:900;margin-top:2px;">高度化 / AI活用</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.6;">
+FAQチャットボット<br>
+蓄積データに基づくAI提案<br>
+評価額トレンドチャート<br>
+<span style="color:#2e7d32;font-size:8px;">目標: データ活用による業務の質的向上</span>
+</div>
+</div>
+</div>
+</div>
+<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
+</div>
+
+<!-- 07: 前提・認識修正・リスク -->
+<div class="slide white">
+<div class="geo-tr"></div><div class="geo-tr2"></div>
+<div style="padding:26px 36px;">
+<div class="sn">07</div><div class="sec">PREREQUISITES & RISKS</div>
+<h2 class="tt" style="margin-top:4px;">前提・認識修正・リスク</h2><div class="dl"></div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
+<!-- 認識修正1 -->
+<div style="display:flex;gap:12px;">
+<div style="flex:1;background:#fee;border-left:4px solid #B80C2C;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:10px;font-weight:900;color:#B80C2C;">開発側の認識</div>
+<div style="font-size:9px;margin-top:4px;line-height:1.5;">旧CRMのデータ更新は「手動コピペ」→ 新CRMで自動化</div>
+</div>
+<div style="flex:1;background:#e8f5e9;border-left:4px solid #2e7d32;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:10px;font-weight:900;color:#2e7d32;">実態</div>
+<div style="font-size:9px;margin-top:4px;line-height:1.5;">旧CRMの入力は<b>BM担当者</b>が行っていた（UBMではない）。担当者不在で移行が必要になった経緯</div>
+</div>
+</div>
+<!-- 認識修正2 -->
+<div style="display:flex;gap:12px;">
+<div style="flex:1;background:#fee;border-left:4px solid #B80C2C;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:10px;font-weight:900;color:#B80C2C;">開発側の認識</div>
+<div style="font-size:9px;margin-top:4px;line-height:1.5;">クレカ通知 → CreditCardDeclined画面から取得</div>
+</div>
+<div style="flex:1;background:#e8f5e9;border-left:4px solid #2e7d32;padding:10px 12px;border-radius:0 6px 6px 0;">
+<div style="font-size:10px;font-weight:900;color:#2e7d32;">実態</div>
+<div style="font-size:9px;margin-top:4px;line-height:1.5;"><b>CC Expiry</b> = 期限切れ前リマインダー（17件）<br><b>CC Declined</b> = 決済失敗後の追いかけ（35件）<br>用途が異なる2画面。通知ロジックも別設計が必要</div>
+</div>
+</div>
+<!-- リスク -->
+<div style="background:#f0f4ff;border-left:4px solid #1565c0;padding:10px 14px;border-radius:0 6px 6px 0;">
+<div style="font-size:10px;font-weight:700;color:#1565c0;">未確定リスク</div>
+<div style="font-size:9px;color:#666;margin-top:4px;line-height:1.6;">
+<b>RL360 API可否が未確定</b> — BM担当者に確認文送付中。API不可の場合はRPA（Playwright）での代替取得が必要。コスト・安定性にリスク。<br>
+<b>ドミニオンCRM接続方法</b> — API / スクレイピングのどちらか未調査。アクセス情報は共有可能。<br>
+<b>クレカ有効期限データ</b> — 旧CRMの契約詳細ポップアップ内にのみ存在。移行時のスクレイピングが必要。
+</div>
+</div>
+</div>
+</div>
+<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
+</div>
+
+<!-- 08: 次回会議での確認事項 -->
+<div class="slide dark">
+<div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
+<div style="padding:26px 36px;">
+<div class="sn" style="text-align:center;">08</div><div class="sec" style="text-align:center;">NEXT STEPS</div>
+<h2 class="tt" style="text-align:center;margin-top:4px;">次回会議での確認事項</h2>
+<div style="width:60px;height:3px;background:#B80C2C;margin:8px auto;"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;">
+<div class="card" style="border-left:3px solid #B80C2C;">
+<div style="font-size:9px;color:#B80C2C;font-weight:700;">判断 1</div>
+<div style="font-size:12px;font-weight:700;margin-top:4px;">Phase 0 の対象範囲はこれでよいか</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">最優先3件 + データ移行。高優先4件はPhase 0に含めるか、Phase 1に回すか</div>
+</div>
+<div class="card" style="border-left:3px solid #B80C2C;">
+<div style="font-size:9px;color:#B80C2C;font-weight:700;">判断 2</div>
+<div style="font-size:12px;font-weight:700;margin-top:4px;">UBM追加要望のうち Phase 1 に入れる項目はどれか</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">ペンディング統合・ドミニオン連携は Phase 1 必須でよいか。見積150万との切り分けは</div>
+</div>
+<div class="card" style="border-left:3px solid #e6a700;">
+<div style="font-size:9px;color:#e6a700;font-weight:700;">判断 3</div>
+<div style="font-size:12px;font-weight:700;margin-top:4px;">通知機能はメール先行で合意するか</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">LINE IDがないためメール通知で構築。LINE連携はPhase 2でよいか</div>
+</div>
+<div class="card" style="border-left:3px solid #e6a700;">
+<div style="font-size:9px;color:#e6a700;font-weight:700;">判断 4</div>
+<div style="font-size:12px;font-weight:700;margin-top:4px;">ドミニオンCRM連携の調査着手を進めてよいか</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">アクセス情報を開発パートナーに共有し、接続方法の調査を開始する</div>
+</div>
+<div class="card" style="border-left:3px solid #1565c0;">
+<div style="font-size:9px;color:#1565c0;font-weight:700;">判断 5</div>
+<div style="font-size:12px;font-weight:700;margin-top:4px;">API確認が来ない場合の代替案</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">RL360 APIの返答が来ない場合、RPAで先行するか、Phase 1を先に進めるか</div>
+</div>
+<div class="card" style="border-left:3px solid #1565c0;">
+<div style="font-size:9px;color:#1565c0;font-weight:700;">判断 6</div>
+<div style="font-size:12px;font-weight:700;margin-top:4px;">UBM側で先に準備すべきこと</div>
+<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">データ提供、アクセス権限、テスト環境の準備。開発パートナーに何を先に渡すか</div>
+</div>
+</div>
+</div>
+<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
+</div>
+
+<!-- ==================== APPENDIX ==================== -->
+
+<!-- A1: ペンディング管理の詳細フロー -->
+<div class="slide dark">
+<div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
+<div style="padding:26px 36px;">
+<div style="font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:2px;font-weight:700;">APPENDIX A</div>
+<h2 class="tt" style="margin-top:4px;">ペンディング管理の詳細フロー</h2>
+<div style="width:60px;height:3px;background:#B80C2C;margin:8px 0;"></div>
+<div style="display:flex;gap:12px;margin-top:10px;">
 <div class="card" style="flex:1;">
 <div style="font-size:11px;font-weight:900;color:#B80C2C;margin-bottom:6px;">データソース</div>
 <div style="font-size:9px;line-height:1.6;color:rgba(255,255,255,0.7);">
@@ -286,227 +390,85 @@ BS外部シート（430件）<br>BM外部シート（353件）<br>→ 週1回手
 </div>
 </div>
 </div>
-<div style="text-align:center;margin-top:12px;font-size:10px;color:rgba(255,255,255,0.5);">
-→ このすべてをCRM上に統合し、カスタマーがCRM内で進捗確認・更新まで完結できる状態にしたい
 </div>
-</div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
+<div class="ft">APPENDIX ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
-<!-- 08: 通知システムの要件 -->
+<!-- A2: 通知システムの要件詳細 -->
 <div class="slide white">
 <div class="geo-tr"></div><div class="geo-tr2"></div>
 <div style="padding:26px 36px;">
-<div class="sn">08</div><div class="sec">NOTIFICATION SYSTEM</div>
+<div style="font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:2px;font-weight:700;">APPENDIX B</div>
 <h2 class="tt" style="margin-top:4px;">通知システムの要件詳細</h2><div class="dl"></div>
 <div style="display:flex;gap:12px;margin-top:10px;">
-<!-- 予防 -->
 <div style="flex:1;border:2px solid #2e7d32;border-radius:8px;overflow:hidden;">
 <div style="background:#2e7d32;color:#fff;padding:6px 10px;font-size:11px;font-weight:700;">予防: Credit Card Expiry</div>
 <div style="padding:10px;font-size:9px;line-height:1.6;">
 <b>目的:</b> 期限切れ「前」に通知<br>
-<b>データ:</b> RL360ポータル CC Expiry画面（現在17件）<br>
-<b>列:</b> Policy No / Cardholder / Card type / Card ending / Expiry date / Days to expiry<br>
-<b>通知タイミング:</b> 30日前・14日前・7日前<br>
-<b>送信先:</b> Client detailsのメールアドレス<br>
-<b>CC:</b> 担当アドバイザー
+<b>データ:</b> RL360 CC Expiry画面（17件）<br>
+<b>通知:</b> 30日前・14日前・7日前<br>
+<b>送信先:</b> 本人 + 担当アドバイザー
 </div>
 </div>
-<!-- 対応 -->
 <div style="flex:1;border:2px solid #e6a700;border-radius:8px;overflow:hidden;">
 <div style="background:#e6a700;color:#fff;padding:6px 10px;font-size:11px;font-weight:700;">対応: Credit Card Declined</div>
 <div style="padding:10px;font-size:9px;line-height:1.6;">
-<b>目的:</b> 決済失敗案件を追いかけ<br>
-<b>データ:</b> RL360ポータル CC Declined画面（現在35件）<br>
-<b>列:</b> Policy No / Premium amount / Card type / Collections attempts / Date declined / Next collection<br>
-<b>本人通知:</b> 毎日20時（Declinedから消えるまで）<br>
-<b>管理者通知:</b> 月曜朝8時に未解決者リスト
+<b>目的:</b> 決済失敗案件の追いかけ<br>
+<b>データ:</b> RL360 CC Declined画面（35件）<br>
+<b>本人:</b> 毎日20時（解消まで）<br>
+<b>管理者:</b> 月曜朝8時に未解決リスト
 </div>
 </div>
-<!-- エスカレーション -->
 <div style="flex:1;border:2px solid #B80C2C;border-radius:8px;overflow:hidden;">
-<div style="background:#B80C2C;color:#fff;padding:6px 10px;font-size:11px;font-weight:700;">エスカレーション: Premium Arrears</div>
+<div style="background:#B80C2C;color:#fff;padding:6px 10px;font-size:11px;font-weight:700;">エスカレーション: Arrears</div>
 <div style="padding:10px;font-size:9px;line-height:1.6;">
 <b>目的:</b> 長期滞納の上位アラート<br>
-<b>データ:</b> RL360ポータル Arrears画面（現在43件）<br>
-<b>現状:</b> 通知の仕組みなし<br>
-<b>要望:</b> 一定期間未解決で管理者にエスカレーション通知<br>
+<b>データ:</b> RL360 Arrears画面（43件）<br>
+<b>現状:</b> 通知なし<br>
 <b>優先度:</b> Expiry・Declined構築後
 </div>
 </div>
 </div>
-<div style="margin-top:10px;background:#f0f4ff;border-left:4px solid #1565c0;padding:10px 14px;border-radius:0 6px 6px 0;">
-<div style="font-size:10px;font-weight:700;color:#1565c0;">通知チャネルの段階計画</div>
-<div style="font-size:9px;color:#666;margin-top:4px;">
-Phase 1: メール通知（Client detailsのメールアドレス）→ Phase 2: LINE連携（LINE ID取得の仕組みが前提）
-<br>現状、ポータル/CRMにLINE IDは登録されていない。LINE回答フォーム等を通じてID取得→紐付けが必要。
+<div style="margin-top:10px;background:#f0f4ff;border-left:4px solid #1565c0;padding:8px 14px;border-radius:0 6px 6px 0;">
+<div style="font-size:9px;color:#666;">Phase 1: メール通知 → Phase 2: LINE連携（LINE ID取得の仕組みが前提）</div>
 </div>
 </div>
-</div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
+<div class="ft">APPENDIX ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
-<!-- 09: RL360ポータル・旧CRM調査結果 -->
+<!-- A3: RL360・旧CRM調査結果 + 既存資産 -->
 <div class="slide white">
 <div class="geo-tr"></div><div class="geo-tr2"></div>
 <div style="padding:26px 36px;">
-<div class="sn">09</div><div class="sec">INVESTIGATION RESULTS</div>
-<h2 class="tt" style="margin-top:4px;">RL360ポータル・旧CRM 調査結果</h2><div class="dl"></div>
-<div style="display:flex;gap:16px;margin-top:10px;">
+<div style="font-size:10px;color:rgba(0,0,0,0.35);letter-spacing:2px;font-weight:700;">APPENDIX C</div>
+<h2 class="tt" style="margin-top:4px;">調査結果 + 既存資産一覧</h2><div class="dl"></div>
+<div style="display:flex;gap:14px;margin-top:8px;">
 <div style="flex:1;">
-<div style="font-size:12px;font-weight:900;color:#B80C2C;margin-bottom:8px;">RL360ポータル（Playwright調査済み）</div>
+<div style="font-size:11px;font-weight:900;color:#B80C2C;margin-bottom:6px;">RL360ポータル（Playwright調査済み）</div>
 <table class="tbl">
 <tr><th>画面</th><th>件数</th><th>取得可能データ</th></tr>
 <tr><td>My Policies</td><td>1,393</td><td>全契約一覧</td></tr>
-<tr><td>CC Declined</td><td>35</td><td>証券No/金額/カード種別/試行回数/不承認日/次回日</td></tr>
-<tr><td>CC Expiry</td><td>17</td><td>証券No/カード種別/有効期限/残日数</td></tr>
-<tr><td>Premium Arrears</td><td>43</td><td>滞納案件一覧</td></tr>
-<tr><td>Pipeline</td><td>59</td><td>処理中案件</td></tr>
-<tr><td>New Policies</td><td>72</td><td>新規契約</td></tr>
+<tr><td>CC Declined</td><td>35</td><td>証券No/金額/試行回数/不承認日</td></tr>
+<tr><td>CC Expiry</td><td>17</td><td>証券No/有効期限/残日数</td></tr>
+<tr><td>Arrears</td><td>43</td><td>滞納案件一覧</td></tr>
 </table>
-<div style="margin-top:8px;font-size:9px;color:#888;">
-API可否: BM担当者に確認文送付中（日英両文）。RPAの場合はコスト・正確性にリスクあり。
-</div>
+<div style="font-size:11px;font-weight:900;color:#B80C2C;margin:10px 0 6px;">旧CRM</div>
+<div style="font-size:9px;color:#666;line-height:1.5;">クレカ有効期限は契約詳細ポップアップ内にのみ存在。リマインダー画面は0件で機能していなかった。</div>
 </div>
 <div style="flex:1;">
-<div style="font-size:12px;font-weight:900;color:#B80C2C;margin-bottom:8px;">旧CRM（Playwright調査済み）</div>
+<div style="font-size:11px;font-weight:900;color:#B80C2C;margin-bottom:6px;">CRM統合に活用できる既存資産</div>
 <table class="tbl">
-<tr><th>画面</th><th>データ</th></tr>
-<tr><td>契約一覧</td><td>全契約の検索・フィルター</td></tr>
-<tr><td>契約詳細ポップアップ</td><td>支払方法 / カード番号(下4桁) / <b style="color:#B80C2C;">有効期限(YY/MM)</b></td></tr>
-<tr><td>CCリマインダー画面</td><td>0件（機能していない）</td></tr>
-</table>
-<div style="margin-top:8px;font-size:9px;color:#888;">
-クレカ有効期限は契約詳細ポップアップ内にのみ存在。旧CRMのリマインダー画面も0件で元々機能していなかった。
-</div>
-<div style="font-size:12px;font-weight:900;color:#B80C2C;margin:10px 0 8px;">ドミニオンCRM</div>
-<div style="font-size:9px;color:#888;">
-アクセス情報: 共有可能。ペンディングデータの取得→統合が次の調査対象。
-</div>
-</div>
-</div>
-</div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
-</div>
-
-<!-- 10: 構築済み資産の一覧 -->
-<div class="slide white">
-<div class="geo-tr"></div><div class="geo-tr2"></div>
-<div style="padding:26px 36px;">
-<div class="sn">10</div><div class="sec">EXISTING ASSETS</div>
-<h2 class="tt" style="margin-top:4px;">さきかが構築済みの資産一覧</h2><div class="dl"></div>
-<div style="font-size:10px;color:#888;margin-bottom:8px;">CRM統合時に活用・移行できる既存の仕組み</div>
-<table class="tbl" style="margin-top:4px;">
-<tr><th style="width:25%;">資産</th><th style="width:15%;">種別</th><th>内容</th><th style="width:25%;">CRM統合時の活用</th></tr>
-<tr><td style="font-weight:700;">ペンディングポータル</td><td>GAS Web App</td><td>ダッシュボード、代理店別案件管理、対応フロー13ステップ、ステータス自動判定、優先度並び替え、BS/BMサマリー</td><td>対応フローとステータスロジックをCRMに移植</td></tr>
-<tr><td style="font-weight:700;">ペンディングシート</td><td>スプレッドシート</td><td>BS+BM統合784件、紹介者マスタ突合、カテゴリ分類9種</td><td>データ構造・分類ルールの参考</td></tr>
-<tr><td style="font-weight:700;">信託報酬集約シート</td><td>GAS</td><td>4マスタ横断検索（全契約集計/イントロ変更/移管/管理フォーム）</td><td>検索ロジック ※計算式に要修正あり</td></tr>
-<tr><td style="font-weight:700;">契約データ統合</td><td>Node.js</td><td>4シート統合、紹介者・一次代理店不明リスト自動抽出</td><td>データクレンジングの参考</td></tr>
-<tr><td style="font-weight:700;">ORACLEシミュレーション</td><td>スプレッドシート</td><td>一括投資の手数料計算、99年対応、グラフ付き</td><td>商品別シミュレーション機能</td></tr>
-<tr><td style="font-weight:700;">サンライフ統合</td><td>GAS</td><td>BS+GTサンライフ→統合→外部シート自動反映</td><td>外部データ統合のパターン</td></tr>
-<tr><td style="font-weight:700;">LINEWORKS Bot通知</td><td>GAS</td><td>ペンディング通知（個人メッセージ）</td><td>通知システムの参考実装</td></tr>
+<tr><th>資産</th><th>活用方法</th></tr>
+<tr><td style="font-weight:700;">ペンディングポータル</td><td>対応フロー・ステータスロジック移植</td></tr>
+<tr><td style="font-weight:700;">信託報酬集約GAS</td><td>4マスタ横断検索ロジック</td></tr>
+<tr><td style="font-weight:700;">契約データ統合</td><td>データクレンジングの参考</td></tr>
+<tr><td style="font-weight:700;">LINEWORKS Bot</td><td>通知システムの参考実装</td></tr>
+<tr><td style="font-weight:700;">サンライフ統合GAS</td><td>外部データ統合のパターン</td></tr>
 </table>
 </div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
-</div>
-
-<!-- 11: Phase別ロードマップ -->
-<div class="slide dark">
-<div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
-<div style="padding:26px 36px;">
-<div class="sn" style="text-align:center;">11</div><div class="sec" style="text-align:center;">ROADMAP</div>
-<h2 class="tt" style="text-align:center;margin-top:4px;">Phase別ロードマップ（統合版）</h2>
-<div style="width:60px;height:3px;background:#B80C2C;margin:8px auto;"></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
-<div class="card" style="border-left:4px solid #B80C2C;">
-<div style="font-size:10px;color:#B80C2C;font-weight:700;">Phase 0: CRM載せ替え（今月中）</div>
-<div style="font-size:12px;font-weight:900;margin-top:4px;">最優先3件修正 + データ正確性の確保</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.5;">
-・トップ画面数字不一致の修正<br>
-・並び順の統一<br>
-・グラフ多言語対応<br>
-・契約数不一致の原因調査・修正<br>
-・旧CRMからのデータ完全移行
 </div>
 </div>
-<div class="card" style="border-left:4px solid #e6a700;">
-<div style="font-size:10px;color:#e6a700;font-weight:700;">Phase 1: 統合＆整地</div>
-<div style="font-size:12px;font-weight:900;margin-top:4px;">ペンディング統合 + ドミニオン + 通知</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.5;">
-・ペンディング管理のCRM統合<br>
-・ドミニオンCRMのデータ連携<br>
-・通知システム構築（メール: Expiry + Declined）<br>
-・高優先4件修正（検索窓、受託者、閉じるボタン、連絡先保護）<br>
-・データ整合性の整地
-</div>
-</div>
-<div class="card" style="border-left:4px solid #1565c0;">
-<div style="font-size:10px;color:#1565c0;font-weight:700;">Phase 2: 完全一元管理 + 自動化</div>
-<div style="font-size:12px;font-weight:900;margin-top:4px;">代理店ポータル + 申請管理 + LINE</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.5;">
-・代理店向け閲覧ポータル<br>
-・各種申請書類の履歴管理<br>
-・LINE連携（ID取得→通知移行）<br>
-・Premium Arrearsの通知<br>
-・データ自動取得の完全自動化（API or RPA）
-</div>
-</div>
-<div class="card" style="border-left:4px solid #2e7d32;">
-<div style="font-size:10px;color:#2e7d32;font-weight:700;">Phase 3: AI活用</div>
-<div style="font-size:12px;font-weight:900;margin-top:4px;">FAQチャットボット + データ分析</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.5;">
-・代理店/顧客向けFAQチャットボット<br>
-・蓄積データに基づくAI提案<br>
-・評価額トレンドチャート<br>
-・管理者ダッシュボード高度化
-</div>
-</div>
-</div>
-</div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
-</div>
-
-<!-- 12: 次回MTGで確認すべきこと -->
-<div class="slide dark">
-<div class="geo-tr"></div><div class="geo-tr2"></div><div class="geo-bl"></div>
-<div style="padding:26px 36px;">
-<div class="sn" style="text-align:center;">12</div><div class="sec" style="text-align:center;">NEXT MEETING AGENDA</div>
-<h2 class="tt" style="text-align:center;margin-top:4px;">次回MTGで確認すべきこと</h2>
-<div style="width:60px;height:3px;background:#B80C2C;margin:8px auto;"></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;">
-<div class="card" style="border-left:3px solid #B80C2C;">
-<div style="font-size:9px;color:#B80C2C;font-weight:700;">確認 1</div>
-<div style="font-size:12px;font-weight:700;margin-top:4px;">Phase 0の完了条件</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">9件修正のうちどこまでがPhase 0？最優先3件だけ？全9件？</div>
-</div>
-<div class="card" style="border-left:3px solid #B80C2C;">
-<div style="font-size:9px;color:#B80C2C;font-weight:700;">確認 2</div>
-<div style="font-size:12px;font-weight:700;margin-top:4px;">見積もり150万の内訳</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">Phase 0にいくら、Phase 1にいくら等。追加要望分の費用は別途？</div>
-</div>
-<div class="card" style="border-left:3px solid #e6a700;">
-<div style="font-size:9px;color:#e6a700;font-weight:700;">確認 3</div>
-<div style="font-size:12px;font-weight:700;margin-top:4px;">RL360 APIの返答が来ない場合</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">RPAで進めるのか、API待ちでPhase 1を先に進めるのか</div>
-</div>
-<div class="card" style="border-left:3px solid #e6a700;">
-<div style="font-size:9px;color:#e6a700;font-weight:700;">確認 4</div>
-<div style="font-size:12px;font-weight:700;margin-top:4px;">ペンディング統合の技術方針</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">既存のGAS+スプシのロジックをどう移植するか。対応フロー13ステップの実装方法</div>
-</div>
-<div class="card" style="border-left:3px solid #1565c0;">
-<div style="font-size:9px;color:#1565c0;font-weight:700;">確認 5</div>
-<div style="font-size:12px;font-weight:700;margin-top:4px;">ドミニオンCRMの接続方法</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">API？スクレイピング？アクセス情報は共有可能</div>
-</div>
-<div class="card" style="border-left:3px solid #1565c0;">
-<div style="font-size:9px;color:#1565c0;font-weight:700;">確認 6</div>
-<div style="font-size:12px;font-weight:700;margin-top:4px;">UBM側で先に準備すべきこと</div>
-<div style="font-size:9px;color:rgba(255,255,255,0.5);margin-top:4px;">データ提供、アクセス権限、テスト環境の準備等</div>
-</div>
-</div>
-</div>
-<div class="ft">CONFIDENTIAL ｜ 本資料は社内利用目的に限り使用してください。</div>
+<div class="ft">APPENDIX ｜ 本資料は社内利用目的に限り使用してください。</div>
 </div>
 
 </body>
