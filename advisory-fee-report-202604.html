@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>信託報酬システム 2026年4月 包括的改善レポート</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
+@media print{body{background:#fff}.slide{page-break-after:always;box-shadow:none!important;margin:0!important}}
+.slide{width:960px;height:540px;margin:20px auto;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.dk{background:#1a1a2e;color:#fff}
+.wh{background:#fff;color:#1a1a1a}
+.geo1{position:absolute;top:-40px;right:-40px;width:200px;height:200px;border:2px solid rgba(255,255,255,.08);transform:rotate(15deg)}
+.geo2{position:absolute;top:-20px;right:-60px;width:160px;height:160px;border:2px solid rgba(255,255,255,.05);transform:rotate(25deg)}
+.geo3{position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;border:2px solid rgba(255,255,255,.05);transform:rotate(-10deg)}
+.wh .geo1{border-color:rgba(0,0,0,.04)}.wh .geo2{border-color:rgba(0,0,0,.03)}
+.ct{position:relative;z-index:1;padding:36px 48px;height:100%;display:flex;flex-direction:column}
+.sn{font-size:36px;font-weight:300;font-style:italic;color:#B80C2C;letter-spacing:4px}
+.sc{font-size:12px;font-weight:700;letter-spacing:2px;margin-top:2px}
+.dk .sc{color:rgba(255,255,255,.5)}.wh .sc{color:#888}
+.tt{font-size:22px;font-weight:900;margin-top:6px;line-height:1.4}
+.dl{width:60px;height:3px;margin:8px 0 0}
+.dl-r{background:#B80C2C}.dl-b{background:#0f3460}.dl-w{background:#fff}
+.ft{position:absolute;bottom:0;left:0;right:0;height:24px;display:flex;align-items:center;justify-content:center;font-size:8px;z-index:2}
+.dk .ft{color:rgba(255,255,255,.3)}.wh .ft{color:rgba(0,0,0,.2)}
+
+/* Cover */
+.cov{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center}
+.cov h1{font-size:30px;font-weight:900;letter-spacing:3px;line-height:1.5}
+.cov-line{width:80px;height:3px;background:#B80C2C;margin:16px auto 0}
+.cov .sub{font-size:14px;color:rgba(255,255,255,.6);margin-top:14px;line-height:1.8}
+.cov .meta{font-size:11px;color:rgba(255,255,255,.4);margin-top:24px}
+.cov .meta span{margin:0 10px}
+
+/* Cards */
+.card{background:#fff;color:#1a1a2e;border-radius:8px;padding:14px 18px;margin-top:8px}
+.card-red{border-left:4px solid #B80C2C}
+.card-ylw{border-left:4px solid #e6a817}
+.card-grn{border-left:4px solid #2e7d32}
+.card-blu{border-left:4px solid #1565c0}
+.card p{font-size:12px;line-height:1.7;margin-top:3px}
+.card-title{font-size:13px;font-weight:900;margin-bottom:4px}
+
+/* Tags */
+.tg{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-right:4px;font-weight:700}
+.tg-hi{background:#f8d7da;color:#721c24}
+.tg-md{background:#ffeeba;color:#856404}
+.tg-lo{background:#d4edda;color:#155724}
+
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px;background:#fff;color:#1a1a2e;border-radius:6px;overflow:hidden}
+.tbl th{background:#B80C2C;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:11px}
+.wh .tbl th{background:#0f3460}
+.tbl td{padding:6px 10px;border-bottom:1px solid #e8e8e8;font-size:11px}
+.tbl tr:nth-child(even) td{background:#f8f9fa}
+.pri{font-weight:900;color:#B80C2C;text-align:center;font-size:15px}
+
+/* Flow (horizontal) */
+.flow{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
+.fb{background:#fff;color:#1a1a2e;border:1px solid #ddd;border-radius:8px;padding:8px 14px;text-align:center;font-size:11px;font-weight:700;min-width:90px}
+.wh .fb{background:#f0f4f8;border-color:#d0d8e0}
+.fb small{display:block;font-size:9px;font-weight:400;margin-top:2px;color:#888}
+.fb.fail{border-color:#B80C2C;color:#B80C2C;background:#fff5f5}
+.fb.ok{border-color:#2e7d32;color:#2e7d32;background:#f0f9ee}
+.fa{font-size:16px;color:#B80C2C;font-weight:900}
+
+/* Timeline (vertical) */
+.timeline{margin-top:14px}
+.tl-item{display:flex;gap:12px;padding:8px 0;align-items:flex-start}
+.tl-num{background:#B80C2C;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0}
+.tl-body{flex:1;background:#fff;color:#1a1a2e;border-radius:6px;padding:8px 12px;font-size:12px;line-height:1.6}
+.tl-body strong{display:block;font-size:13px;margin-bottom:2px}
+
+/* Stats grid */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.stat{background:#fff;color:#1a1a2e;border-radius:8px;padding:14px 10px;text-align:center;border-top:3px solid #B80C2C}
+.stat-n{font-size:28px;font-weight:900;color:#B80C2C;line-height:1.1}
+.stat-l{font-size:10px;color:#666;margin-top:4px;line-height:1.4}
+.stat.ok .stat-n{color:#2e7d32}
+.stat.ok{border-top-color:#2e7d32}
+.stat.wn .stat-n{color:#e6a817}
+.stat.wn{border-top-color:#e6a817}
+
+/* Issue cards grid */
+.issues{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.iss{background:#fff;color:#1a1a2e;border-radius:8px;padding:10px 12px;border-left:3px solid #B80C2C}
+.iss-n{font-size:10px;color:#B80C2C;font-weight:700}
+.iss-t{font-size:12px;font-weight:900;margin:2px 0 4px}
+.iss-b{font-size:10px;line-height:1.5;color:#555}
+
+/* Status cols */
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.sc-col h3{font-size:14px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sc-col ul{list-style:none}
+.sc-col li{font-size:11px;line-height:1.6;padding:4px 0;border-bottom:1px solid #eee;display:flex;gap:6px}
+.sc-col li:last-child{border-bottom:none}
+.s-icon{flex-shrink:0;font-size:13px}
+
+/* Next steps */
+.ns-list{margin-top:16px;max-width:720px}
+.ns-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.ns-num{background:#B80C2C;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.ns-text{font-size:13px;line-height:1.7}
+
+.hl{background:#fff3cd;color:#856404;padding:1px 6px;border-radius:3px}
+.hl-g{background:#d4edda;color:#155724;padding:1px 6px;border-radius:3px}
+
+.msg{background:rgba(184,12,44,.1);border:1px solid rgba(184,12,44,.3);border-radius:8px;padding:12px 16px;margin-top:12px;text-align:center}
+.wh .msg{background:#fff5f5;border-color:#f0c0c0}
+.msg p{font-size:13px;font-weight:700;color:#B80C2C}
+
+.bb{background:#eef5fb;border-left:4px solid #0f3460;padding:10px 14px;margin-top:10px;border-radius:4px;font-size:12px;color:#1a1a2e}
+.wh .bb{background:#eef5fb}
+
+/* Feature grid */
+.fg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.fc{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 14px;border-top:3px solid #B80C2C}
+.fc-i{font-size:20px;margin-bottom:6px}
+.fc-t{font-size:12px;font-weight:900;margin-bottom:3px}
+.fc-b{font-size:10px;line-height:1.5;color:#555}
+</style>
+</head>
+<body>
+
+<!-- Slide 1: 表紙 -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct"><div class="cov">
+<h1 contenteditable="true">信託報酬システム<br>2026年4月 包括的改善レポート</h1>
+<div class="cov-line"></div>
+<div class="sub" contenteditable="true">データ消失事象の原因分析と<br>再発防止策の全記録</div>
+<div class="meta"><span>作成: 高本咲佳</span><span>|</span><span>2026年4月18日</span><span>|</span><span>読み手: 大越さん、ゆーちゃん、引き継ぎ担当</span></div>
+</div></div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 2: エグゼクティブサマリー -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">01</div><div class="sc">EXECUTIVE SUMMARY</div>
+<div class="tt" contenteditable="true">エグゼクティブサマリー（全体像）</div>
+<div class="dl dl-b"></div>
+
+<div class="stats">
+<div class="stat"><div class="stat-n">2,500</div><div class="stat-l">行の紹介者情報が<br>消失した行数</div></div>
+<div class="stat ok"><div class="stat-n">453</div><div class="stat-l">自動復元に成功した<br>行数</div></div>
+<div class="stat ok"><div class="stat-n">0</div><div class="stat-l">紹介者分裂の<br>不整合件数</div></div>
+<div class="stat wn"><div class="stat-n">1,664</div><div class="stat-l">レガシー契約として<br>放置可能な行</div></div>
+</div>
+
+<p style="font-size:13px;margin-top:16px;line-height:1.8" contenteditable="true">
+エルメ仕様変更と管理シート列修正、エルメバックアップ復元の三段重なり事故で、管理シート内の手入力紹介者情報が約2,500行消失。過去に代理店配布した公開シート履歴を活用して<span class="hl-g">453行を自動復元</span>、さらに<span class="hl-g">手動紐付けマスタ</span>で永続保全の仕組みを実装し、将来同様の事故にも対応できる体制を構築しました。
+</p>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 3: 発端 -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">02</div><div class="sc">WHAT HAPPENED</div>
+<div class="tt" contenteditable="true">発端：2,500行の紹介者情報消失事象</div>
+<div class="dl dl-r"></div>
+
+<p style="font-size:12px;margin-top:10px;opacity:.9;line-height:1.7" contenteditable="true">
+お客様管理フォームの「管理シート」内で、BOが手入力した紹介者情報 約2,500行 が消失。過去に代理店へ配布した報酬明細には名前が入っていたが、現在の管理シートには空白になっていた。原因不明のあまり全体調査を実施した。
+</p>
+
+<div class="card card-red" style="margin-top:14px">
+<p class="card-title">影響範囲</p>
+<p>🔴 最も古い契約分 約2,500行 の紹介者情報が<strong>物理的に復元不可能</strong></p>
+<p>🔴 過去に記載した内容の記録・記憶も残っていない</p>
+<p>🟡 エルメにアンケート回答が残っている 2,500行目以降 は<strong>復元可能</strong>だった</p>
+</div>
+
+<div class="msg" style="margin-top:14px">
+<p contenteditable="true">物理的に失ったデータは戻らない。だが「同様の事故に即座に気づき、解決できる仕組み」を構築した</p>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 4: 消失の時系列 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">03</div><div class="sc">TIMELINE</div>
+<div class="tt" contenteditable="true">消失の時系列（三段重なり事故）</div>
+<div class="dl dl-b"></div>
+
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-num">1</div>
+<div class="tl-body"><strong>エルメ（LINEシステム）仕様変更</strong>アンケート回答シートの列がずれる事象が発生</div>
+</div>
+<div class="tl-item">
+<div class="tl-num">2</div>
+<div class="tl-body"><strong>ももさんが列構成を修正</strong>ずれた列を元に戻していただいた（ただし修正後にも一部ずれが残っていた）</div>
+</div>
+<div class="tl-item">
+<div class="tl-num">3</div>
+<div class="tl-body"><strong>エルメからのバックアップ復元が実行される</strong>ももさん修正後、エルメ側の自動バックアップからデータ復元が走った</div>
+</div>
+<div class="tl-item">
+<div class="tl-num">4</div>
+<div class="tl-body"><strong>手入力していた紹介者名が消失</strong>エルメの保持データには手入力分が含まれず、上書きされる形で約2,500行が消失</div>
+</div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 5: 発見された問題 -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">04</div><div class="sc">ISSUES FOUND</div>
+<div class="tt" contenteditable="true">発見された5つの問題</div>
+<div class="dl dl-r"></div>
+
+<div class="issues">
+<div class="iss">
+<div class="iss-n">PROBLEM 1</div>
+<div class="iss-t">管理シート「正しい紹介者名」列が未入力</div>
+<div class="iss-b">BO手入力すべき列が未入力のままの行が多数</div>
+</div>
+<div class="iss">
+<div class="iss-n">PROBLEM 2</div>
+<div class="iss-t">紹介者列の自動検出が別列を誤検出</div>
+<div class="iss-b">完全一致で見つからない時、部分一致で別列を拾うケース</div>
+</div>
+<div class="iss">
+<div class="iss-n">PROBLEM 3</div>
+<div class="iss-t">公開シート履歴が自動参照されない</div>
+<div class="iss-b">過去に代理店配布した情報が活用されない</div>
+</div>
+<div class="iss">
+<div class="iss-n">PROBLEM 4</div>
+<div class="iss-t">同姓同名の括弧表記が崩れるリスク</div>
+<div class="iss-b">「鈴木光穂(GH )」のような区別用括弧の削除リスク</div>
+</div>
+<div class="iss" style="grid-column:1/3">
+<div class="iss-n">PROBLEM 5</div>
+<div class="iss-t">過去の配布漏れが画面上分からない</div>
+<div class="iss-b">紹介者空白だった行は配布対象から除外され、漏れの存在が認識されない</div>
+</div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 6: 再発防止策 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">05</div><div class="sc">SOLUTIONS</div>
+<div class="tt" contenteditable="true">実装した再発防止策（4分野）</div>
+<div class="dl dl-b"></div>
+
+<div class="fg">
+<div class="fc">
+<div class="fc-i">🔐</div>
+<div class="fc-t">データ保護系</div>
+<div class="fc-b">手動紐付けマスタ新設（エルメ復元の影響を受けない永続保管）。K列を値出力方式に変更。自動バックアップ作成。既存値は上書きしない方針。</div>
+</div>
+<div class="fc">
+<div class="fc-i">🔍</div>
+<div class="fc-t">自動検出系</div>
+<div class="fc-b">紹介者欠損診断、整合性チェック、ヘッダーマッピング確認、バックアップ差分、代理店別分布集計の5機能で全方位監視。</div>
+</div>
+<div class="fc">
+<div class="fc-i">🔄</div>
+<div class="fc-t">自動復元系</div>
+<div class="fc-b">公開シート配布履歴を第6マスタとして統合。「紹介者情報を更新」ボタン1つで過去配布実績から自動復元。手動紐付けマスタを最優先に。</div>
+</div>
+</div>
+
+<div class="bb" style="margin-top:10px"><strong>📖 ドキュメント化:</strong> 機能マニュアル（各ボタンの動作説明）と月次運用マニュアル（毎月の完全手順）の2種類をHTMLで作成。メニューボタンからいつでも閲覧可能。</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 7: 作成したレポート・診断機能 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">06</div><div class="sc">REPORTS &amp; TOOLS</div>
+<div class="tt" contenteditable="true">作成したレポート・診断機能 8種類</div>
+<div class="dl dl-b"></div>
+
+<table class="tbl" style="margin-top:8px">
+<thead><tr><th style="width:40%">レポート名</th><th>目的</th><th style="width:18%">成果</th></tr></thead>
+<tbody>
+<tr><td>紹介者欠損診断</td><td>空白行の原因を9観点で自動分析</td><td>31.7%復元可能と判明</td></tr>
+<tr><td>バックアップ差分</td><td>更新前後の変化を相細展示</td><td>変更追跡可能</td></tr>
+<tr><td>紹介者整合性チェック</td><td>同一契約で紹介者分裂を検出</td><td>不整合 0 件</td></tr>
+<tr><td>代理店別分布</td><td>空白行の代理店偏り集計</td><td>レガシー特定</td></tr>
+<tr><td>公開シート復元プレビュー</td><td>復元可能行の事前確認</td><td>453行確認</td></tr>
+<tr><td>公開シート復元ログ</td><td>実行時の埋込内容記録</td><td>完全追跡可能</td></tr>
+<tr><td>レビュー用圧縮レポート</td><td>900行超を代表例3件に圧縮</td><td>共有容易化</td></tr>
+<tr><td>報酬明細試作内の差分</td><td>配布前の公開シートとの差分提示</td><td>配布漏れ検出</td></tr>
+</tbody></table>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 8: 定量データ -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">07</div><div class="sc">KEY METRICS</div>
+<div class="tt" contenteditable="true">今回の調査で判明した事実（定量データ）</div>
+<div class="dl dl-r"></div>
+
+<div class="stats" style="margin-top:18px">
+<div class="stat"><div class="stat-n">5,681</div><div class="stat-l">集約シート<br>総行数</div></div>
+<div class="stat"><div class="stat-n">1,452</div><div class="stat-l">ユニーク契約<br>グループ数</div></div>
+<div class="stat wn"><div class="stat-n">2,117</div><div class="stat-l">紹介者空白だった<br>行数（調査開始時）</div></div>
+<div class="stat ok"><div class="stat-n">453</div><div class="stat-l">公開シートから<br>自動復元成功</div></div>
+</div>
+
+<div class="stats" style="margin-top:10px">
+<div class="stat wn"><div class="stat-n">1,664</div><div class="stat-l">レガシー契約<br>放置可</div></div>
+<div class="stat ok"><div class="stat-n">0</div><div class="stat-l">紹介者分裂<br>不整合件数</div></div>
+<div class="stat wn"><div class="stat-n">13</div><div class="stat-l">コンフリクト<br>（表記揺れのみ）</div></div>
+<div class="stat ok"><div class="stat-n">6</div><div class="stat-l">統合したマスタ<br>の数</div></div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 9: 新機能・メニュー -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">08</div><div class="sc">NEW FEATURES</div>
+<div class="tt" contenteditable="true">追加された新機能（メニュー構成）</div>
+<div class="dl dl-b"></div>
+
+<div class="sg">
+<div class="sc-col">
+<h3><span style="color:#B80C2C">●</span> 📊 Advisory Fee 集約メニュー</h3>
+<ul>
+<li><span class="s-icon">📖</span><div>機能マニュアル</div></li>
+<li><span class="s-icon">📋</span><div>月次運用マニュアル</div></li>
+<li><span class="s-icon">🔐</span><div>手動紐付けマスタを開く</div></li>
+<li><span class="s-icon">📝</span><div>紹介者情報を更新＋ログ出力（6マスタ横断）</div></li>
+<li><span class="s-icon">📄</span><div>紹介者の文字揺れを修正</div></li>
+<li><span class="s-icon">🏢</span><div>一次代理店の文字揺れを修正</div></li>
+</ul>
+</div>
+<div class="sc-col">
+<h3><span style="color:#0f3460">●</span> ⚙️ 設定メニュー</h3>
+<ul>
+<li><span class="s-icon">🔍</span><div>ヘッダーマッピング確認</div></li>
+<li><span class="s-icon">🔄</span><div>K列を再計算</div></li>
+<li><span class="s-icon">🔄</span><div>公開シートから紹介者を復元（プレビュー）</div></li>
+<li><span class="s-icon">🔄</span><div>公開シートから紹介者を復元（実行）</div></li>
+<li><span class="s-icon">🔍</span><div>紹介者整合性チェック</div></li>
+<li><span class="s-icon">🔎</span><div>紹介者欠損診断</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 10: マスタ優先順位 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">09</div><div class="sc">MASTER PRIORITY</div>
+<div class="tt" contenteditable="true">マスタ優先順位（6層構造）</div>
+<div class="dl dl-b"></div>
+
+<p style="font-size:12px;margin-top:8px;line-height:1.7" contenteditable="true">
+「紹介者情報を更新」実行時、以下の優先順位で6つのマスタを横断検索。複数マスタに該当があれば上位のマスタの値が採用される。
+</p>
+
+<table class="tbl" style="margin-top:10px">
+<thead><tr><th style="width:8%">優先</th><th style="width:35%">マスタ名</th><th>備考</th></tr></thead>
+<tbody>
+<tr><td class="pri">1</td><td>🔐 手動紐付けマスタ</td><td>最優先・永続保管・BO確定値（エルメ復元で消えない）</td></tr>
+<tr><td class="pri">2</td><td>全契約集計</td><td>契約データの統合、最も網羅性が高い</td></tr>
+<tr><td class="pri">3</td><td>イントロデューサー変更申請</td><td>FA変更があった契約の最新情報</td></tr>
+<tr><td class="pri">4</td><td>RL360契約移管手続き</td><td>他社から移管してきた契約</td></tr>
+<tr><td class="pri">5</td><td>お客様管理フォーム</td><td>お客様自身の入力データ</td></tr>
+<tr><td class="pri">6</td><td>🔄 公開シート配布履歴</td><td>最終フォールバック・過去配布実績から自動復元</td></tr>
+</tbody></table>
+
+<div class="bb" style="margin-top:12px"><strong>💡 この改善でボタン1つで完結:</strong> 月次運用でBOが別途「公開シート復元」を押す必要なし。「紹介者情報を更新」ボタン1つで自動復元まで完了する。</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 11: 運用ルール DO/DON'T -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">10</div><div class="sc">OPERATING RULES</div>
+<div class="tt" contenteditable="true">今後の運用ルール（DO / DON'T）</div>
+<div class="dl dl-r"></div>
+
+<div class="sg">
+<div class="sc-col" style="background:rgba(255,255,255,0.05);padding:12px;border-radius:8px">
+<h3><span style="color:#4ade80">●</span> DO（必ず守る）</h3>
+<ul>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>BO手入力は「手動紐付けマスタ」に集約</div></li>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>紹介者情報を更新ボタン1つで完結</div></li>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>毎月の運用フロー（9フェーズ）に従う</div></li>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>配布前に整合性チェック4種を実行</div></li>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>入力者・入力日を記録（追跡可能に）</div></li>
+</ul>
+</div>
+<div class="sc-col" style="background:rgba(255,255,255,0.05);padding:12px;border-radius:8px">
+<h3><span style="color:#f87171">●</span> DON'T（やってはいけない）</h3>
+<ul>
+<li><span class="s-icon" style="color:#f87171">✗</span><div>紹介者名の括弧表記（例: 鈴木光穂(GH )）を削除</div></li>
+<li><span class="s-icon" style="color:#f87171">✗</span><div>管理シートへの直接手入力（エルメ復元で消失）</div></li>
+<li><span class="s-icon" style="color:#f87171">✗</span><div>整合性チェックをスキップして配布</div></li>
+<li><span class="s-icon" style="color:#f87171">✗</span><div>同じ証券番号を手動紐付けマスタに重複入力</div></li>
+<li><span class="s-icon" style="color:#f87171">✗</span><div>紹介者名だけ入力でAC・代理店を空のまま放置</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 12: 将来の展望 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">11</div><div class="sc">FUTURE OUTLOOK</div>
+<div class="tt" contenteditable="true">将来の課題（今回扱わなかったもの）</div>
+<div class="dl dl-b"></div>
+
+<div class="flow" style="margin-top:18px">
+<div class="fb" style="border-color:#e6a817;background:#fff8e1;color:#856404;min-width:130px;padding:12px">
+<strong>短期</strong>
+<small>1〜2ヶ月以内</small>
+</div>
+<div class="fa">→</div>
+<div class="fb" style="min-width:130px;padding:12px">
+<strong>中期</strong>
+<small>3〜6ヶ月</small>
+</div>
+<div class="fa">→</div>
+<div class="fb" style="border-color:#0f3460;background:#eef5fb;color:#0f3460;min-width:130px;padding:12px">
+<strong>長期</strong>
+<small>CRM移行</small>
+</div>
+</div>
+
+<div class="card card-ylw" style="margin-top:16px">
+<p class="card-title">⏳ 短期: AC（アドバイザーコード）の自動補完</p>
+<p>公開シート復元ではACが空のままになる。紹介者マスタからの逆引き機能追加を検討</p>
+</div>
+
+<div class="card card-blu" style="margin-top:8px">
+<p class="card-title">⏳ 中期: 定期的な紐付けチェックの運用ルール化</p>
+<p>月次以外にも、週次・四半期での自動整合性チェックをスケジュール化する</p>
+</div>
+
+<div class="card card-grn" style="margin-top:8px">
+<p class="card-title">⏳ 長期: CRM移行による構造的解決</p>
+<p>信託報酬・ペンディング・契約統合を一元管理する新CRMへ移行することで、そもそもの紐付け問題を構造的に解消</p>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 13: 結論 -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct"><div class="cov">
+<div style="font-size:13px;color:rgba(255,255,255,.5);letter-spacing:3px;margin-bottom:10px">CONCLUSION</div>
+<h1 style="font-size:24px;font-weight:900;letter-spacing:2px;line-height:1.6" contenteditable="true">結論：前に進める体制ができた</h1>
+<div class="cov-line"></div>
+<div class="ns-list" style="text-align:left;margin-top:20px">
+<div class="ns-item">
+<div class="ns-num">1</div>
+<div class="ns-text" contenteditable="true">2,500行の消失は「成長期の仕組みの限界」が表面化したもの。システムバグではなく構造的課題</div>
+</div>
+<div class="ns-item">
+<div class="ns-num">2</div>
+<div class="ns-text" contenteditable="true">物理的に失ったデータは戻らないが、過去配布シートから453行を自動復元</div>
+</div>
+<div class="ns-item">
+<div class="ns-num">3</div>
+<div class="ns-text" contenteditable="true">手動紐付けマスタ＋6マスタ統合で、今後BOの手入力は永続保全される</div>
+</div>
+<div class="ns-item">
+<div class="ns-num">4</div>
+<div class="ns-text" contenteditable="true">複数の診断・復旧ツールで、同様の事象に即座に気づき、解決できる体制</div>
+</div>
+<div class="ns-item">
+<div class="ns-num">5</div>
+<div class="ns-text" contenteditable="true">CRM移行までの橋渡しとして、この運用を誠実に回し、代理店との信頼を維持する</div>
+</div>
+</div>
+</div></div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+</body>
+</html>
