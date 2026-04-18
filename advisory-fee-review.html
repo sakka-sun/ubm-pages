@@ -127,10 +127,10 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct"><div class="cov">
-<h1 contenteditable="true">信託報酬集約シート<br>システムレビュー依頼書</h1>
+<h1 contenteditable="true">信託報酬集約シート<br>診断結果レポート</h1>
 <div class="cov-line"></div>
-<div class="sub" contenteditable="true">データ紐付けロジックの妥当性確認と改善提案</div>
-<div class="meta"><span>作成: 高本咲佳</span><span>|</span><span>2026年4月</span><span>|</span><span>レビュー依頼先: 佐藤さん</span></div>
+<div class="sub" contenteditable="true">真の原因の特定と実施済み改善策の全記録</div>
+<div class="meta"><span>作成: 高本咲佳</span><span>|</span><span>2026年4月（診断後更新）</span><span>|</span><span>共有先: 大越さん・佐藤さん等</span></div>
 </div></div>
 <div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
@@ -204,62 +204,62 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 5: 発見された不備 -->
+<!-- Slide 5: 診断で判明した不備（更新版） -->
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">04</div><div class="sc">ISSUES FOUND</div>
-<div class="tt" contenteditable="true">発見された不備</div>
+<div class="sn">04</div><div class="sc">ISSUES FOUND (DIAGNOSED)</div>
+<div class="tt" contenteditable="true">診断で判明した真の不備</div>
 <div class="dl dl-r"></div>
-<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">運用の中で、以下の3つの不備が発見されました。いずれも紹介者の紐付け精度に直接影響します。</p>
+<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">紹介者欠損診断の結果、当初想定していた「ヘッダー自動検出ミス」は実際には発生していませんでした（管理シートは固定列方式で正しく読まれていた）。代わりに以下3つが真の原因でした。</p>
 <div class="card card-red" style="margin-top:10px">
-<p><span class="tg tg-hi">影響: 高</span> <strong>ヘッダー自動検出の優先度ミス</strong></p>
-<p>各マスタのヘッダー名から「紹介者」列を自動検出する際、部分一致で左から順にスキャンしていたため、A列「担当者」やD列「ご紹介者のアドバイザーコード」が先にマッチし、本来の「紹介者」列がスキップされていました。結果、<strong>間違った列から紹介者名を取得</strong>していました。</p>
+<p><span class="tg tg-hi">影響: 最高</span> <strong>BOの手入力データ2,500行が消失</strong></p>
+<p>エルメ（LINEシステム）仕様変更→列修正→エルメバックアップ復元の三段重なりにより、管理シートに手入力していた紹介者情報が上書き消失。古い契約ほど影響が大きく、物理的に復元不可能。</p>
 </div>
 <div class="card card-ylw">
-<p><span class="tg tg-md">影響: 中</span> <strong>フォームの生データと加工済みデータの混在</strong></p>
-<p>お客様管理フォームの「シート1」（お客様がフォームに入力した未検証の生データ）と「管理シート」（バックオフィスが加工・確認済み）を区別せず検索していました。RL360移管でも進捗・テンプレ等の不要シートを読んでいました。</p>
+<p><span class="tg tg-md">影響: 中</span> <strong>管理シート「正しい紹介者名」列の未入力</strong></p>
+<p>BOが手入力で確定させるべき「正しい紹介者名」列が未入力の行が多数存在。この列が空のため、紹介者情報が取得できないケースが発生していた。</p>
 </div>
 <div class="card card-ylw">
-<p><span class="tg tg-lo">影響: 低</span> <strong>同一証券番号で紹介者の空白行が混在</strong></p>
-<p>マスタへの登録タイミングの問題で、同じ証券番号なのに一部の月だけ紹介者が空白のまま残っているケースがありました。</p>
+<p><span class="tg tg-lo">影響: 中</span> <strong>公開シート配布履歴の未活用</strong></p>
+<p>過去に代理店へ配布した公開シートには紹介者名が残っていたが、システムが自動参照していなかったため、手入力が失われた行もそのまま空白のままだった。</p>
 </div>
 </div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 6: なぜ起きたか -->
+<!-- Slide 6: なぜ起きたか（更新版） -->
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
 <div class="sn">05</div><div class="sc">ROOT CAUSES</div>
 <div class="tt" contenteditable="true">なぜ起きたか（構造的な原因）</div>
 <div class="dl dl-r"></div>
-<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">個別のバグではなく、仕組み全体に4つの弱点があります。</p>
+<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">個別のバグではなく、データ管理の構造的弱点4つが重なって事象が発生しました。</p>
 <div class="cause-grid">
 <div class="cause-card">
 <div class="cause-num">原因 1</div>
-<div class="cause-title" contenteditable="true">データの「正」が未定義</div>
-<div class="cause-body" contenteditable="true">4マスタのどれが正しいかが曖昧。同じ証券番号で紹介者が異なるケースがあっても、どちらを採用すべきかのルールが明文化されていない。</div>
+<div class="cause-title" contenteditable="true">BO手入力の永続保管場所がなかった</div>
+<div class="cause-body" contenteditable="true">BOが手入力した紹介者情報を、エルメ復元の影響を受けない安全な場所に保管する仕組みが存在せず、管理シート直接入力のみが運用されていた。</div>
 </div>
 <div class="cause-card">
 <div class="cause-num">原因 2</div>
-<div class="cause-title" contenteditable="true">列検出の設計が脆弱</div>
-<div class="cause-body" contenteditable="true">ヘッダー名の部分一致で列位置を自動検出していたため、似た名前の別列（「担当者」vs「紹介者」）を誤検出する構造的リスクがあった。</div>
+<div class="cause-title" contenteditable="true">外部システム依存のリスク</div>
+<div class="cause-body" contenteditable="true">エルメ（LINEシステム）の仕様変更やバックアップ復元が、社内の手入力データを上書きしてしまう構造だった。外部イベントへの耐性が低い。</div>
 </div>
 <div class="cause-card">
 <div class="cause-num">原因 3</div>
-<div class="cause-title" contenteditable="true">生データと加工データの境界が曖昧</div>
-<div class="cause-body" contenteditable="true">同じスプレッドシート内にフォームの生データ（シート1）と加工済みデータ（管理シート）が混在しており、どちらを使うべきかが定義されていなかった。</div>
+<div class="cause-title" contenteditable="true">公開履歴の未活用</div>
+<div class="cause-body" contenteditable="true">代理店に配布済みの公開シートには紹介者名が残っているが、システムが参照していなかった。過去のデータ資産が活かされていない状態だった。</div>
 </div>
 <div class="cause-card">
 <div class="cause-num">原因 4</div>
-<div class="cause-title" contenteditable="true">第三者チェックの不在</div>
-<div class="cause-body" contenteditable="true">設計・構築・運用を一人で担っているため、ロジックの妥当性を客観的に検証する機会がなかった。結果、不備がそのまま本番運用されていた。</div>
+<div class="cause-title" contenteditable="true">診断・検出の仕組み不在</div>
+<div class="cause-body" contenteditable="true">「何が失われたか」「なぜ空白なのか」を自動で検出するツールがなく、事故の発見が遅れ、原因特定にも時間がかかっていた。</div>
 </div>
 </div>
 </div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
 <!-- Slide 7: 実施済みの対応 -->
@@ -273,19 +273,19 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="status-col">
 <h3><span style="color:#2e7d32">&#9679;</span> 対応済み</h3>
 <ul>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>ヘッダー検出を完全一致優先に変更</strong><br><span style="font-size:10px;color:#888">部分一致のみ → 完全一致2パス方式＋除外キーワード</span></div></li>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>マスタのシート指定を明示化</strong><br><span style="font-size:10px;color:#888">各マスタの取得元シートをコード上で固定指定</span></div></li>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>更新ログに検索キー・取得元・既存値を追加</strong><br><span style="font-size:10px;color:#888">証券番号以外のマッチを色分けで可視化</span></div></li>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>既存データ保護</strong><br><span style="font-size:10px;color:#888">手動修正した値を上書きしない設計</span></div></li>
+<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>🔐 手動紐付けマスタを新設</strong><br><span style="font-size:10px;color:#888">BO手入力の永続保管場所（エルメ復元の影響なし）</span></div></li>
+<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>🔄 公開シート配布履歴を第6マスタ統合</strong><br><span style="font-size:10px;color:#888">453行を自動復元に成功（ボタン1つで完結）</span></div></li>
+<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>🔍 診断・検出ツール群の整備</strong><br><span style="font-size:10px;color:#888">欠損診断・整合性チェック・差分・分布の4種</span></div></li>
+<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>📖 運用マニュアル2種を作成</strong><br><span style="font-size:10px;color:#888">機能マニュアル＋月次運用マニュアル（9フェーズ）</span></div></li>
 </ul>
 </div>
 <div class="status-col">
-<h3><span style="color:#e6a817">&#9679;</span> 未解決（レビュー対象）</h3>
+<h3><span style="color:#e6a817">&#9679;</span> 未解決（今後の課題）</h3>
 <ul>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>マスタ側のデータ品質</strong><br><span style="font-size:10px;color:#888">お客様入力で紹介者名が間違っているケースがある</span></div></li>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>メール検索の誤マッチリスク</strong><br><span style="font-size:10px;color:#888">同じメールで別人の行にマッチする可能性</span></div></li>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>同一証券番号の一括反映ができない</strong><br><span style="font-size:10px;color:#888">SSの構造上、証券番号→紹介者のリレーションがない</span></div></li>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>変更履歴が追えない</strong><br><span style="font-size:10px;color:#888">紹介者が変更された経緯が記録されていない</span></div></li>
+<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>AC（アドバイザーコード）の自動補完</strong><br><span style="font-size:10px;color:#888">公開シート復元ではACが空のまま。紹介者マスタからの逆引き機能を検討</span></div></li>
+<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>定期的な整合性チェックの自動化</strong><br><span style="font-size:10px;color:#888">週次・四半期での自動スケジュール実行</span></div></li>
+<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>CRM移行による構造的解決</strong><br><span style="font-size:10px;color:#888">中長期タスク。信託報酬・契約統合の一元管理へ</span></div></li>
+<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>2,500行の物理的消失は復元不可</strong><br><span style="font-size:10px;color:#888">過去データの一部は恒久的に空白のまま残る</span></div></li>
 </ul>
 </div>
 </div>
