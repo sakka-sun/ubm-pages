@@ -270,24 +270,24 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="tt" contenteditable="true">現在のスクリプト構造（月次①②③④）</div>
 <div class="dl dl-b"></div>
 
-<p style="font-size:11.5px;margin-top:6px;line-height:1.7" contenteditable="true">毎月ドミニオンからExcelが届く→社内4マスタ＋手動紐付けマスタ＋公開履歴の計6マスタで紐付け→配布前に整合性チェック→代理店ごとに報酬明細生成、という一本道に再構築しました。</p>
+<p style="font-size:10.5px;margin-top:4px;line-height:1.5" contenteditable="true">毎月ドミニオンからExcelが届く→6マスタ横断で紐付け→配布前に整合性チェック→代理店ごとに報酬明細生成、という一本道に再構築。</p>
 
-<div class="flow" style="margin-top:12px">
-<div class="fb">① 変換<small>Excel→スプシ</small></div><div class="fa">→</div>
-<div class="fb new">② 紐付け<small>6マスタ横断＋文字揺れ修正</small></div><div class="fa">→</div>
-<div class="fb new">③ 整合性<small>4診断一括実行</small></div><div class="fa">→</div>
-<div class="fb">④ 明細生成<small>代理店ごと</small></div>
+<div class="flow" style="margin-top:6px;gap:4px">
+<div class="fb" style="padding:5px 10px;min-width:70px;font-size:10px">① 変換<small style="font-size:8px">Excel→スプシ</small></div><div class="fa" style="font-size:13px">→</div>
+<div class="fb new" style="padding:5px 10px;min-width:70px;font-size:10px">② 紐付け<small style="font-size:8px">6マスタ＋文字揺れ</small></div><div class="fa" style="font-size:13px">→</div>
+<div class="fb new" style="padding:5px 10px;min-width:70px;font-size:10px">③ 整合性<small style="font-size:8px">4診断一括</small></div><div class="fa" style="font-size:13px">→</div>
+<div class="fb" style="padding:5px 10px;min-width:70px;font-size:10px">④ 明細生成<small style="font-size:8px">代理店ごと</small></div>
 </div>
 
-<table class="tbl" style="margin-top:10px">
-<thead><tr><th style="width:40px">優先</th><th>マスタ名</th><th>役割</th></tr></thead>
+<table class="tbl" style="margin-top:8px;font-size:10px">
+<thead><tr><th style="width:36px;padding:4px 6px;font-size:9.5px">優先</th><th style="padding:4px 6px;font-size:9.5px;width:38%">マスタ名（URL）</th><th style="padding:4px 6px;font-size:9.5px">役割</th></tr></thead>
 <tbody>
-<tr><td class="pri">1</td><td><strong>🔐 手動紐付けマスタ（新設）</strong><br><span style="font-size:9px;color:#888">集約スプシ内シート（信託報酬集約SS内）</span></td><td>BOが確定入力する永続保管シート。エルメ側のバックアップ復元や仕様変更の影響を受けない、唯一の"書いたら消えない"場所</td></tr>
-<tr><td class="pri">2</td><td><strong>全契約集計</strong><br><span style="font-size:9px;color:#888;word-break:break-all">https://docs.google.com/spreadsheets/d/10lG9UXo3H9kaZXlxFc0vHetz1TzxLqcDZ13tVE5BjqU/edit</span></td><td>弊社管理の契約リスト。お客様ごとの契約情報を一元化した社内メインデータ</td></tr>
-<tr><td class="pri">3</td><td><strong>イントロデューサー変更申請</strong><br><span style="font-size:9px;color:#888;word-break:break-all">https://docs.google.com/spreadsheets/d/1mVGCUSLBpnlhdzgZ3SBWALgbQKfunw-OwvYtn7Qe3VY/edit</span></td><td>担当FAが途中で変わった契約の最新情報（申請フォームの回答）</td></tr>
-<tr><td class="pri">4</td><td><strong>RL360契約移管手続き</strong><br><span style="font-size:9px;color:#888;word-break:break-all">https://docs.google.com/spreadsheets/d/1o6O4_a131PECOMhHPtHenRDAhfI76oZhrrAzE9D4IW0/edit</span></td><td>他社から弊社に移管された契約の情報（申請フォームの回答）</td></tr>
-<tr><td class="pri">5</td><td><strong>お客様管理フォーム</strong><br><span style="font-size:9px;color:#888;word-break:break-all">https://docs.google.com/spreadsheets/d/1NsneM_D8UY5CMgIZnEcp_ehH-P6bDvesyw-hg9yGg5s/edit</span></td><td>ご契約者様サポートラインのアンケート入力データ（お客様ご本人が入力した内容）</td></tr>
-<tr><td class="pri">6</td><td><strong>🔄 公開シート配布履歴（新設）</strong><br><span style="font-size:9px;color:#888">代理店5社に配布済みの公開シートの「詳細データ」から自動収集</span></td><td>過去に代理店へ配布した公開シートを読み込み、そこに載っていた紹介者名を復元用に使う（最終フォールバック）</td></tr>
+<tr><td class="pri" style="padding:3px 6px;font-size:11px">1</td><td style="padding:3px 6px;line-height:1.35"><strong>🔐 手動紐付けマスタ（新設）</strong><br><span style="font-size:8px;color:#888">集約スプシ内シート</span></td><td style="padding:3px 6px;font-size:9.5px;line-height:1.4">BOが確定入力する永続保管シート。エルメ復元の影響を受けない唯一の"書いたら消えない"場所</td></tr>
+<tr><td class="pri" style="padding:3px 6px;font-size:11px">2</td><td style="padding:3px 6px;line-height:1.35"><strong>全契約集計</strong><br><span style="font-size:8px;color:#888;word-break:break-all">docs.google.com/spreadsheets/d/10lG9UXo3H9kaZXlxFc0vHetz1TzxLqcDZ13tVE5BjqU/edit</span></td><td style="padding:3px 6px;font-size:9.5px;line-height:1.4">弊社管理の契約リスト。社内メインデータ</td></tr>
+<tr><td class="pri" style="padding:3px 6px;font-size:11px">3</td><td style="padding:3px 6px;line-height:1.35"><strong>イントロデューサー変更申請</strong><br><span style="font-size:8px;color:#888;word-break:break-all">docs.google.com/spreadsheets/d/1mVGCUSLBpnlhdzgZ3SBWALgbQKfunw-OwvYtn7Qe3VY/edit</span></td><td style="padding:3px 6px;font-size:9.5px;line-height:1.4">担当FAが変わった契約の最新情報</td></tr>
+<tr><td class="pri" style="padding:3px 6px;font-size:11px">4</td><td style="padding:3px 6px;line-height:1.35"><strong>RL360契約移管手続き</strong><br><span style="font-size:8px;color:#888;word-break:break-all">docs.google.com/spreadsheets/d/1o6O4_a131PECOMhHPtHenRDAhfI76oZhrrAzE9D4IW0/edit</span></td><td style="padding:3px 6px;font-size:9.5px;line-height:1.4">他社から弊社に移管された契約の情報</td></tr>
+<tr><td class="pri" style="padding:3px 6px;font-size:11px">5</td><td style="padding:3px 6px;line-height:1.35"><strong>お客様管理フォーム</strong><br><span style="font-size:8px;color:#888;word-break:break-all">docs.google.com/spreadsheets/d/1NsneM_D8UY5CMgIZnEcp_ehH-P6bDvesyw-hg9yGg5s/edit</span></td><td style="padding:3px 6px;font-size:9.5px;line-height:1.4">ご契約者様サポートラインのアンケート入力データ</td></tr>
+<tr><td class="pri" style="padding:3px 6px;font-size:11px">6</td><td style="padding:3px 6px;line-height:1.35"><strong>🔄 公開シート配布履歴（新設）</strong><br><span style="font-size:8px;color:#888">代理店5社の公開シートの詳細データから自動収集</span></td><td style="padding:3px 6px;font-size:9.5px;line-height:1.4">過去配布シートから紹介者名を復元用に使う（最終フォールバック）</td></tr>
 </tbody></table>
 </div>
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
