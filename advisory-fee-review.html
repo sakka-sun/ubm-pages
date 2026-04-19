@@ -210,43 +210,53 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 4: それでも残る未納の存在 -->
+<!-- Slide 4: 本当の問題＝"後追い追加"で過去月明細が崩れる -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">03</div><div class="sc">REMAINING GAP</div>
-<div class="tt" contenteditable="true">復旧しても残る「未納」の存在</div>
+<div class="sn">03</div><div class="sc">THE REAL PROBLEM</div>
+<div class="tt" contenteditable="true">本当の問題は「過去月明細への後追い追加」</div>
 <div class="dl dl-b"></div>
 
-<p style="font-size:12px;margin-top:10px;line-height:1.8" contenteditable="true">
-スプシ履歴からの復元で<strong>管理シートは元の状態に戻りました</strong>が、それでも以下のケースでは紐付けが成立せず、<span class="hl">報酬配布時に未納扱い</span>となる契約が残ります。
+<p style="font-size:12px;margin-top:8px;line-height:1.7" contenteditable="true">
+<strong>未納（紐付かない契約）が存在すること自体は問題ではありません。</strong>古い契約や情報欠損で紐付け不可の行は常に一定数存在します。本当に問題なのは、<span class="hl">翌月以降の処理で過去契約が後から見つかり、既に代理店へ公開した前月明細に追加で載ってきてしまう</span>ことです。
 </p>
 
+<div style="background:#fff5f5;border-left:4px solid #B80C2C;padding:12px 16px;margin-top:10px;border-radius:6px">
+<p style="font-size:12px;font-weight:900;color:#B80C2C;margin-bottom:6px">📉 実際に起きているシナリオ</p>
+<p style="font-size:11.5px;line-height:1.75;color:#1a1a2e">
+① 3月分の報酬明細を代理店Aに公開（紐付け不可の契約Xは載っていない）<br>
+② 4月処理時、マスタに情報が追加されて契約Xが紐付けできるようになる<br>
+③ <strong>4月分の明細に「契約X（3月分）」が追加で載ってくる</strong><br>
+④ 代理店Aから見ると、<span style="color:#B80C2C;font-weight:700">3月に公開された明細と、4月に見る3月分の数字が食い違う</span>
+</p>
+</div>
+
 <div class="cause-grid" style="margin-top:10px">
-<div class="cause-card" style="border-color:#e6a817">
-<div class="cause-num" style="color:#e6a817">未納ケース 1</div>
-<div class="cause-title">復元前の月で配布済み</div>
-<div class="cause-body">復元が完了する前の月次配布で、紐付けが取れないまま「紹介者空白」で代理店配布した契約がある。過去の報酬明細には空欄として残っている</div>
+<div class="cause-card" style="border-color:#B80C2C">
+<div class="cause-num">何が起きる</div>
+<div class="cause-title">過去月明細が"確定"しない</div>
+<div class="cause-body">一度公開した明細が後から追加で書き換わる。代理店側は「いつの数字を信じればいいか分からない」状態になる</div>
 </div>
-<div class="cause-card" style="border-color:#e6a817">
-<div class="cause-num" style="color:#e6a817">未納ケース 2</div>
-<div class="cause-title">そもそもマスタに未登録</div>
-<div class="cause-body">古い契約（レガシー）で、どの4マスタにも紹介者情報が存在しない。BO手入力分も元々無い行。これは復元の対象外で、代理店からの申告待ち</div>
+<div class="cause-card" style="border-color:#B80C2C">
+<div class="cause-num">なぜ起きる</div>
+<div class="cause-title">紐付けタイミングと公開タイミングのズレ</div>
+<div class="cause-body">マスタ情報は随時追加される一方、代理店公開は月次で1回きり。後から紐付いた契約の扱いが定義されていない</div>
 </div>
-<div class="cause-card" style="border-color:#e6a817">
-<div class="cause-num" style="color:#e6a817">未納ケース 3</div>
-<div class="cause-title">列ずれ期のデータに残影響</div>
-<div class="cause-body">ロイヤル修正後に残ったズレが一部シートに波及した時期のデータで、証券番号とメールの対応が崩れている契約が混在している可能性</div>
+<div class="cause-card" style="border-color:#B80C2C">
+<div class="cause-num">影響</div>
+<div class="cause-title">代理店側の信頼性リスク</div>
+<div class="cause-body">「前に見た明細と違う」と感じさせてしまう。未納自体より、明細の不安定さのほうが信頼を損ねる</div>
 </div>
-<div class="cause-card" style="border-color:#e6a817">
-<div class="cause-num" style="color:#e6a817">未納ケース 4</div>
-<div class="cause-title">表記揺れによる検索失敗</div>
-<div class="cause-body">マスタ側の紹介者名表記が「鈴木光穂」「鈴木光穂(GH )」など揺れていると、同姓同名区別で同一人物扱いにならず、紐付けが取れない</div>
+<div class="cause-card" style="border-color:#B80C2C">
+<div class="cause-num">本来のあるべき姿</div>
+<div class="cause-title">月次明細は"スナップショット固定"</div>
+<div class="cause-body">公開時点での内容が確定。後から紐付いた過去月分は「追加差分」として別枠で明示し、元の明細は書き換えないのが理想</div>
 </div>
 </div>
 
 <div class="msg">
-<p contenteditable="true">完全復旧＝"消失前の状態に戻る"であって、"未納ゼロ"ではない。未納は別の仕組みで潰す必要がある</p>
+<p contenteditable="true">問題は未納の存在ではなく、過去月の明細が"後追いで追加されて変わる"こと</p>
 </div>
 </div>
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
