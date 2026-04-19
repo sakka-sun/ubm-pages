@@ -283,11 +283,48 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 6: 何ができるようになったか -->
+<!-- Slide 6: 検索ロジック（証券番号→メール→契約者） -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">05</div><div class="sc">WHAT'S NEW</div>
+<div class="sn">05</div><div class="sc">SEARCH LOGIC</div>
+<div class="tt" contenteditable="true">検索ロジック（証券番号→メール→契約者）</div>
+<div class="dl dl-b"></div>
+
+<p style="font-size:11.5px;margin-top:8px;line-height:1.7" contenteditable="true">②紐付け実行時、6マスタを横断しながら<strong>3段階のカスケード検索</strong>でマッチを試みます。前の段階でヒットしなかった行だけ次の段階に進み、信頼度の高いキーから順に判定します。</p>
+
+<div class="flow" style="margin-top:14px">
+<div class="fb new" style="min-width:130px"><strong>STEP 1</strong><small>証券番号で全マスタ検索</small></div>
+<div class="fa">→</div>
+<div class="fb fail" style="border-color:#e6a817;background:#fffbeb;color:#856404;min-width:100px">ヒットなし</div>
+<div class="fa">→</div>
+<div class="fb new" style="min-width:130px;border-color:#e6a817;background:#fffbeb"><strong>STEP 2</strong><small>メールで全マスタ検索</small></div>
+<div class="fa">→</div>
+<div class="fb fail" style="border-color:#e6a817;background:#fffbeb;color:#856404;min-width:100px">ヒットなし</div>
+<div class="fa">→</div>
+<div class="fb new" style="min-width:130px;border-color:#B80C2C;background:#fff5f5"><strong>STEP 3</strong><small>契約者名で検索</small></div>
+</div>
+
+<table class="tbl" style="margin-top:12px">
+<thead><tr><th style="width:50px">段階</th><th style="width:110px">検索キー</th><th>理由／信頼度</th><th style="width:120px">リスク</th></tr></thead>
+<tbody>
+<tr><td class="pri">1</td><td><strong>証券番号</strong></td><td>契約ごとに一意で不変。最も信頼できる紐付けキー</td><td>マスタ未登録だと空振り</td></tr>
+<tr><td class="pri" style="color:#e6a817">2</td><td><strong>メールアドレス</strong></td><td>証券番号でヒットしない場合のフォールバック。一人で複数契約を持つケースに対応</td><td>家族共有メール等で<br>別人にマッチするリスク</td></tr>
+<tr><td class="pri" style="color:#B80C2C">3</td><td><strong>契約者名</strong></td><td>最終フォールバック。証券番号もメールも無い行を救う</td><td>同姓同名での誤マッチが<br>最も起こりやすい</td></tr>
+</tbody></table>
+
+<div class="msg">
+<p contenteditable="true">信頼度の高いキーから順にヒットさせることで、誤マッチを最小化しつつ紐付け率を最大化</p>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 7: 何ができるようになったか -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">06</div><div class="sc">WHAT'S NEW</div>
 <div class="tt" contenteditable="true">何ができるようになったか（4つの能力）</div>
 <div class="dl dl-b"></div>
 
@@ -325,7 +362,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">06</div><div class="sc">REPORTS &amp; LOGS</div>
+<div class="sn">07</div><div class="sc">REPORTS &amp; LOGS</div>
 <div class="tt" contenteditable="true">レポート・差分の自動生成構造</div>
 <div class="dl dl-r"></div>
 
@@ -361,7 +398,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">07</div><div class="sc">STRUCTURAL CHALLENGE</div>
+<div class="sn">08</div><div class="sc">STRUCTURAL CHALLENGE</div>
 <div class="tt" contenteditable="true">現在抱える構造的な課題</div>
 <div class="dl dl-r"></div>
 
@@ -389,7 +426,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">08</div><div class="sc">3 HYPOTHESES</div>
+<div class="sn">09</div><div class="sc">3 HYPOTHESES</div>
 <div class="tt" contenteditable="true">なぜドリフトが起きるのか（3仮説）</div>
 <div class="dl dl-b"></div>
 
@@ -424,7 +461,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">09</div><div class="sc">REVIEW REQUEST</div>
+<div class="sn">10</div><div class="sc">REVIEW REQUEST</div>
 <div class="tt" contenteditable="true">佐藤さんへのレビュー依頼内容</div>
 <div class="dl dl-r"></div>
 
