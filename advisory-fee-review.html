@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>信託報酬集約シート システムレビュー依頼書</title>
+<title>信託報酬システム レビュー依頼書（2026年4月版）</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -15,9 +15,9 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 .geo2{position:absolute;top:-20px;right:-60px;width:160px;height:160px;border:2px solid rgba(255,255,255,.05);transform:rotate(25deg)}
 .geo3{position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;border:2px solid rgba(255,255,255,.05);transform:rotate(-10deg)}
 .wh .geo1{border-color:rgba(0,0,0,.04)}.wh .geo2{border-color:rgba(0,0,0,.03)}
-.ct{position:relative;z-index:1;padding:36px 48px;height:100%;display:flex;flex-direction:column}
-.sn{font-size:36px;font-weight:300;font-style:italic;color:#B80C2C;letter-spacing:4px}
-.sc{font-size:12px;font-weight:700;letter-spacing:2px;margin-top:2px}
+.ct{position:relative;z-index:1;padding:32px 44px;height:100%;display:flex;flex-direction:column}
+.sn{font-size:32px;font-weight:300;font-style:italic;color:#B80C2C;letter-spacing:4px}
+.sc{font-size:11px;font-weight:700;letter-spacing:2px;margin-top:2px}
 .dk .sc{color:rgba(255,255,255,.5)}.wh .sc{color:#888}
 .tt{font-size:22px;font-weight:900;margin-top:6px;line-height:1.4}
 .dl{width:60px;height:3px;margin:8px 0 0}
@@ -27,19 +27,19 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 
 /* Cover */
 .cov{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center}
-.cov h1{font-size:28px;font-weight:900;letter-spacing:3px;line-height:1.5}
+.cov h1{font-size:26px;font-weight:900;letter-spacing:2px;line-height:1.5}
 .cov-line{width:80px;height:3px;background:#B80C2C;margin:16px auto 0}
-.cov .sub{font-size:14px;color:rgba(255,255,255,.6);margin-top:14px;line-height:1.8}
-.cov .meta{font-size:11px;color:rgba(255,255,255,.4);margin-top:24px}
-.cov .meta span{margin:0 10px}
+.cov .sub{font-size:13px;color:rgba(255,255,255,.7);margin-top:14px;line-height:1.8}
+.cov .meta{font-size:10px;color:rgba(255,255,255,.4);margin-top:24px}
+.cov .meta span{margin:0 8px}
 
 /* Cards on dark */
-.card{background:#fff;color:#1a1a2e;border-radius:8px;padding:14px 18px;margin-top:8px}
+.card{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 16px;margin-top:8px}
 .card-red{border-left:4px solid #B80C2C}
 .card-ylw{border-left:4px solid #e6a817}
-.card-grn{border-left:4px solid #2e7d32}
+.card-grn{border-left:4px solid #16a34a;background:#f0fdf4;color:#14532d}
 .card-blu{border-left:4px solid #1565c0}
-.card p{font-size:12px;line-height:1.7;margin-top:3px}
+.card p{font-size:11.5px;line-height:1.7;margin-top:3px}
 .card-title{font-size:13px;font-weight:900;margin-bottom:4px}
 
 /* Tags */
@@ -47,78 +47,93 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 .tg-hi{background:#f8d7da;color:#721c24}
 .tg-md{background:#ffeeba;color:#856404}
 .tg-lo{background:#d4edda;color:#155724}
-.tg-done{background:#d4edda;color:#155724}
-.tg-open{background:#ffeeba;color:#856404}
 
-/* Table on dark */
-.tbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px;background:#fff;color:#1a1a2e;border-radius:6px;overflow:hidden}
-.tbl th{background:#B80C2C;color:#fff;padding:7px 10px;text-align:left;font-weight:700;font-size:11px}
-.wh .tbl th{background:#0f3460}
-.tbl td{padding:6px 10px;border-bottom:1px solid #e8e8e8;font-size:12px}
-.tbl tr:nth-child(even) td{background:#f8f9fa}
-.pri{font-weight:900;color:#B80C2C;text-align:center;font-size:15px}
+/* Timeline */
+.tl{margin-top:10px}
+.tl-row{display:flex;gap:12px;margin-bottom:8px;align-items:flex-start}
+.tl-n{background:#B80C2C;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.tl-n.ok{background:#16a34a}
+.tl-b{background:#fff;color:#1a1a2e;border-radius:6px;padding:8px 12px;flex:1;font-size:11.5px;line-height:1.6}
+.tl-b.ok{background:#f0fdf4;color:#14532d;border-left:3px solid #16a34a}
+.tl-b strong{display:block;margin-bottom:2px;font-size:12px}
 
 /* Flow */
-.flow{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
-.fb{background:#fff;color:#1a1a2e;border:1px solid #ddd;border-radius:8px;padding:8px 14px;text-align:center;font-size:11px;font-weight:700;min-width:90px}
+.flow{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.fb{background:#fff;color:#1a1a2e;border:1px solid #ddd;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;min-width:90px}
 .wh .fb{background:#f0f4f8;border-color:#d0d8e0}
 .fb small{display:block;font-size:9px;font-weight:400;margin-top:2px;color:#888}
-.fb.fail{border-color:#B80C2C;color:#B80C2C;background:#fff5f5}
+.fb.new{border-color:#B80C2C;border-width:2px;background:#fff5f5}
 .fa{font-size:16px;color:#B80C2C;font-weight:900}
-
-/* Checklist */
-.cl{list-style:none;margin-top:8px}
-.cl li{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #eee;font-size:12px;line-height:1.6}
-.cl li:last-child{border-bottom:none}
-.ci{color:#2e7d32;font-weight:900;flex-shrink:0;font-size:14px}
-
-/* Questions */
-.q-grid{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.q-card{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 16px;display:flex;gap:12px;align-items:flex-start}
-.q-num{background:#B80C2C;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.q-body{flex:1}
-.q-title{font-size:13px;font-weight:900;margin-bottom:2px}
-.q-desc{font-size:11px;color:#555;line-height:1.6}
-
-/* Proposals */
-.props{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.pc{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 14px;border-top:3px solid #B80C2C}
-.pc-n{font-size:10px;color:#B80C2C;font-weight:700;margin-bottom:2px;letter-spacing:1px}
-.pc-t{font-size:12px;font-weight:900;margin-bottom:3px}
-.pc-b{font-size:10px;line-height:1.6;color:#555}
-
-/* Cause cards */
-.cause-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.cause-card{background:#fff;color:#1a1a2e;border-radius:8px;padding:14px 16px;border-left:4px solid #B80C2C}
-.cause-num{font-size:11px;color:#B80C2C;font-weight:700}
-.cause-title{font-size:13px;font-weight:900;margin:2px 0 4px}
-.cause-body{font-size:11px;line-height:1.6;color:#555}
 
 /* Status split */
 .status-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.status-col h3{font-size:14px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.status-col h3{font-size:13px;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:6px}
 .status-col ul{list-style:none}
-.status-col li{font-size:11px;line-height:1.6;padding:4px 0;border-bottom:1px solid #eee;display:flex;gap:6px}
+.status-col li{font-size:11px;line-height:1.55;padding:4px 0;border-bottom:1px solid #eee;display:flex;gap:6px}
 .status-col li:last-child{border-bottom:none}
 .s-icon{flex-shrink:0;font-size:13px}
 
-/* Next steps */
-.ns-list{margin-top:16px;max-width:640px}
-.ns-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.ns-num{background:#B80C2C;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.ns-text{font-size:13px;line-height:1.7}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px;background:#fff;color:#1a1a2e;border-radius:6px;overflow:hidden}
+.tbl th{background:#B80C2C;color:#fff;padding:6px 9px;text-align:left;font-weight:700;font-size:10.5px}
+.wh .tbl th{background:#0f3460}
+.tbl td{padding:5px 9px;border-bottom:1px solid #e8e8e8}
+.tbl tr:nth-child(even) td{background:#f8f9fa}
+.pri{font-weight:900;color:#B80C2C;text-align:center;font-size:13px}
 
-/* Highlight */
-.hl{background:#fff3cd;color:#856404;padding:1px 6px;border-radius:3px}
+/* Cause cards */
+.cause-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.cause-card{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 14px;border-left:4px solid #B80C2C}
+.cause-num{font-size:10px;color:#B80C2C;font-weight:700;letter-spacing:1px}
+.cause-title{font-size:12px;font-weight:900;margin:2px 0 4px}
+.cause-body{font-size:10.5px;line-height:1.6;color:#555}
+
+/* Proposal grid */
+.props{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.pc{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 14px;border-top:3px solid #B80C2C}
+.pc-n{font-size:10px;color:#B80C2C;font-weight:700;margin-bottom:2px;letter-spacing:1px}
+.pc-t{font-size:12px;font-weight:900;margin-bottom:3px}
+.pc-b{font-size:10.5px;line-height:1.6;color:#555}
+
+/* Capability boxes */
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.cap{background:#fff;color:#1a1a2e;border-radius:8px;padding:12px 14px;border-left:4px solid #16a34a}
+.cap-i{font-size:18px;margin-bottom:4px}
+.cap-t{font-size:12.5px;font-weight:900;margin-bottom:3px}
+.cap-b{font-size:10.5px;line-height:1.6;color:#555}
+
+/* Question cards */
+.q-grid{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.q-card{background:#fff;color:#1a1a2e;border-radius:8px;padding:10px 14px;display:flex;gap:10px;align-items:flex-start}
+.q-num{background:#B80C2C;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.q-body{flex:1}
+.q-title{font-size:12px;font-weight:900;margin-bottom:2px}
+.q-desc{font-size:10.5px;color:#555;line-height:1.55}
+
+/* Next steps list */
+.ns-list{margin-top:16px;max-width:680px}
+.ns-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.ns-num{background:#B80C2C;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.ns-text{font-size:12.5px;line-height:1.7}
 
 /* Message box */
-.msg{background:rgba(184,12,44,.1);border:1px solid rgba(184,12,44,.3);border-radius:8px;padding:12px 16px;margin-top:12px;text-align:center}
+.msg{background:rgba(184,12,44,.1);border:1px solid rgba(184,12,44,.3);border-radius:8px;padding:10px 14px;margin-top:10px;text-align:center}
 .wh .msg{background:#fff5f5;border-color:#f0c0c0}
-.msg p{font-size:13px;font-weight:700;color:#B80C2C}
+.msg p{font-size:12px;font-weight:700;color:#B80C2C}
+.msg.ok{background:#f0fdf4;border-color:#bbf7d0}
+.msg.ok p{color:#15803d}
 
-/* Before/After */
-.bef{color:#c62828;text-decoration:line-through;opacity:.7}
-.aft{color:#2e7d32;font-weight:700}
+/* KPI stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.stat{background:#fff;color:#1a1a2e;border-radius:8px;padding:10px 8px;text-align:center}
+.stat-n{font-size:22px;font-weight:900;color:#B80C2C;line-height:1.1}
+.stat.ok .stat-n{color:#16a34a}
+.stat.wn .stat-n{color:#e6a817}
+.stat-l{font-size:10px;margin-top:4px;line-height:1.4;color:#555}
+
+/* Highlight */
+.hl{background:#fff3cd;color:#856404;padding:1px 6px;border-radius:3px;font-weight:700}
+.hl-g{background:#d4edda;color:#155724;padding:1px 6px;border-radius:3px;font-weight:700}
 </style>
 </head>
 <body>
@@ -127,276 +142,348 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct"><div class="cov">
-<h1 contenteditable="true">信託報酬集約シート<br>診断結果レポート</h1>
+<h1 contenteditable="true">信託報酬システム<br>レビュー依頼書</h1>
 <div class="cov-line"></div>
-<div class="sub" contenteditable="true">真の原因の特定と実施済み改善策の全記録</div>
-<div class="meta"><span>作成: 高本咲佳</span><span>|</span><span>2026年4月（診断後更新）</span><span>|</span><span>共有先: 大越さん・佐藤さん等</span></div>
+<div class="sub" contenteditable="true">エルメ列ずれ事故の真因と復旧／<br>できるようになったこと／そして残る構造的課題</div>
+<div class="meta"><span>作成: 高本咲佳</span><span>|</span><span>2026年4月19日</span><span>|</span><span>共有先: 大越さん・佐藤さん</span></div>
 </div></div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 2: なぜこのレビューが必要か -->
+<!-- Slide 2: エグゼクティブサマリー -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">01</div><div class="sc">WHY THIS REVIEW</div>
-<div class="tt" contenteditable="true">なぜこのレビューが必要か</div>
+<div class="sn">01</div><div class="sc">EXECUTIVE SUMMARY</div>
+<div class="tt" contenteditable="true">このレビューで伝えたい3つのこと</div>
 <div class="dl dl-b"></div>
-<p style="font-size:13px;margin-top:14px;line-height:1.8" contenteditable="true">現在、信託報酬の集約・紐付け・代理店配布に関する仕組みを<strong>一人で設計・構築・運用</strong>しています。第三者によるチェック体制がなく、設計やロジックの不備に気づけないまま本番運用しているリスクがあります。</p>
-<p style="font-size:13px;margin-top:8px;line-height:1.8" contenteditable="true">実際に、紹介者の誤紐付けやデータ空白の問題が発見されました。紹介者の紐付けミスは<span class="hl">報酬支払い先の誤りに直結</span>するため、金銭的にも重要度が非常に高い業務です。</p>
+
+<div class="stats" style="margin-top:14px">
+<div class="stat ok"><div class="stat-n">完全復旧</div><div class="stat-l">エルメ列ずれ事故<br>スプシ履歴から再配置</div></div>
+<div class="stat ok"><div class="stat-n">①②③④</div><div class="stat-l">月次フロー一本道化<br>＋自動診断4種統合</div></div>
+<div class="stat wn"><div class="stat-n">一部未納</div><div class="stat-l">復旧後も紐付けが<br>取れない契約が残存</div></div>
+<div class="stat wn"><div class="stat-n">ドリフト</div><div class="stat-l">AI改修で業務ルールが<br>少しずつ忘れられていく</div></div>
+</div>
+
+<p style="font-size:12px;margin-top:14px;line-height:1.8" contenteditable="true">
+<strong>1. 事象の真因:</strong> BO手入力消失の裏側には<span class="hl">エルメ側の列ずれ仕様変更</span>があり、ロイヤルが列構成を修正したが<span class="hl">修正後の構成にもズレが残っていた</span>ことが根本原因。復元に時間がかかり、その間も月次配布は続いていた。<br>
+<strong>2. 実装した解決策:</strong> 6マスタ横断検索・手動紐付けマスタ・③整合性チェック4種を統合し、月次①②③④の一本道を構築。<span class="hl-g">何が起きたか／何が空白か／何が変わったか</span>が全て自動でレポート出力される体制へ。<br>
+<strong>3. それでも残る課題:</strong> 復旧後も<span class="hl">未納＝紐付け不成立の契約</span>が残存。さらに根深いのが<span class="hl">AI駆動開発のドリフト</span>—スクリプトを改修するたび過去のルールが少しずつ忘れられていく問題。
+</p>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 3: 真の根本原因 -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">02</div><div class="sc">TRUE ROOT CAUSE</div>
+<div class="tt" contenteditable="true">診断で判明した真の根本原因</div>
+<div class="dl dl-r"></div>
+
+<p style="font-size:11.5px;margin-top:8px;opacity:.85;line-height:1.7" contenteditable="true">当初は「BOの手入力データ2,500行が消失」と見えていましたが、診断を進めた結果、消失そのものは<strong>表層の現象</strong>で、真の根本原因は別にありました。</p>
+
+<div class="tl" style="margin-top:10px">
+<div class="tl-row">
+<div class="tl-n">1</div>
+<div class="tl-b"><strong>エルメ（LINEシステム）側で列位置が勝手にずれた</strong>アンケート回答シートの列構成が仕様変更で変動。社内の集約ロジックが読んでいる列と実際のデータ列が不一致になった</div>
+</div>
+<div class="tl-row">
+<div class="tl-n">2</div>
+<div class="tl-b"><strong>ロイヤルが列構成を修正</strong>ずれた列を元に戻していただいたが、<span style="color:#B80C2C;font-weight:700">修正後の構成にも一部ズレが残っていた</span>ため、紐付けが正しく戻らない行が生じた</div>
+</div>
+<div class="tl-row">
+<div class="tl-n">3</div>
+<div class="tl-b"><strong>エルメ自動バックアップ復元で手入力が上書き</strong>ロイヤル修正後、エルメ側の自動バックアップが走り、BOが管理シートへ直接手入力していた紹介者名が上書きで消失</div>
+</div>
+<div class="tl-row">
+<div class="tl-n">4</div>
+<div class="tl-b"><strong>復元に時間がかかった</strong>スプシ変更履歴からの復旧手法確立まで時間を要し、<span style="color:#B80C2C;font-weight:700">その間も月次配布は続いていた</span>ため、一部契約の未納（紐付け不成立のまま配布）が発生</div>
+</div>
+<div class="tl-row">
+<div class="tl-n ok">✓</div>
+<div class="tl-b ok"><strong>復旧完了</strong>スプシの変更履歴から消失前のデータを発掘→関数で証券番号マッチして正しい行に再配置→<strong>管理シートは消失前の状態に完全復元</strong></div>
+</div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 4: それでも残る未納の存在 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">03</div><div class="sc">REMAINING GAP</div>
+<div class="tt" contenteditable="true">復旧しても残る「未納」の存在</div>
+<div class="dl dl-b"></div>
+
+<p style="font-size:12px;margin-top:10px;line-height:1.8" contenteditable="true">
+スプシ履歴からの復元で<strong>管理シートは元の状態に戻りました</strong>が、それでも以下のケースでは紐付けが成立せず、<span class="hl">報酬配布時に未納扱い</span>となる契約が残ります。
+</p>
+
+<div class="cause-grid" style="margin-top:10px">
+<div class="cause-card" style="border-color:#e6a817">
+<div class="cause-num" style="color:#e6a817">未納ケース 1</div>
+<div class="cause-title">復元前の月で配布済み</div>
+<div class="cause-body">復元が完了する前の月次配布で、紐付けが取れないまま「紹介者空白」で代理店配布した契約がある。過去の報酬明細には空欄として残っている</div>
+</div>
+<div class="cause-card" style="border-color:#e6a817">
+<div class="cause-num" style="color:#e6a817">未納ケース 2</div>
+<div class="cause-title">そもそもマスタに未登録</div>
+<div class="cause-body">古い契約（レガシー）で、どの4マスタにも紹介者情報が存在しない。BO手入力分も元々無い行。これは復元の対象外で、代理店からの申告待ち</div>
+</div>
+<div class="cause-card" style="border-color:#e6a817">
+<div class="cause-num" style="color:#e6a817">未納ケース 3</div>
+<div class="cause-title">列ずれ期のデータに残影響</div>
+<div class="cause-body">ロイヤル修正後に残ったズレが一部シートに波及した時期のデータで、証券番号とメールの対応が崩れている契約が混在している可能性</div>
+</div>
+<div class="cause-card" style="border-color:#e6a817">
+<div class="cause-num" style="color:#e6a817">未納ケース 4</div>
+<div class="cause-title">表記揺れによる検索失敗</div>
+<div class="cause-body">マスタ側の紹介者名表記が「鈴木光穂」「鈴木光穂(GH )」など揺れていると、同姓同名区別で同一人物扱いにならず、紐付けが取れない</div>
+</div>
+</div>
+
 <div class="msg">
-<p contenteditable="true">紐付けミス ＝ 報酬が違う代理店に渡る ＝ 金銭事故</p>
+<p contenteditable="true">完全復旧＝"消失前の状態に戻る"であって、"未納ゼロ"ではない。未納は別の仕組みで潰す必要がある</p>
 </div>
-<p style="font-size:13px;margin-top:12px;line-height:1.8" contenteditable="true">この資料で現状の仕組みと発見された課題を説明し、設計の妥当性について<strong>第三者レビュー</strong>をお願いしたいです。</p>
 </div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 3: 信託報酬集約の仕組み -->
+<!-- Slide 5: 現在のスクリプト構造 -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">02</div><div class="sc">HOW IT WORKS</div>
-<div class="tt" contenteditable="true">信託報酬集約の仕組み</div>
+<div class="sn">04</div><div class="sc">CURRENT ARCHITECTURE</div>
+<div class="tt" contenteditable="true">現在のスクリプト構造（月次①②③④）</div>
 <div class="dl dl-b"></div>
-<p style="font-size:13px;margin-top:12px;line-height:1.8" contenteditable="true">毎月、信託会社（ドミニオン）からExcelで報酬データが届きます。このExcelには「証券番号・契約者名・報酬額」はありますが、報酬配布に必要な<strong>「紹介者（担当FA）・アドバイザーコード・一次代理店」</strong>が含まれていません。</p>
-<p style="font-size:13px;margin-top:6px;line-height:1.8" contenteditable="true">この3項目がないと、<strong>誰の実績として計上するか・どの代理店に配布するか</strong>が判断できません。そのため、社内の4つのマスタデータから証券番号をキーに自動で紐付けしています。</p>
-<div class="flow" style="margin-top:16px">
-<div class="fb">Excelデータ<small>証券番号・契約者名・報酬額</small></div>
-<div class="fa">→</div>
-<div class="fb" style="border-color:#B80C2C;border-width:2px">4マスタ検索<small>紹介者・AC・代理店を補完</small></div>
-<div class="fa">→</div>
-<div class="fb">集約シート<small>全情報が揃った状態</small></div>
-<div class="fa">→</div>
-<div class="fb">報酬明細配布<small>各代理店へ</small></div>
-</div>
-<div class="msg" style="margin-top:16px">
-<p contenteditable="true">この「4マスタ検索」の部分に不備があり、間違った紹介者が紐付くケースが発見されました</p>
-</div>
-</div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
-</div>
 
-<!-- Slide 4: 4マスタと検索ロジック -->
-<div class="slide wh">
-<div class="geo1"></div><div class="geo2"></div>
-<div class="ct">
-<div class="sn">03</div><div class="sc">DATA SOURCES &amp; LOGIC</div>
-<div class="tt" contenteditable="true">4つのマスタと検索ロジック</div>
-<div class="dl dl-b"></div>
-<p style="font-size:12px;margin-top:8px;line-height:1.7" contenteditable="true">契約データが複数のフォーム・シートに分散しているため、1つのマスタでは全契約をカバーできません。以下の優先順で横断検索しています。</p>
-<table class="tbl">
-<thead><tr><th style="width:36px">優先</th><th>マスタ名</th><th>役割</th><th>対象シート</th><th>検索キー</th></tr></thead>
-<tbody>
-<tr><td class="pri">1</td><td contenteditable="true">全契約集計</td><td contenteditable="true">全契約データの統合。最も網羅性が高い</td><td>1枚目</td><td>証券番号→メール→氏名</td></tr>
-<tr><td class="pri">2</td><td contenteditable="true">イントロ変更申請</td><td contenteditable="true">FA変更があった契約の最新情報</td><td>フォームの回答 1</td><td>証券番号→メール</td></tr>
-<tr><td class="pri">3</td><td contenteditable="true">RL360契約移管</td><td contenteditable="true">他社から移管してきた契約</td><td>フォームの回答 1</td><td>証券番号→メール</td></tr>
-<tr><td class="pri">4</td><td contenteditable="true">お客様管理フォーム</td><td contenteditable="true">お客様自身の入力データ</td><td>管理シート</td><td>証券番号→メール</td></tr>
-</tbody></table>
+<p style="font-size:11.5px;margin-top:6px;line-height:1.7" contenteditable="true">毎月ドミニオンからExcelが届く→社内4マスタ＋手動紐付けマスタ＋公開履歴の計6マスタで紐付け→配布前に整合性チェック→代理店ごとに報酬明細生成、という一本道に再構築しました。</p>
+
 <div class="flow" style="margin-top:12px">
-<div class="fb">証券番号で全マスタ</div><div class="fa">→</div>
-<div class="fb fail">ヒットなし</div><div class="fa">→</div>
-<div class="fb">メールで全マスタ</div><div class="fa">→</div>
-<div class="fb fail">ヒットなし</div><div class="fa">→</div>
-<div class="fb">氏名で検索</div>
-</div>
-</div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="fb">① 変換<small>Excel→スプシ</small></div><div class="fa">→</div>
+<div class="fb new">② 紐付け<small>6マスタ横断＋文字揺れ修正</small></div><div class="fa">→</div>
+<div class="fb new">③ 整合性<small>4診断一括実行</small></div><div class="fa">→</div>
+<div class="fb">④ 明細生成<small>代理店ごと</small></div>
 </div>
 
-<!-- Slide 5: 診断で判明した不備（更新版） -->
-<div class="slide dk">
-<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
-<div class="ct">
-<div class="sn">04</div><div class="sc">ISSUES FOUND (DIAGNOSED)</div>
-<div class="tt" contenteditable="true">診断で判明した真の不備</div>
-<div class="dl dl-r"></div>
-<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">紹介者欠損診断の結果、当初想定していた「ヘッダー自動検出ミス」は実際には発生していませんでした（管理シートは固定列方式で正しく読まれていた）。代わりに以下3つが真の原因でした。</p>
-<div class="card card-red" style="margin-top:10px">
-<p><span class="tg tg-hi">影響: 最高</span> <strong>BOの手入力データ2,500行が消失</strong></p>
-<p>エルメ（LINEシステム）仕様変更→列修正→エルメバックアップ復元の三段重なりにより、管理シートに手入力していた紹介者情報が上書き消失。古い契約ほど影響が大きく、物理的に復元不可能。</p>
-</div>
-<div class="card card-ylw">
-<p><span class="tg tg-md">影響: 中</span> <strong>管理シート「正しい紹介者名」列の未入力</strong></p>
-<p>BOが手入力で確定させるべき「正しい紹介者名」列が未入力の行が多数存在。この列が空のため、紹介者情報が取得できないケースが発生していた。</p>
-</div>
-<div class="card card-ylw">
-<p><span class="tg tg-lo">影響: 中</span> <strong>公開シート配布履歴の未活用</strong></p>
-<p>過去に代理店へ配布した公開シートには紹介者名が残っていたが、システムが自動参照していなかったため、手入力が失われた行もそのまま空白のままだった。</p>
-</div>
+<table class="tbl" style="margin-top:10px">
+<thead><tr><th style="width:40px">優先</th><th>マスタ名</th><th>役割</th></tr></thead>
+<tbody>
+<tr><td class="pri">1</td><td>🔐 手動紐付けマスタ（新設）</td><td>BOが確定入力する永続保管シート。エルメ復元の影響を受けない</td></tr>
+<tr><td class="pri">2</td><td>全契約集計</td><td>全契約データの統合（最も網羅性が高い）</td></tr>
+<tr><td class="pri">3</td><td>イントロ変更申請</td><td>FA変更があった契約の最新情報</td></tr>
+<tr><td class="pri">4</td><td>RL360契約移管</td><td>他社から移管してきた契約</td></tr>
+<tr><td class="pri">5</td><td>お客様管理フォーム</td><td>お客様自身の入力データ（未検証）</td></tr>
+<tr><td class="pri">6</td><td>🔄 公開シート配布履歴（新設）</td><td>過去配布済みの公開シートから自動復元（最終フォールバック）</td></tr>
+</tbody></table>
 </div>
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 6: なぜ起きたか（更新版） -->
-<div class="slide dk">
-<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
-<div class="ct">
-<div class="sn">05</div><div class="sc">ROOT CAUSES</div>
-<div class="tt" contenteditable="true">なぜ起きたか（構造的な原因）</div>
-<div class="dl dl-r"></div>
-<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">個別のバグではなく、データ管理の構造的弱点4つが重なって事象が発生しました。</p>
-<div class="cause-grid">
-<div class="cause-card">
-<div class="cause-num">原因 1</div>
-<div class="cause-title" contenteditable="true">BO手入力の永続保管場所がなかった</div>
-<div class="cause-body" contenteditable="true">BOが手入力した紹介者情報を、エルメ復元の影響を受けない安全な場所に保管する仕組みが存在せず、管理シート直接入力のみが運用されていた。</div>
-</div>
-<div class="cause-card">
-<div class="cause-num">原因 2</div>
-<div class="cause-title" contenteditable="true">外部システム依存のリスク</div>
-<div class="cause-body" contenteditable="true">エルメ（LINEシステム）の仕様変更やバックアップ復元が、社内の手入力データを上書きしてしまう構造だった。外部イベントへの耐性が低い。</div>
-</div>
-<div class="cause-card">
-<div class="cause-num">原因 3</div>
-<div class="cause-title" contenteditable="true">公開履歴の未活用</div>
-<div class="cause-body" contenteditable="true">代理店に配布済みの公開シートには紹介者名が残っているが、システムが参照していなかった。過去のデータ資産が活かされていない状態だった。</div>
-</div>
-<div class="cause-card">
-<div class="cause-num">原因 4</div>
-<div class="cause-title" contenteditable="true">診断・検出の仕組み不在</div>
-<div class="cause-body" contenteditable="true">「何が失われたか」「なぜ空白なのか」を自動で検出するツールがなく、事故の発見が遅れ、原因特定にも時間がかかっていた。</div>
-</div>
-</div>
-</div>
-<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
-</div>
-
-<!-- Slide 7: 実施済みの対応 -->
+<!-- Slide 6: 何ができるようになったか -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">06</div><div class="sc">ACTIONS TAKEN</div>
-<div class="tt" contenteditable="true">実施済みの対応 と 未解決の課題</div>
+<div class="sn">05</div><div class="sc">WHAT'S NEW</div>
+<div class="tt" contenteditable="true">何ができるようになったか（4つの能力）</div>
 <div class="dl dl-b"></div>
-<div class="status-grid">
-<div class="status-col">
-<h3><span style="color:#2e7d32">&#9679;</span> 対応済み</h3>
-<ul>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>🔐 手動紐付けマスタを新設</strong><br><span style="font-size:10px;color:#888">BO手入力の永続保管場所（エルメ復元の影響なし）</span></div></li>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>🔄 公開シート配布履歴を第6マスタ統合</strong><br><span style="font-size:10px;color:#888">453行を自動復元に成功（ボタン1つで完結）</span></div></li>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>🔍 診断・検出ツール群の整備</strong><br><span style="font-size:10px;color:#888">欠損診断・整合性チェック・差分・分布の4種</span></div></li>
-<li><span class="s-icon" style="color:#2e7d32">&#10003;</span><div contenteditable="true"><strong>📖 運用マニュアル2種を作成</strong><br><span style="font-size:10px;color:#888">機能マニュアル＋月次運用マニュアル（9フェーズ）</span></div></li>
-</ul>
+
+<div class="cap-grid">
+<div class="cap">
+<div class="cap-i">🔍</div>
+<div class="cap-t">何が空白か・なぜ空白かが一目で分かる</div>
+<div class="cap-b">③整合性チェックで紹介者欠損診断を実行。空欄行を9パターン（マスタ未登録／表記揺れ／列ずれ残影響 等）に自動分類し、専用シートに出力。未納の原因が瞬時に特定できる</div>
 </div>
-<div class="status-col">
-<h3><span style="color:#e6a817">&#9679;</span> 未解決（今後の課題）</h3>
-<ul>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>AC（アドバイザーコード）の自動補完</strong><br><span style="font-size:10px;color:#888">公開シート復元ではACが空のまま。紹介者マスタからの逆引き機能を検討</span></div></li>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>定期的な整合性チェックの自動化</strong><br><span style="font-size:10px;color:#888">週次・四半期での自動スケジュール実行</span></div></li>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>CRM移行による構造的解決</strong><br><span style="font-size:10px;color:#888">中長期タスク。信託報酬・契約統合の一元管理へ</span></div></li>
-<li><span class="s-icon" style="color:#e6a817">&#9888;</span><div contenteditable="true"><strong>2,500行の物理的消失は復元不可</strong><br><span style="font-size:10px;color:#888">過去データの一部は恒久的に空白のまま残る</span></div></li>
-</ul>
+<div class="cap">
+<div class="cap-i">⚖️</div>
+<div class="cap-t">同一契約で紹介者が分裂していないか検出</div>
+<div class="cap-b">紹介者整合性チェックで、同じ契約グループに別の紹介者名や空白が混在していないか自動検査。不一致0件が配布前の合格基準</div>
 </div>
+<div class="cap">
+<div class="cap-i">📊</div>
+<div class="cap-t">前月との差分が自動で可視化される</div>
+<div class="cap-b">前月バックアップ差分で、今回の紐付け更新で何が変わったか（新規／変更／削除）を全量出力。想定外の変更があれば配布前に気づける</div>
 </div>
+<div class="cap">
+<div class="cap-i">🔐</div>
+<div class="cap-t">BO手入力が二度と消えない永続保管</div>
+<div class="cap-b">手動紐付けマスタを集約スプシ内に新設。エルメ復元の影響を一切受けず、最優先マスタとして毎月自動参照される</div>
 </div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 8: レビューしてほしいこと -->
+<div class="msg ok">
+<p contenteditable="true">配布前に「何が起きて／何が空白で／何が変わったか」が全て自動レポート化される</p>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 7: レポート・差分の構築 -->
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">07</div><div class="sc">REVIEW REQUEST</div>
-<div class="tt" contenteditable="true">レビューしてほしいこと</div>
+<div class="sn">06</div><div class="sc">REPORTS &amp; LOGS</div>
+<div class="tt" contenteditable="true">レポート・差分の自動生成構造</div>
 <div class="dl dl-r"></div>
-<p style="font-size:12px;margin-top:10px;opacity:.8;line-height:1.7" contenteditable="true">以下の4点について、設計の妥当性や改善案をご意見いただきたいです。</p>
+
+<p style="font-size:11.5px;margin-top:8px;opacity:.85;line-height:1.7" contenteditable="true">②紐付け・③整合性チェックの実行時、それぞれが専用シートにタイムスタンプ付きでレポートを出力します。過去の全実行履歴が追跡可能です。</p>
+
+<div class="cause-grid" style="margin-top:10px">
+<div class="cause-card">
+<div class="cause-num">REPORT 1</div>
+<div class="cause-title">紹介者更新ログ</div>
+<div class="cause-body">②実行時、どの行に・どのマスタから・何を埋めたかを全件ログ化。色分け（青=メール／氏名マッチ、黄=不一致）で信頼度を可視化</div>
+</div>
+<div class="cause-card">
+<div class="cause-num">REPORT 2</div>
+<div class="cause-title">紹介者整合性チェック_YYYYMMDD</div>
+<div class="cause-body">同一契約グループで紹介者が分裂している行・空白混在している行を全量出力。配布前の合格基準は不整合0件</div>
+</div>
+<div class="cause-card">
+<div class="cause-num">REPORT 3</div>
+<div class="cause-title">紹介者欠損診断_YYYYMMDD</div>
+<div class="cause-body">空欄行を9パターンに自動分類。「マスタ未登録（レガシー）」は放置可、それ以外は要対応とトリアージされる</div>
+</div>
+<div class="cause-card">
+<div class="cause-num">REPORT 4</div>
+<div class="cause-title">バックアップ差分_YYYYMMDD</div>
+<div class="cause-body">②紐付け実行前の自動バックアップと比較し、変更／新規／削除の全件を出力。想定外の変更を事前検知</div>
+</div>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 8: 現在抱える課題（AIドリフト） -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">07</div><div class="sc">STRUCTURAL CHALLENGE</div>
+<div class="tt" contenteditable="true">現在抱える構造的な課題</div>
+<div class="dl dl-r"></div>
+
+<p style="font-size:11.5px;margin-top:8px;opacity:.85;line-height:1.7" contenteditable="true">信託報酬を含む業務スクリプト全般を、<strong>AI（Claude Code）と対話しながら日々改修</strong>しています。ここで「AIが過去の業務ルールを保持しきれず、スクリプトが少しずつ意図と違う方向に変わっていく」現象が起きています。</p>
+
+<div class="card card-red" style="margin-top:10px">
+<p class="card-title">🌀 気づかないドリフトのスパイラル</p>
+<p>・過去に決めた業務ルールが、別の改修のタイミングで消えかける</p>
+<p>・上書き更新の繰り返しで、当初の設計思想から外れていく</p>
+<p>・「このロジックは絶対触るな」と指示したはずの箇所が、気づかないうちに書き換わる</p>
+</div>
+
+<div class="msg">
+<p contenteditable="true">2,500行の消失事故も、根っこはこの「誰も全体を把握できていない」構造に起因していた</p>
+</div>
+
+<p style="font-size:11px;margin-top:8px;opacity:.8;line-height:1.7" contenteditable="true">
+今回の信託報酬は整合性チェック・差分レポート・マニュアル整備で<strong>システム単体の耐性</strong>は上げられましたが、<span class="hl">AI駆動開発そのものの構造的弱点</span>は残ったままです。
+</p>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 9: 根本原因の3仮説 -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">08</div><div class="sc">3 HYPOTHESES</div>
+<div class="tt" contenteditable="true">なぜドリフトが起きるのか（3仮説）</div>
+<div class="dl dl-b"></div>
+
+<p style="font-size:11.5px;margin-top:8px;line-height:1.7" contenteditable="true">個人のミスではなく、仕組みの欠陥として整理すると、原因は3つに収束します。これを<strong>同時に全部対処しないと</strong>、同じトラブルが繰り返し起きる構造だと考えています。</p>
+
+<div class="props">
+<div class="pc">
+<div class="pc-n">原因 1</div>
+<div class="pc-t">仕様が会話履歴にしか存在しない</div>
+<div class="pc-b">業務ルール・設計意図・過去の決定事項が、ドキュメントではなく「Claudeとの会話履歴」の中にしかない。新しい会話を始めるとAIは過去ルールを引き継げず、同じ指示を毎回やり直す必要がある</div>
+</div>
+<div class="pc">
+<div class="pc-n">原因 2</div>
+<div class="pc-t">変更後の機械検証が無い</div>
+<div class="pc-b">「前と同じ動きか」を自動で確かめるテストコードが存在しない。変更のたびに人の目視で整合性を確認するしかなく、細部の違いに気づけない</div>
+</div>
+<div class="pc">
+<div class="pc-n">原因 3</div>
+<div class="pc-t">レビュアーが高本1人しかいない</div>
+<div class="pc-b">AIが出力した差分を確認できるのが本人だけ。見落としがそのままバグになり、気づいた時には数週間前の改修との不整合が累積している</div>
+</div>
+</div>
+
+<div class="msg" style="margin-top:12px">
+<p contenteditable="true">「個人のミス」ではなく「仕組みの欠陥」として整理する — 仕組みで直す必要がある</p>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 10: 佐藤さんへのレビュー依頼 -->
+<div class="slide dk">
+<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
+<div class="ct">
+<div class="sn">09</div><div class="sc">REVIEW REQUEST</div>
+<div class="tt" contenteditable="true">佐藤さんへのレビュー依頼内容</div>
+<div class="dl dl-r"></div>
+
+<p style="font-size:11.5px;margin-top:8px;opacity:.85;line-height:1.7" contenteditable="true">AI駆動開発のドリフト問題を構造から解決するため、佐藤さんにシステム全体のレビューと改善提案をお願いしたいと考えています。依頼範囲は3つです。</p>
+
 <div class="q-grid">
 <div class="q-card">
-<div class="q-num">Q1</div>
+<div class="q-num">1</div>
 <div class="q-body">
-<div class="q-title" contenteditable="true">検索ロジックの妥当性</div>
-<div class="q-desc" contenteditable="true">4マスタを優先順で横断検索し、証券番号→メール→氏名の順でフォールバックする設計です。この優先順序と検索キーの選び方は妥当でしょうか？</div>
+<div class="q-title">信託報酬GAS（約6,500行）の設計意図と実装の整合性レビュー</div>
+<div class="q-desc">特に「月次①②③④フロー」と「手動紐付けマスタ永続化」の部分。設計意図と実装にズレが出ていないか、現状の構造に見落としが無いかを第三者目線でご確認いただきたい</div>
 </div>
 </div>
 <div class="q-card">
-<div class="q-num">Q2</div>
+<div class="q-num">2</div>
 <div class="q-body">
-<div class="q-title" contenteditable="true">メール検索の許容範囲</div>
-<div class="q-desc" contenteditable="true">証券番号でヒットしない場合にメールアドレスで検索していますが、別人の行にマッチするリスクがあります。メール検索はどこまで許容すべきでしょうか？廃止すべきですか？</div>
+<div class="q-title">AI駆動開発のドリフト課題への改善提案</div>
+<div class="q-desc">・仕様書（SSOT=Single Source of Truth）をどこに置き、どう維持するか　・自動テスト／整合性チェックをどう組み込むか　・AIと対話しながらの改修で、過去ルールが消えないようにする運用フロー</div>
 </div>
 </div>
 <div class="q-card">
-<div class="q-num">Q3</div>
+<div class="q-num">3</div>
 <div class="q-body">
-<div class="q-title" contenteditable="true">お客様入力データの信頼度</div>
-<div class="q-desc" contenteditable="true">お客様管理フォーム（管理シート）を紐付け元の1つとして使っていますが、お客様自身が紹介者名を間違えて入力しているケースがあります。このマスタの扱いをどう考えますか？</div>
-</div>
-</div>
-<div class="q-card">
-<div class="q-num">Q4</div>
-<div class="q-body">
-<div class="q-title" contenteditable="true">CRM移行時のデータ統合方針</div>
-<div class="q-desc" contenteditable="true">将来のCRM構築時に、この4マスタのデータをどう統合すべきですか？どのデータを「正」とし、どのような設計にすべきでしょうか？</div>
+<div class="q-title">他システムへの横展開時の設計指針</div>
+<div class="q-desc">ペンディングシート／解約対応／お客様管理フォーム／契約統合など、同じ構造のシステムが複数ある。信託報酬で確立した「①②③④＋整合性チェック」モデルを他システムに横展開する際の設計指針をいただきたい</div>
 </div>
 </div>
 </div>
 </div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 9: CRM設計で解決できること -->
-<div class="slide dk">
-<div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
-<div class="ct">
-<div class="sn" style="text-align:center">08</div>
-<div class="sc" style="text-align:center">CRM DESIGN PROPOSAL</div>
-<div class="tt" style="text-align:center;font-size:20px" contenteditable="true">CRM構築で構造的に解決できること</div>
-<div class="dl dl-w" style="margin:8px auto 0"></div>
-<p style="font-size:12px;margin-top:10px;text-align:center;opacity:.8;line-height:1.7" contenteditable="true">現在のスプレッドシート運用で発生している問題の多くは、DB化することで構造的に解消できます。</p>
-<div class="props" style="margin-top:12px">
-<div class="pc">
-<div class="pc-n">PROPOSAL 1</div>
-<div class="pc-t" contenteditable="true">証券番号を唯一のマスターキーに</div>
-<div class="pc-b" contenteditable="true">4SSにバラバラに存在する紹介者情報を、契約テーブルで1箇所に集約。同一証券番号の紹介者が食い違う問題が消える。</div>
-</div>
-<div class="pc">
-<div class="pc-n">PROPOSAL 2</div>
-<div class="pc-t" contenteditable="true">Single Source of Truth</div>
-<div class="pc-b" contenteditable="true">「このDBの値が正」という単一の真実源を定義。4マスタのどれが正しいか曖昧な状態を解消する。</div>
-</div>
-<div class="pc">
-<div class="pc-n">PROPOSAL 3</div>
-<div class="pc-t" contenteditable="true">変更履歴の記録</div>
-<div class="pc-b" contenteditable="true">紹介者変更時に「いつ・誰が・何から何に」を自動記録。現状は追跡不可能な変更履歴をDBで管理する。</div>
-</div>
-<div class="pc">
-<div class="pc-n">PROPOSAL 4</div>
-<div class="pc-t" contenteditable="true">検証ステータスの導入</div>
-<div class="pc-b" contenteditable="true">フォーム入力＝未検証、BO確認済み＝検証済み。お客様入力データの信頼度を明示し、未検証データの自動採用を防ぐ。</div>
-</div>
-</div>
-</div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
-</div>
-
-<!-- Slide 10: ネクストステップ -->
+<!-- Slide 11: お願いしたいこと -->
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct"><div class="cov">
-<div style="font-size:13px;color:rgba(255,255,255,.5);letter-spacing:3px;margin-bottom:10px">NEXT STEPS</div>
-<h1 style="font-size:24px;font-weight:900;letter-spacing:2px;line-height:1.6" contenteditable="true">お願いしたいこと</h1>
+<div style="font-size:12px;color:rgba(255,255,255,.5);letter-spacing:3px;margin-bottom:10px">NEXT STEPS</div>
+<h1 style="font-size:22px;font-weight:900;letter-spacing:2px;line-height:1.6" contenteditable="true">お願いしたいこと</h1>
 <div class="cov-line"></div>
-<div class="ns-list" style="text-align:left;margin-top:24px">
+<div class="ns-list" style="text-align:left;margin-top:20px">
 <div class="ns-item">
 <div class="ns-num">1</div>
-<div class="ns-text" contenteditable="true">本資料の内容をご確認いただき、検索ロジック・データ設計についてフィードバックをお願いいたします</div>
+<div class="ns-text" contenteditable="true">本資料の内容をご確認いただき、事象の理解に齟齬がないかフィードバックをお願いします</div>
 </div>
 <div class="ns-item">
 <div class="ns-num">2</div>
-<div class="ns-text" contenteditable="true">特にQ1〜Q4について、「この設計で問題ないか」「こうした方がいい」などのご意見をいただけると助かります</div>
+<div class="ns-text" contenteditable="true">レビュー範囲3点（GAS整合性／ドリフト対策／横展開指針）のうち、工数・優先度をご相談させてください</div>
 </div>
 <div class="ns-item">
 <div class="ns-num">3</div>
-<div class="ns-text" contenteditable="true">他のシステム（ペンディングシート、契約統合等）についても段階的にレビュー資料を作成予定です</div>
+<div class="ns-text" contenteditable="true">CRM移行（5月末目標）と並行する形になりますが、この構造的課題も早期に着手したいと考えています</div>
 </div>
 <div class="ns-item">
 <div class="ns-num">4</div>
-<div class="ns-text" contenteditable="true">CRM構築時のデータ移行設計にも、本資料の知見を活かしていただければ幸いです</div>
+<div class="ns-text" contenteditable="true">大越さんにもこの資料で共有し、AI駆動開発を安全に続けるための仕組み作りについて合意形成したいです</div>
 </div>
 </div>
 </div></div>
-<div class="ft">&copy; 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
 </body>
