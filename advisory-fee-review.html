@@ -330,74 +330,92 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 7: 何ができるようになったか -->
+<!-- Slide 7: 何ができるようになったか（4軸×12能力） -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
 <div class="sn">06</div><div class="sc">WHAT'S NEW</div>
-<div class="tt" contenteditable="true">何ができるようになったか（4つの能力）</div>
+<div class="tt" contenteditable="true">何ができるようになったか（12の能力を4軸で整理）</div>
 <div class="dl dl-b"></div>
 
-<div class="cap-grid">
-<div class="cap">
-<div class="cap-i">🔍</div>
-<div class="cap-t">何が空白か・なぜ空白かが一目で分かる</div>
-<div class="cap-b">③整合性チェックで紹介者欠損診断を実行。空欄行を9パターン（マスタ未登録／表記揺れ／列ずれ残影響 等）に自動分類し、専用シートに出力。未納の原因が瞬時に特定できる</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+<div style="background:#fff5f5;border-left:4px solid #B80C2C;border-radius:6px;padding:10px 12px">
+<div style="font-size:12px;font-weight:900;color:#B80C2C;margin-bottom:4px">🔍 検出する</div>
+<ul style="list-style:none;font-size:10.5px;line-height:1.55;color:#1a1a2e">
+<li>• 紹介者の空白を9パターンに自動分類</li>
+<li>• 同一契約で紹介者が分裂していないか検査</li>
+<li>• 別人紐付けはコンフリクトとして警告</li>
+</ul>
 </div>
-<div class="cap">
-<div class="cap-i">⚖️</div>
-<div class="cap-t">同一契約で紹介者が分裂していないか検出</div>
-<div class="cap-b">紹介者整合性チェックで、同じ契約グループに別の紹介者名や空白が混在していないか自動検査。不一致0件が配布前の合格基準</div>
+<div style="background:#f0fdf4;border-left:4px solid #16a34a;border-radius:6px;padding:10px 12px">
+<div style="font-size:12px;font-weight:900;color:#15803d;margin-bottom:4px">🔄 復元・補完する</div>
+<ul style="list-style:none;font-size:10.5px;line-height:1.55;color:#14532d">
+<li>• 公開シート配布履歴から自動復元（453行）</li>
+<li>• 紹介者・一次代理店の文字揺れを自動修正</li>
+<li>• 紹介者名から一次代理店を自動補完</li>
+</ul>
 </div>
-<div class="cap">
-<div class="cap-i">📊</div>
-<div class="cap-t">前月との差分が自動で可視化される</div>
-<div class="cap-b">前月バックアップ差分で、今回の紐付け更新で何が変わったか（新規／変更／削除）を全量出力。想定外の変更があれば配布前に気づける</div>
+<div style="background:#eff6ff;border-left:4px solid #1565c0;border-radius:6px;padding:10px 12px">
+<div style="font-size:12px;font-weight:900;color:#0f3460;margin-bottom:4px">🔐 守る</div>
+<ul style="list-style:none;font-size:10.5px;line-height:1.55;color:#1a1a2e">
+<li>• 手動紐付けマスタで永続保管（最優先）</li>
+<li>• ②実行前に自動バックアップ作成</li>
+<li>• 旧→新マスタ遷移を推定して記録</li>
+</ul>
 </div>
-<div class="cap">
-<div class="cap-i">🔐</div>
-<div class="cap-t">BO手入力が二度と消えない永続保管</div>
-<div class="cap-b">手動紐付けマスタを集約スプシ内に新設。エルメ復元の影響を一切受けず、最優先マスタとして毎月自動参照される</div>
+<div style="background:#fffbeb;border-left:4px solid #e6a817;border-radius:6px;padding:10px 12px">
+<div style="font-size:12px;font-weight:900;color:#92400e;margin-bottom:4px">⚡ 運用する</div>
+<ul style="list-style:none;font-size:10.5px;line-height:1.55;color:#1a1a2e">
+<li>• 月次①②③④の一本道フロー</li>
+<li>• 対象月を選んで過去月を保護</li>
+<li>• 強制上書きモード（洗い替え用）</li>
+</ul>
 </div>
 </div>
 
-<div class="msg ok">
+<div class="msg ok" style="margin-top:10px">
 <p contenteditable="true">配布前に「何が起きて／何が空白で／何が変わったか」が全て自動レポート化される</p>
 </div>
 </div>
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 7: レポート・差分の構築 -->
+<!-- Slide 8: レポート・差分（9種類×3カテゴリ） -->
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
 <div class="sn">07</div><div class="sc">REPORTS &amp; LOGS</div>
-<div class="tt" contenteditable="true">レポート・差分の自動生成構造</div>
+<div class="tt" contenteditable="true">レポート・差分の自動生成構造（9種類）</div>
 <div class="dl dl-r"></div>
 
-<p style="font-size:11.5px;margin-top:8px;opacity:.85;line-height:1.7" contenteditable="true">②紐付け・③整合性チェックの実行時、それぞれが専用シートにタイムスタンプ付きでレポートを出力します。過去の全実行履歴が追跡可能です。</p>
+<p style="font-size:10.5px;margin-top:6px;opacity:.85;line-height:1.55" contenteditable="true">②紐付け・③整合性チェック・手動実行時に、タイムスタンプ付きで専用シートに自動出力。過去の全実行履歴が追跡可能です。</p>
 
-<div class="cause-grid" style="margin-top:10px">
-<div class="cause-card">
-<div class="cause-num">REPORT 1</div>
-<div class="cause-title">紹介者更新ログ</div>
-<div class="cause-body">②実行時、どの行に・どのマスタから・何を埋めたかを全件ログ化。色分け（青=メール／氏名マッチ、黄=不一致）で信頼度を可視化</div>
+<div style="margin-top:8px">
+<div style="background:#fff;color:#1a1a2e;border-radius:6px;padding:8px 12px;margin-bottom:6px">
+<div style="font-size:11px;font-weight:900;color:#B80C2C;margin-bottom:4px">📝 日次ログ系（②実行時に自動生成）</div>
+<table style="width:100%;font-size:10px;border-collapse:collapse">
+<tr><td style="width:38%;padding:2px 4px"><strong>1. 更新ログ</strong></td><td style="padding:2px 4px">どのマスタから何を埋めたかを全件ログ化。色分けで信頼度を可視化</td></tr>
+<tr><td style="padding:2px 4px"><strong>2. 強制上書きログ</strong></td><td style="padding:2px 4px">強制モード時、旧→新マスタの遷移＋旧値／新値を全件記録</td></tr>
+<tr><td style="padding:2px 4px"><strong>3. 紹介者更新前バックアップ</strong></td><td style="padding:2px 4px">②実行直前のスナップショット。後続の差分比較に使用</td></tr>
+</table>
 </div>
-<div class="cause-card">
-<div class="cause-num">REPORT 2</div>
-<div class="cause-title">紹介者整合性チェック_YYYYMMDD</div>
-<div class="cause-body">同一契約グループで紹介者が分裂している行・空白混在している行を全量出力。配布前の合格基準は不整合0件</div>
+
+<div style="background:#fff;color:#1a1a2e;border-radius:6px;padding:8px 12px;margin-bottom:6px">
+<div style="font-size:11px;font-weight:900;color:#15803d;margin-bottom:4px">🔍 診断系（③整合性チェック実行時に自動生成）</div>
+<table style="width:100%;font-size:10px;border-collapse:collapse">
+<tr><td style="width:38%;padding:2px 4px"><strong>4. 紹介者整合性チェック</strong></td><td style="padding:2px 4px">同一契約グループでの紹介者分裂・空白混在を全量検出</td></tr>
+<tr><td style="padding:2px 4px"><strong>5. 紹介者欠損診断</strong></td><td style="padding:2px 4px">空欄行を9パターン（レガシー／表記揺れ／列ずれ等）に自動仕分け</td></tr>
+<tr><td style="padding:2px 4px"><strong>6. 紹介者欠損診断_サマリ</strong></td><td style="padding:2px 4px">集計とヘッダー警告（要対応／診断専用の2段分離表示）</td></tr>
+<tr><td style="padding:2px 4px"><strong>7. 残空行_代理店別</strong></td><td style="padding:2px 4px">空白が残っている行の代理店別偏り集計</td></tr>
+</table>
 </div>
-<div class="cause-card">
-<div class="cause-num">REPORT 3</div>
-<div class="cause-title">紹介者欠損診断_YYYYMMDD</div>
-<div class="cause-body">紹介者が空欄になっている行を、原因ごとに9種類に自動仕分け。「古い契約でそもそもマスタに無い（＝対応不要）」と「マスタ側を直せば解決する行（＝要対応）」を自動で切り分けてくれるので、どこから手を付ければいいかが一目で分かる</div>
-</div>
-<div class="cause-card">
-<div class="cause-num">REPORT 4</div>
-<div class="cause-title">バックアップ差分_YYYYMMDD</div>
-<div class="cause-body">②紐付け実行前の自動バックアップと比較し、変更／新規／削除の全件を出力。想定外の変更を事前検知</div>
+
+<div style="background:#fff;color:#1a1a2e;border-radius:6px;padding:8px 12px">
+<div style="font-size:11px;font-weight:900;color:#0f3460;margin-bottom:4px">📊 復元・差分系（手動実行時＋③実行時）</div>
+<table style="width:100%;font-size:10px;border-collapse:collapse">
+<tr><td style="width:38%;padding:2px 4px"><strong>8. バックアップ差分</strong></td><td style="padding:2px 4px">前月比で変更／新規／削除を全量出力＋マスタ遷移（旧→新）を併記</td></tr>
+<tr><td style="padding:2px 4px"><strong>9. 公開シート復元プレビュー／ログ</strong></td><td style="padding:2px 4px">公開履歴からの個別復旧時の事前確認と実行記録</td></tr>
+</table>
 </div>
 </div>
 </div>
