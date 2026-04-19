@@ -268,17 +268,18 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 </div>
 <div class="fc">
 <div class="fc-i">🔍</div>
-<div class="fc-t">自動検出系</div>
-<div class="fc-b">紹介者欠損診断、整合性チェック、ヘッダーマッピング確認、バックアップ差分、代理店別分布集計の5機能で全方位監視。</div>
+<div class="fc-t">自動検出系（③に統合）</div>
+<div class="fc-b">紹介者整合性チェック／欠損診断／前月バックアップ差分／残り空欄分析の4診断を<strong>「③ 整合性チェック」1ボタンで一括実行</strong>。配布前の最終確認が数クリックで完了。</div>
 </div>
 <div class="fc">
 <div class="fc-i">🔄</div>
 <div class="fc-t">自動復元系</div>
-<div class="fc-b">公開シート配布履歴を第6マスタとして統合。「紹介者情報を更新」ボタン1つで過去配布実績から自動復元。手動紐付けマスタを最優先に。</div>
+<div class="fc-b">公開シート配布履歴を第6マスタとして統合。「②紹介者情報を更新」ボタン1つで過去配布実績から自動復元。手動紐付けマスタを最優先に。</div>
 </div>
 </div>
 
-<div class="bb" style="margin-top:10px"><strong>📖 ドキュメント化:</strong> 機能マニュアル（各ボタンの動作説明）と月次運用マニュアル（毎月の完全手順）の2種類をHTMLで作成。メニューボタンからいつでも閲覧可能。</div>
+<div class="bb" style="margin-top:10px"><strong>🎯 月次フローの一本道化:</strong> メニューボタンが増えすぎた反省から<strong>①変換 → ②紐付け → ③整合性チェック → ④明細生成</strong>の4ボタンに集約。特殊操作は「🛠️ その他のツール」配下へ分離し、日常フローから見えないように整理。</div>
+<div class="bb" style="margin-top:6px"><strong>📖 ドキュメント化:</strong> 機能マニュアル（各ボタンの動作説明）と月次運用マニュアル（毎月の完全手順）の2種をHTMLで作成。メニューから直接閲覧可能。</div>
 </div>
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
@@ -337,30 +338,34 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
 <div class="sn">08</div><div class="sc">NEW FEATURES</div>
-<div class="tt" contenteditable="true">追加された新機能（メニュー構成）</div>
+<div class="tt" contenteditable="true">メニュー構成（月次①②③④の一本道）</div>
 <div class="dl dl-b"></div>
 
-<div class="sg">
+<p style="font-size:11.5px;margin-top:6px;line-height:1.6" contenteditable="true">
+BOから「ボタンが多すぎて順番が分かりにくい」という声を受け、<strong>月次で押すのは①②③④の4つだけ</strong>という一本道に集約。特殊操作はサブメニューへ分離。
+</p>
+
+<div class="sg" style="margin-top:8px">
 <div class="sc-col">
-<h3><span style="color:#B80C2C">●</span> 📊 Advisory Fee 集約メニュー</h3>
+<h3><span style="color:#B80C2C">●</span> 📊 月次フロー（毎月この順に押すだけ）</h3>
 <ul>
-<li><span class="s-icon">📖</span><div>機能マニュアル</div></li>
-<li><span class="s-icon">📋</span><div>月次運用マニュアル</div></li>
-<li><span class="s-icon">🔐</span><div>手動紐付けマスタを開く</div></li>
-<li><span class="s-icon">📝</span><div>紹介者情報を更新＋ログ出力（6マスタ横断）</div></li>
-<li><span class="s-icon">📄</span><div>紹介者の文字揺れを修正</div></li>
-<li><span class="s-icon">🏢</span><div>一次代理店の文字揺れを修正</div></li>
+<li><span class="s-icon">①</span><div>新しいExcelを変換</div></li>
+<li><span class="s-icon">②</span><div>紹介者情報を更新＋ログ出力<br><span style="font-size:10px;color:#666">（6マスタ横断＋文字揺れ修正＋一次代理店補完を自動実行）</span></div></li>
+<li><span class="s-icon" style="color:#B80C2C;font-weight:900">③</span><div>整合性チェック（4種実行）<span style="font-size:10px;color:#B80C2C">★NEW</span><br><span style="font-size:10px;color:#666">（配布前の最終チェック。4診断を一括実行）</span></div></li>
+<li><span class="s-icon">④</span><div>報酬明細を生成（代理店を選択）<br><span style="font-size:10px;color:#666">（旧「試作」から改名。5社なら④を5回）</span></div></li>
+<li><span class="s-icon">🔐</span><div>手動紐付けマスタを開く（BO追記用）</div></li>
 </ul>
 </div>
 <div class="sc-col">
-<h3><span style="color:#0f3460">●</span> ⚙️ 設定メニュー</h3>
+<h3><span style="color:#0f3460">●</span> 📖 マニュアル ＋ 🛠️ その他のツール</h3>
 <ul>
-<li><span class="s-icon">🔍</span><div>ヘッダーマッピング確認</div></li>
-<li><span class="s-icon">🔄</span><div>K列を再計算</div></li>
-<li><span class="s-icon">🔄</span><div>公開シートから紹介者を復元（プレビュー）</div></li>
-<li><span class="s-icon">🔄</span><div>公開シートから紹介者を復元（実行）</div></li>
-<li><span class="s-icon">🔍</span><div>紹介者整合性チェック</div></li>
-<li><span class="s-icon">🔎</span><div>紹介者欠損診断</div></li>
+<li><span class="s-icon">📋</span><div>月次運用マニュアル（毎月の完全手順）</div></li>
+<li><span class="s-icon">📖</span><div>機能マニュアル（各ボタンの動作説明）</div></li>
+<li><span class="s-icon">🔍</span><div>診断3種（整合性／欠損／ヘッダー）</div></li>
+<li><span class="s-icon">⚡</span><div>復旧2種（強制上書き／K列再計算）</div></li>
+<li><span class="s-icon">📝</span><div>整備3種（文字揺れ修正／最新月再取得）</div></li>
+<li><span class="s-icon">⚠️</span><div>リセット2種（全再集約／処理済みクリア）</div></li>
+<li><span class="s-icon">ℹ️</span><div>設定を確認</div></li>
 </ul>
 </div>
 </div>
@@ -408,10 +413,10 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="sc-col" style="background:rgba(255,255,255,0.05);padding:12px;border-radius:8px">
 <h3><span style="color:#4ade80">●</span> DO（必ず守る）</h3>
 <ul>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>月次は <strong>①→②→③→④</strong> の順に押す</div></li>
 <li><span class="s-icon" style="color:#4ade80">✓</span><div>BO手入力は「手動紐付けマスタ」に集約</div></li>
-<li><span class="s-icon" style="color:#4ade80">✓</span><div>紹介者情報を更新ボタン1つで完結</div></li>
-<li><span class="s-icon" style="color:#4ade80">✓</span><div>毎月の運用フロー（9フェーズ）に従う</div></li>
-<li><span class="s-icon" style="color:#4ade80">✓</span><div>配布前に整合性チェック4種を実行</div></li>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>②紹介者情報を更新ボタン1つで完結（自動横断＋文字揺れ修正）</div></li>
+<li><span class="s-icon" style="color:#4ade80">✓</span><div>④配布前に必ず③整合性チェック（4種）を実行</div></li>
 <li><span class="s-icon" style="color:#4ade80">✓</span><div>入力者・入力日を記録（追跡可能に）</div></li>
 </ul>
 </div>
@@ -420,7 +425,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <ul>
 <li><span class="s-icon" style="color:#f87171">✗</span><div>紹介者名の括弧表記（例: 鈴木光穂(GH )）を削除</div></li>
 <li><span class="s-icon" style="color:#f87171">✗</span><div>管理シートへの直接手入力（エルメ復元で消失）</div></li>
-<li><span class="s-icon" style="color:#f87171">✗</span><div>整合性チェックをスキップして配布</div></li>
+<li><span class="s-icon" style="color:#f87171">✗</span><div>③整合性チェックをスキップして④配布</div></li>
 <li><span class="s-icon" style="color:#f87171">✗</span><div>同じ証券番号を手動紐付けマスタに重複入力</div></li>
 <li><span class="s-icon" style="color:#f87171">✗</span><div>紹介者名だけ入力でAC・代理店を空のまま放置</div></li>
 </ul>
