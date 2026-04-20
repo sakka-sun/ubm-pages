@@ -333,11 +333,65 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
 </div>
 
-<!-- Slide 7: 何ができるようになったか（4軸×12能力） -->
+<!-- Slide 7: 紹介者・一次代理店マスタに正規表記を整備（NEW） -->
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">06</div><div class="sc">WHAT'S NEW</div>
+<div class="sn">06</div><div class="sc">MASTER NORMALIZATION</div>
+<div class="tt" contenteditable="true">紹介者マスタ・一次代理店マスタに「正規表記」を整備</div>
+<div class="dl dl-b"></div>
+
+<p style="font-size:11px;margin-top:6px;line-height:1.6" contenteditable="true">同じ人・同じ代理店でも、入力される表記が違うと紐付けが失敗します。そこで、<strong>2つのマスタに「正規表記」列を追加</strong>し、あらゆる表記を1つの正式名に統一する辞書を整備中です。</p>
+
+<!-- Before/After comparison -->
+<div class="status-grid" style="margin-top:8px;gap:10px">
+  <div class="status-col">
+    <h3 style="color:#B80C2C;font-size:12px">❌ 整備前（これまでの問題）</h3>
+    <div style="background:#fff5f5;border:1px solid #f0c0c0;border-radius:6px;padding:8px 10px;font-size:10px;line-height:1.55;margin-top:4px">
+      <div style="margin-bottom:3px;font-weight:700;color:#B80C2C">入力場所によって表記がバラバラ</div>
+      ・「鈴木 太郎」（スペースあり）<br>
+      ・「鈴木太郎」（スペースなし）<br>
+      ・「（株）ABC」「株式会社ABC」<br>
+      <div style="margin-top:4px;padding-top:4px;border-top:1px dashed #f0c0c0;color:#B80C2C;font-weight:700">→ 別人・別代理店として扱われ紐付けNG</div>
+    </div>
+  </div>
+  <div class="status-col">
+    <h3 style="color:#16a34a;font-size:12px">✅ 整備後（正規表記マスタ）</h3>
+    <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:8px 10px;font-size:10px;line-height:1.55;margin-top:4px">
+      <div style="margin-bottom:3px;font-weight:700;color:#15803d">マスタで正規表記を定義</div>
+      ・どの書き方も「鈴木太郎」に統一<br>
+      ・どの書き方も「株式会社ABC」に統一<br>
+      ・スクリプトが自動変換してから照合<br>
+      <div style="margin-top:4px;padding-top:4px;border-top:1px dashed #bbf7d0;color:#15803d;font-weight:700">→ 同一人物・同一代理店として紐付く</div>
+    </div>
+  </div>
+</div>
+
+<!-- Visual Flow Diagram -->
+<div class="flow" style="margin-top:10px;gap:6px;justify-content:center">
+  <div style="display:flex;flex-direction:column;gap:2px">
+    <div class="fb" style="padding:3px 8px;min-width:90px;font-size:9.5px;background:#fff5f5;border-color:#f0c0c0">鈴木 太郎</div>
+    <div class="fb" style="padding:3px 8px;min-width:90px;font-size:9.5px;background:#fff5f5;border-color:#f0c0c0">鈴木太郎</div>
+    <div class="fb" style="padding:3px 8px;min-width:90px;font-size:9.5px;background:#fff5f5;border-color:#f0c0c0">スズキタロウ</div>
+  </div>
+  <div class="fa" style="font-size:18px">→</div>
+  <div class="fb new" style="padding:8px 12px;min-width:120px;font-size:11px;border-color:#16a34a;background:#f0fdf4;color:#15803d"><strong>正規表記マスタ</strong><small style="color:#15803d;font-weight:700">「鈴木太郎」</small></div>
+  <div class="fa" style="font-size:18px;color:#16a34a">→</div>
+  <div class="fb" style="padding:8px 12px;min-width:100px;font-size:10.5px;background:#f0fdf4;border:2px solid #16a34a;color:#15803d"><strong>マッチ成功</strong><small style="color:#15803d">正しく紐付く</small></div>
+</div>
+
+<div class="msg" style="margin-top:10px">
+<p contenteditable="true">表記揺れを人力で直さなくても、マスタ1箇所を整備すれば全シート・全紐付けで自動統一される</p>
+</div>
+</div>
+<div class="ft">&copy; 2026 UNITED BM WEALTH. ALL RIGHTS RESERVED.</div>
+</div>
+
+<!-- Slide 8: 何ができるようになったか（4軸×12能力） -->
+<div class="slide wh">
+<div class="geo1"></div><div class="geo2"></div>
+<div class="ct">
+<div class="sn">07</div><div class="sc">WHAT'S NEW</div>
 <div class="tt" contenteditable="true">何ができるようになったか（12の能力を4軸で整理）</div>
 <div class="dl dl-b"></div>
 
@@ -387,7 +441,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">07</div><div class="sc">REPORTS &amp; LOGS</div>
+<div class="sn">08</div><div class="sc">REPORTS &amp; LOGS</div>
 <div class="tt" contenteditable="true">レポート・差分の自動生成構造（9種類）</div>
 <div class="dl dl-r"></div>
 
@@ -429,7 +483,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">08</div><div class="sc">STRUCTURAL CHALLENGE</div>
+<div class="sn">09</div><div class="sc">STRUCTURAL CHALLENGE</div>
 <div class="tt" contenteditable="true">現在抱える構造的な課題</div>
 <div class="dl dl-r"></div>
 
@@ -457,7 +511,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide wh">
 <div class="geo1"></div><div class="geo2"></div>
 <div class="ct">
-<div class="sn">09</div><div class="sc">3 HYPOTHESES</div>
+<div class="sn">10</div><div class="sc">3 HYPOTHESES</div>
 <div class="tt" contenteditable="true">なぜドリフト（気づかない仕様崩れ）が起きるのか</div>
 <div class="dl dl-b"></div>
 
@@ -492,7 +546,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#1a1a1a}
 <div class="slide dk">
 <div class="geo1"></div><div class="geo2"></div><div class="geo3"></div>
 <div class="ct">
-<div class="sn">10</div><div class="sc">REVIEW REQUEST</div>
+<div class="sn">11</div><div class="sc">REVIEW REQUEST</div>
 <div class="tt" contenteditable="true">佐藤さんへのレビュー依頼内容</div>
 <div class="dl dl-r"></div>
 
