@@ -353,5 +353,52 @@
   <div class="footer">© 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
 </div>
 
+<!-- ========== APPENDIX 1 エラー時のリカバリーフロー ========== -->
+<div class="slide dark">
+  <div class="bgov"></div>
+  <div class="geo-tr"><div></div><div></div></div>
+  <div style="position:absolute;top:34px;left:48px;"><div class="num" style="font-size:22px;">APPENDIX 1</div><div class="sec">エラー時のリカバリーフロー</div></div>
+  <div style="position:absolute;top:128px;left:50px;right:50px;">
+    <div style="display:flex;align-items:stretch;gap:7px;">
+      <div class="card" style="flex:1;text-align:center;border-color:rgba(255,112,136,0.5);"><div style="color:#ff7088;font-size:11px;font-weight:900;">① エラー発生</div><div style="color:#fff;font-size:11.5px;font-weight:700;margin-top:6px;">自動処理が不可</div><div style="color:rgba(255,255,255,0.6);font-size:10px;margin-top:4px;line-height:1.4;">不一致／表記揺れ／操作失敗</div></div>
+      <div style="display:flex;align-items:center;color:#B80C2C;font-weight:900;">→</div>
+      <div class="card" style="flex:1;text-align:center;"><div style="color:#B80C2C;font-size:11px;font-weight:900;">② UBMへ通知</div><div style="color:#fff;font-size:11.5px;font-weight:700;margin-top:6px;">エラーレポート</div><div style="color:rgba(255,255,255,0.6);font-size:10px;margin-top:4px;line-height:1.4;">メール＋Driveログ<br>件名「⚠エラー…」</div></div>
+      <div style="display:flex;align-items:center;color:#B80C2C;font-weight:900;">→</div>
+      <div class="card" style="flex:1.1;text-align:center;border-color:#B80C2C;"><div style="color:#B80C2C;font-size:11px;font-weight:900;">③ 手作業修正</div><div style="color:#fff;font-size:11.5px;font-weight:700;margin-top:6px;">回答スプシを修正</div><div style="color:rgba(255,255,255,0.6);font-size:10px;margin-top:4px;line-height:1.4;">UBMが日中に表記揺れ等を訂正</div></div>
+      <div style="display:flex;align-items:center;color:#B80C2C;font-weight:900;">→</div>
+      <div class="card" style="flex:1;text-align:center;"><div style="color:#B80C2C;font-size:11px;font-weight:900;">④ 翌日 自動再実行</div><div style="color:#fff;font-size:11.5px;font-weight:700;margin-top:6px;">夜間バッチ</div><div style="color:rgba(255,255,255,0.6);font-size:10px;margin-top:4px;line-height:1.4;">修正分を翌日のバッチで再処理</div></div>
+      <div style="display:flex;align-items:center;color:#B80C2C;font-weight:900;">→</div>
+      <div class="card" style="flex:1;text-align:center;background:rgba(80,180,120,0.12);border-color:rgba(80,180,120,0.4);"><div style="color:#6fcf97;font-size:11px;font-weight:900;">⑤ 完了</div><div style="color:#fff;font-size:11.5px;font-weight:700;margin-top:6px;">処理済</div><div style="color:rgba(255,255,255,0.6);font-size:10px;margin-top:4px;line-height:1.4;">アミラへ／顧客へ完了メール</div></div>
+    </div>
+    <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 18px;margin-top:26px;color:rgba(255,255,255,0.82);font-size:11.5px;line-height:1.8;">
+      <b style="color:#fff;">ポイント</b>：エラーは「その場で止めて翌日リトライ」する設計。UBMは<b>当日中に回答スプレッドシートを手修正</b>しておけば、<b>翌日の夜間バッチが自動で再実行</b>する（再投入の手間なし）。<br>
+      ※ 大文字小文字・「お/ゆ」の数などの表記揺れが対象。<b>姓名の逆転・口座番号の値違いは自動修正せずエラーのまま</b>（誤処理防止）→ 個別確認・顧客へ再入力依頼。
+    </div>
+  </div>
+  <div class="footer">© 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+</div>
+
+<!-- ========== APPENDIX 2 共有情報一覧（アクセス情報） ========== -->
+<div class="slide">
+  <div class="geo-tr"><div></div><div></div></div>
+  <div class="head-wt"><div class="num" style="font-size:22px;">APPENDIX 2</div><div class="sec">共有情報一覧（アクセス情報）</div></div>
+  <div class="body-wt" style="top:108px;">
+    <table>
+      <tr><th style="width:160px;">項目</th><th>URL ・ ID</th><th style="width:150px;">備考</th></tr>
+      <tr><td>DOMINIONポータル</td><td><b>app.dominion-cs.com/ja/login</b></td><td>Googleアカウント方式</td></tr>
+      <tr><td>┗ ID</td><td>ubmwealthlimited@gmail.com</td><td>—</td></tr>
+      <tr><td>┗ パスワード</td><td><b style="color:#B80C2C;">●●●●●●（別途LINEで共有）</b></td><td>公開資料のため非掲載</td></tr>
+      <tr><td>変更申請フォーム</td><td>docs.google.com/forms/d/<b>1Ugi6Xlzzf…F2Eg</b>/edit</td><td>ポートフォリオ変更申請</td></tr>
+      <tr><td>┗ フォームID</td><td>1Ugi6XlzzfgrqvojHBGzIkgL32m2bNKw8-XOPNp8F2Eg</td><td>—</td></tr>
+      <tr><td>回答スプレッドシート</td><td>docs.google.com/spreadsheets/d/<b>12LjtGf…k9wU</b>/edit</td><td>gid=905642890</td></tr>
+      <tr><td>┗ シートID</td><td>12LjtGf-Bo8sVzh2sjcxACowBpf1_gLEh_YVAuoxk9wU</td><td>—</td></tr>
+    </table>
+    <div style="background:#fff8e1;border-left:4px solid #e6a700;padding:9px 14px;margin-top:12px;font-size:11px;color:#7a5c00;line-height:1.7;">
+      <b>後ほど共有（未確定）</b>：アミラのメールアドレス（処理済送付先）／UBMのメールアドレス（エラー受信先）／エラーメールの指定件名／照合マスタの所在／Driveフォルダ。<b>パスワード・各メールアドレスはLINE等の非公開チャネルで別途お渡しします。</b>
+    </div>
+  </div>
+  <div class="footer">© 2025 UNITED BM WEALTH. ALL RIGHTS RESERVED. ｜ 本資料は社内利用目的に限り使用してください。（無断転載禁止）</div>
+</div>
+
 </body>
 </html>
