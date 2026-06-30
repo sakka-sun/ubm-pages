@@ -11,7 +11,7 @@
   :root{
     --ink:#1b2331; --ink2:#46536b; --muted:#98a2b3; --faint:#c6cdd9;
     --bg:#f5f6f8; --card:#ffffff; --line:#eef1f5; --line2:#e3e7ee;
-    --red:#cf0a41; --green:#0f9d6b; --green-soft:#edf8f3;
+    --red:#cf0a41; --blue:#2f5fb0; --green:#0f9d6b; --green-soft:#edf8f3;
     /* スレート1トーン（段階） */
     --t1:#334155; --t2:#64748b; --t3:#94a3b8; --t4:#c0cad8;
     --track:#eef1f5;
@@ -60,7 +60,7 @@
   .kind .dot{width:7px; height:7px; border-radius:50%; background:var(--t2);}
   .kind.var .dot{background:var(--t1);}
 
-  .bar{display:flex; height:16px; border-radius:8px; overflow:hidden; background:var(--track); margin-bottom:14px;}
+  .bar{display:flex; height:16px; border-radius:0; overflow:hidden; background:var(--track); margin-bottom:14px;}
   .bar i{height:100%;}
   .mlist{display:flex; flex-direction:column; gap:8px;}
   .ml{display:flex; align-items:center; gap:10px;}
@@ -71,7 +71,7 @@
     font-family:"Manrope"; font-weight:700; font-size:9pt; color:var(--ink); background:#fff;}
   .pcu{color:var(--faint); font-size:8.5pt; width:10px;}
   .pcfix{font-family:"Manrope"; font-weight:700; font-size:9pt; color:var(--muted); width:62px; text-align:right;}
-  .addrow{font-size:8.5pt; font-weight:700; color:var(--red); margin-top:10px; display:inline-flex; gap:6px;}
+  .addrow{font-size:8.5pt; font-weight:700; color:var(--blue); margin-top:10px; display:inline-flex; gap:6px;}
   .tot{font-family:"Manrope"; font-weight:700; font-size:10pt; color:var(--green);}
   .tot.fix{color:var(--muted);}
   .upd{font-size:9pt; font-family:"Manrope"; font-weight:600; color:var(--ink2);}
@@ -83,7 +83,7 @@
   .card-f .note{font-size:8.5pt; color:var(--muted);}
   .acts{display:flex; gap:10px;}
   .btn{border:none; border-radius:24px; font-weight:700; font-size:9.5pt; padding:10px 20px; font-family:inherit; cursor:pointer;}
-  .btn-red{background:var(--red); color:#fff;}
+  .btn-red{background:var(--blue); color:#fff;}
   .btn-ghost{background:#fff; color:var(--ink2); border:1px solid var(--line2);}
 
   /* 更新履歴：横並び3カラム */
@@ -92,7 +92,7 @@
   .hcol:last-child{border-right:none;}
   .hcol .when{font-size:7.5pt; color:var(--faint); font-family:"Manrope"; font-weight:600; letter-spacing:.04em;}
   .hcol .ttl{font-size:9.5pt; font-weight:700; margin:3px 0 4px; display:flex; align-items:center; gap:7px;}
-  .hcol .ttl .d{width:6px; height:6px; border-radius:50%; background:var(--red); opacity:.8;}
+  .hcol .ttl .d{width:6px; height:6px; border-radius:50%; background:var(--blue); opacity:.85;}
   .hcol .desc{font-size:8.5pt; color:var(--ink2);}
 
   .foot{font-size:8pt; color:var(--faint); text-align:center; margin-top:4px;}
